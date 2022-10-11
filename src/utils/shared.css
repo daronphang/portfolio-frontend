@@ -1,0 +1,12 @@
+/*
+    GLOBAL STYLING
+    styles that are used to manipulate DOM directly instead of relying
+    on useState to retrigger animations or restyle
+*/
+
+@keyframes buttonOnError {
+    25% {transform: translateX(-0.5rem)}
+    50% {transform: translateX(0.5rem)}
+    75% {transform: translateX(-0.5rem)}
+    100% {transform: translateX(0rem)}
+}
