@@ -1,3 +1,12 @@
+## Deployment
+
+Build is done on local computer, not remote server instance. Folder needs write access for SSH user.
+
+```console
+$ npm run build
+$ rsync -avP build/ exampleuser@mydomain.com:/var/www/mydomain.com/
+```
+
 ## Testing
 
 Modal, navigation, redux.

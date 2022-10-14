@@ -81,7 +81,7 @@ const InputFields = [
     type: 'text',
     placeholder: 'Required*',
     label: 'name',
-    key: 'username',
+    key: 'contact_name',
     errorMsg: 'Please enter your fullname.',
     icon: 'fa-solid fa-user',
     required: true,
