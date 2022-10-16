@@ -85,7 +85,7 @@ const InputFields = [
     errorMsg: 'Please enter your fullname.',
     icon: 'fa-solid fa-user',
     required: true,
-    pattern: /^[a-zA-Z]{3,}$/,
+    pattern: /^[a-zA-Z ]{3,}$/,
     maxLength: 250,
   },
   {

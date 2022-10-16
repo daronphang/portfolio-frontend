@@ -9,9 +9,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1.6rem;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
+  font-size: 1.6rem;
 }
 
 ::-webkit-scrollbar {
@@ -45,7 +45,7 @@ code {
 @font-face {
   font-family: 'JetBrains';
   font-weight: 300;
-  src: local('JetBrains'), url(./fonts/JetBrainsMono-Light.ttf) format('truetype');
+  src: local('JetBrains'), url(./fonts/JetBrainsMono-Thin.ttf) format('truetype');
 }
 
 @font-face {
@@ -81,6 +81,18 @@ code {
   font-family: 'Arame';
   src: local('Arame'), url(./fonts/ArameMono.ttf) format('truetype');
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url(./fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-weight: 300;
+  font-family: 'Roboto';
+  src: local('Roboto'), url(./fonts/Roboto-Thin.ttf) format('truetype');
+}
+
 
 
 /* setting global font */

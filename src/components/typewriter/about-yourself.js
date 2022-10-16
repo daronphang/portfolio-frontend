@@ -1,19 +1,39 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
-import { standardStyles } from '../../utils/styles';
+import { standardStyles, mediaQuery } from '../../utils/styles';
 import TypeWriter from './typewriter';
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 14.5vh auto;
   color: ${standardStyles.primaryFontColor};
   text-align: left;
   align-self: start;
   justify-self: start;
   align-items: start;
   justify-items: start;
-  font-size: ${standardStyles.fontSizeLarge};
+
+  ${mediaQuery(
+    'mobile',
+    `
+  font-size: ${standardStyles.fontSizeMediumMobile};
+  grid-template-columns: 5.5rem auto;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+  font-size: ${standardStyles.fontSizeSmallTablet};
+  grid-template-columns: 10rem auto;
+  `
+  )};
+  ${mediaQuery(
+    'desktop',
+    `
+  font-size: ${standardStyles.fontSizeMediumDesktop};
+  grid-template-columns: 11vh auto;
+  `
+  )};
 `;
 
 export default function AboutYourself() {

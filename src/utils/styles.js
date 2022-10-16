@@ -8,9 +8,42 @@ export const standardStyles = {
   colorQuinary: '#ffffff',
   fontColorPrimary: '#ffffff',
   fontColorSecondary: '#333333',
+  fontSizeVerySmallMobile: '1rem',
+  fontSizeSmallMobile: '1.3rem',
+  fontSizeMediumMobile: '1.5rem',
+  fontSizeLargeMobile: '2rem',
+  fontSizeVeryLargeMobile: '3rem',
+  fontSizeVerySmallTablet: '1.5rem',
+  fontSizeSmallTablet: '1.7rem',
+  fontSizeMediumTablet: '1.9rem',
+  fontSizeLargeTablet: '2.1rem',
+  fontSizeVeryLargeTablet: '2.3rem',
+  fontSizeVerySmallDesktop: '1.7vh',
+  fontSizeNormalDesktop: '1.6rem',
+  fontSizeSmallDesktop: '2vh',
+  fontSizeMediumDesktop: '3vh',
+  fontSizeLargeDesktop: '4vh',
+  fontSizeVeryLargeDesktop: '5vh',
   fontSizeVerySmall: '1.7vh',
   fontSizeSmall: '2vh',
   fontSizeMedium: '3vh',
   fontSizeLarge: '4vh',
   fontSizeVeryLarge: '5vh',
+};
+
+export const mediaQuery = (device, styled) => {
+  switch (device) {
+    case 'mobile':
+      return `@media (min-width: 320px) { ${styled}}`;
+    case 'mobilePotrait':
+      return `@media (min-width: 320px) and (orientation: potrait) { ${styled}}`;
+    case 'mobileLandscape':
+      return `@media (min-width: 320px) and (orientation: landscape)  { ${styled}}`;
+    case 'tablet':
+      return `@media (min-width: 768px) { ${styled}}`;
+    case 'desktop':
+      return `@media (min-width: 1024px) { ${styled}}`;
+    default:
+      return '';
+  }
 };

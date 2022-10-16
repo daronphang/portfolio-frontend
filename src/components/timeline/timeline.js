@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
 import TimelineContext from './context';
-import useScrollDirection from '../../hooks/useScrollDirection';
 import useScrollAmount from '../../hooks/useScrollAmount';
+import { mediaQuery, standardStyles } from '../../utils/styles';
 
 const Wrap = styled.div`
   position: relative;
@@ -38,8 +38,32 @@ const Arrow = styled.span.attrs((props) => ({
   width: 10vh;
   border-right: 1vh solid #ffffff;
   border-bottom: 1vh solid #ffffff;
-  left: 50%;
   transition: 0.5s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    height: 5rem;
+    width: 5rem;
+    left: 10%;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    height: 10vh;
+    width: 10vh;
+    left: 50%;
+  `
+  )};
+  ${mediaQuery(
+    'desktop',
+    `
+    height: 10vh;
+    width: 10vh;
+    left: 50%;
+  `
+  )};
 `;
 
 const VerticalBar = styled.span.attrs((props) => ({

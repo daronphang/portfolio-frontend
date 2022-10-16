@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
-import { standardStyles } from '../../utils/styles';
+import { standardStyles, mediaQuery } from '../../utils/styles';
 import AboutYourself from '../../components/typewriter/about-yourself';
 import Timeline from '../../components/timeline/timeline';
 import Horizon from './horizon';
@@ -16,8 +16,29 @@ const Introduction = styled.div`
   background: ${standardStyles.colorPrimary};
   height: 100vh;
   color: ${standardStyles.fontColorPrimary};
+  ${mediaQuery(
+    'mobile',
+    `
+  font-size: ${standardStyles.fontSizeMediumMobile};
+  padding: 3rem;
+  padding-top: 12rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+  font-size: ${standardStyles.fontSizeSmallTablet};
+  padding: 5rem;
+  padding-top: 10rem;
+  `
+  )};
+  ${mediaQuery(
+    'desktop',
+    `
+  font-size: ${standardStyles.fontSizeMediumDesktop};
   padding: 10vh;
-  font-size: ${standardStyles.fontSizeLarge};
+  `
+  )};
   font-family: Arame;
 `;
 
@@ -25,7 +46,7 @@ const Footer = styled.div`
   position: absolute;
   left: 0;
   bottom: 0;
-  font-size: ${standardStyles.fontSizeSmall};
+  font-size: ${standardStyles.fontSizeVerySmall};
   width: 100%;
   text-align: center;
   transition: 0.5s;
@@ -43,6 +64,7 @@ const Span = styled.span.attrs((props) => ({
 
 const Name = styled.div`
   font-family: Arame;
+  margin-bottom: 0.5vh;
 `;
 
 export default function LandingPageComponent() {
@@ -54,7 +76,6 @@ export default function LandingPageComponent() {
     <Wrap>
       <Introduction id="introduction" ref={ref}>
         <Name>MY NAME IS DARON.</Name>
-        <br />
         <AboutYourself></AboutYourself>
         <Footer>
           <Span ratio={entry?.intersectionRatio}>

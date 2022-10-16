@@ -13,7 +13,6 @@ const WrapBounds = styled.div`
 
 const Footer = styled.div`
   position: absolute;
-  font-size: ${standardStyles.fontSizeLarge};
   left: 0;
   top: 0;
   width: 100%;

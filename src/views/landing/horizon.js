@@ -12,7 +12,6 @@ import SocialMedia from '../../components/social-media';
 const WrapBounds = styled.div`
   position: relative;
   width: 100%;
-  height: auto;
   background: rgb(20, 20, 20);
 `;
 
@@ -24,9 +23,7 @@ const ZoomImgBounds = styled.div`
 const ZoomImg = styled.div.attrs((props) => ({
   style: {
     opacity: Math.min(1, ((props.ratio || 0) - 0.3) * 3),
-    transform: `scale(${
-      1 + Math.max(0, ((props.scroll - 60) * 4) / 100)
-    }) translateY(${Math.max(0, ((props.scroll - 60) * 4) / 10)}%)`,
+    transform: `scale(${1 + Math.max(0, ((props.scroll - 55) * 1.5) / 100)})`, //  translateY(${Math.max(0, ((props.scroll - 50) * 3) / 10)}%)
   },
 }))`
   top: 0%;
@@ -48,16 +45,16 @@ const MinionWrap = styled.div`
 
 const TerminalWrap = styled.div`
   position: absolute;
-  width: 100%;
+  width: 100vw;
   margin-top: 28vh;
   color: #ffffff;
-  font-size: 1.5vh;
+  font-size: 1vw;
   text-align: center;
 `;
 
 const ProfileWrap = styled.div.attrs((props) => ({
   style: {
-    opacity: Math.min(1, (0.5 - (props.ratio || 1)) * 4.5),
+    opacity: Math.min(1, (0.5 - (props.ratio || -1)) * 4.5),
   },
 }))`
   position: relative;
@@ -125,20 +122,21 @@ export default function Horizon() {
 
   return (
     <WrapBounds id="about" onMouseMove={handleMouseMove}>
-      <ZoomImg ratio={entry?.intersectionRatio} scroll={scrollAmount}>
-        <Img src={tv}></Img>
-        <MinionWrap>
-          <Minion clientX={clientX} clientY={clientY} />
-        </MinionWrap>
-        {entry?.intersectionRatio > 0.3 && (
-          <TerminalWrap>
-            <TypeWriter styles={{ duration: 3, steps: 26 }}>
-              Scroll down to continue...
-            </TypeWriter>
-          </TerminalWrap>
-        )}
-      </ZoomImg>
-      <ZoomImgBounds ref={ref} />
+      <ZoomImgBounds ref={ref}>
+        <ZoomImg ratio={entry?.intersectionRatio} scroll={scrollAmount}>
+          <Img src={tv}></Img>
+          <MinionWrap>
+            <Minion clientX={clientX} clientY={clientY} />
+          </MinionWrap>
+          {entry?.intersectionRatio > 0.3 && (
+            <TerminalWrap>
+              <TypeWriter styles={{ duration: 3, steps: 26 }}>
+                Scroll down to continue...
+              </TypeWriter>
+            </TerminalWrap>
+          )}
+        </ZoomImg>
+      </ZoomImgBounds>
       <ProfileWrap ratio={entry?.intersectionRatio}>
         {/* <ProfileDescriptionBackdrop /> */}
         <ProfileDescription>{description}</ProfileDescription>

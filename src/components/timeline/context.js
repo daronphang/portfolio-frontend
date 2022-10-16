@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
+import { mediaQuery, standardStyles } from '../../utils/styles';
+
 const ContentBounds = styled.div`
   position: relative;
   height: 110vh;
@@ -12,7 +14,25 @@ const ContentWrap = styled.div`
   -webkit-position: sticky;
   position: sticky;
   left: 0;
-  top: 35%;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    top: 30%;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    top: 30%;
+  `
+  )};
+  ${mediaQuery(
+    'desktop',
+    `
+    top: 35%;
+  `
+  )};
 `;
 
 const Horizontal = styled.span.attrs((props) => ({
@@ -39,23 +59,65 @@ const Heading = styled.span.attrs((props) => ({
   },
 }))`
   position: absolute;
-  font-size: 4vh;
-  margin-top: 5vh;
   transition: 0.5s;
   font-family: Arame;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    font-size: ${standardStyles.fontSizeLargeMobile};
+    margin-top: 2.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: 4vh;
+    margin-top: 5vh;
+  `
+  )};
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: 4vh;
+    margin-top: 5vh;
+  `
+  )};
 `;
 
 const Square = styled.span.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.5) * 2),
+    opacity: Math.min(1, ((props.ratio || 0) - 0.5) * 4),
   },
 }))`
   position: absolute;
   background: #ffffff;
-  height: 2vh;
-  width: 2vh;
-  margin-top: 12.5vh;
   transition: 0.5s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    height: ${standardStyles.fontSizeMediumMobile};
+    width: ${standardStyles.fontSizeMediumMobile};
+    margin-top: 5.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    height: 2vh;
+    width: 2vh;
+    margin-top: 12.5vh;
+  `
+  )};
+  ${mediaQuery(
+    'desktop',
+    `
+    height: 2vh;
+    width: 2vh;
+    margin-top: 12.5vh;
+  `
+  )};
 `;
 
 const ZeroDigit = styled.span.attrs((props) => ({
@@ -65,10 +127,31 @@ const ZeroDigit = styled.span.attrs((props) => ({
   },
 }))`
   position: absolute;
-  font-size: 20vh;
-  margin-left: 2vh;
   transition: 0.5s;
   font-family: Arame;
+
+  ${mediaQuery(
+    'mobile',
+    `
+
+    font-size: 10rem;
+    margin-left: 1.7rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: 20vh;
+    margin-left: 2vh;
+  `
+  )};
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: 20vh;
+    margin-left: 2vh;
+  `
+  )};
 `;
 
 const SecondDigit = styled(ZeroDigit).attrs((props) => ({
@@ -77,8 +160,26 @@ const SecondDigit = styled(ZeroDigit).attrs((props) => ({
     transform: `translateY(${Math.min(0, -100 + (props.ratio || 0) * 120)}%)`,
   },
 }))`
-  margin-left: 13vh;
   font-family: Arame;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    margin-left: 7.3rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    margin-left: 13vh;
+  `
+  )};
+  ${mediaQuery(
+    'desktop',
+    `
+    margin-left: 13vh;
+  `
+  )};
 `;
 
 const Content = styled.span.attrs((props) => ({
@@ -88,17 +189,41 @@ const Content = styled.span.attrs((props) => ({
 }))`
   position: absolute;
   width: 75vw;
-  height: 25vh;
+  min-height: 25vh;
   text-align: left;
-  font-size: 2vh;
   font-family: JetBrains;
-  font-weight: 500;
-  word-spacing: -0.5vh;
-  line-height: 2.5vh;
-  margin-top: 20vh;
+  font-weight: 300;
   left: 50%;
   margin-left: -37.5vw;
   transition: 0.5s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    font-size: ${standardStyles.fontSizeSmallMobile};
+    word-spacing: -0.5rem;
+    line-height: 1.7rem;
+    margin-top: 10rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: 2.2vh;
+    word-spacing: -0.5vh;
+    line-height: 2.6vh;
+    margin-top: 20vh;
+  `
+  )};
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: 2.2vh;
+    word-spacing: -0.5vh;
+    line-height: 2.6vh;
+    margin-top: 20vh;
+  `
+  )};
 `;
 
 export default function TimelineContext({ id, heading, content, digit }) {

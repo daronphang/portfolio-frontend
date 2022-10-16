@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import useScrollDirection from '../../hooks/useScrollDirection';
 import CustomNavLink from './navlink';
+import { mediaQuery, standardStyles } from '../../utils/styles';
 
 const NavBarWrap = styled.div`
   display: flex;
@@ -15,6 +16,24 @@ const NavBarWrap = styled.div`
   transition: 0.5s;
   opacity: ${(props) => (props.show ? '1' : '0')};
   z-index: ${(props) => (props.show ? '1' : '0')};
+  ${mediaQuery(
+    'mobile',
+    `
+  font-size: ${standardStyles.fontSizeSmallMobile};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+  font-size: ${standardStyles.fontSizeSmallTablet};
+  `
+  )};
+  ${mediaQuery(
+    'desktop',
+    `
+  font-size: ${standardStyles.fontSizeNormalDesktop};
+  `
+  )};
 `;
 
 const Span = styled.span`
