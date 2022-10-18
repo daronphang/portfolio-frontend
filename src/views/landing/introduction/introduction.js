@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 import useScrollContent from '../../../hooks/useScrollContent';
 import { standardStyles, mediaSizes } from '../../../utils/styles';
-import backgroundImg from '../../../images/intro-background2.jpg';
+import backgroundImg from '../../../images/intro-background.jpg';
 import TypingContent from './typing-content';
 
 /*

@@ -10,7 +10,7 @@ const Glass = styled.div`
   padding: 2rem;
   -webkit-backdrop-filter: blur(3rem);
   backdrop-filter: blur(3rem);
-  z-index: 100;
+  z-index: 10;
   ${(props) => props.styles}
 `;
 

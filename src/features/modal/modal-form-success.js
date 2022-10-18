@@ -16,8 +16,8 @@ const Wrap = styled.div`
 
 const CheckWrap = styled.div`
   position: relative;
-  width: 11vh;
-  height: 11vh;
+  width: 11rem;
+  height: 11rem;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -36,21 +36,21 @@ const CheckWrap = styled.div`
 
 const drawCircle = keyframes`
 0% {
-    box-shadow: 5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green;
+    box-shadow: 5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green;
 }
 25% {
-    box-shadow: 5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green;
+    box-shadow: 5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green;
 }
 50% {
-    box-shadow: -5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green;
+    box-shadow: -5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green;
 }
 
 75% {
-    box-shadow: -5vh 5vh 0 0.2vh green, -5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green;
+    box-shadow: -5rem 5rem 0 0.2rem green, -5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green;
 }
 
 100% {
-    box-shadow: 5vh 5vh 0 0.2vh green, -5vh 5vh 0 0.2vh green, -5vh -5vh 0 0.2vh green, 5vh -5vh 0 0.2vh green;
+    box-shadow: 5rem 5rem 0 0.2rem green, -5rem 5rem 0 0.2rem green, -5rem -5rem 0 0.2rem green, 5rem -5rem 0 0.2rem green;
 }
 `;
 
@@ -77,8 +77,8 @@ const drawCircle = keyframes`
 const Circle = styled.div`
   position: absolute;
   border-radius: 50%;
-  height: 10vh;
-  width: 10vh;
+  height: 10rem;
+  width: 10rem;
   animation: ${drawCircle} 0.5s linear forwards;
 `;
 
@@ -101,7 +101,7 @@ const growShrinkCheck = keyframes`
 
 const Check = styled(FontAwesomeIcon)`
   color: green;
-  font-size: 9vh;
+  font-size: 9rem;
   animation: ${growShrinkCheck} 0.5s forwards;
   animation-delay: 0.5s;
   opacity: 0;

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
-import { standardStyles } from '../../utils/styles';
+import { standardStyles } from '../utils/styles';
 
 const typing = keyframes`
 0% { width: 0 }

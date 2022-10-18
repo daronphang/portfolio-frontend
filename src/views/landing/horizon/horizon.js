@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
 import tv from '../../images/retro-tv2.jpg';
-import profilePic from '../../images/horizon-background.jpg';
+import profilePic from '../../images/profile-pic-original.jpeg';
 import useScrollAmount from '../../hooks/useScrollAmount';
 import Minion from '../../components/minion';
 import TypeWriter from '../../components/typewriter';
-import SocialMedia from './horizon/social-media';
+import SocialMedia from '../../components/social-media';
 
 const WrapBounds = styled.div`
   position: relative;

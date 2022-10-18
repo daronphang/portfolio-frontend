@@ -9,25 +9,23 @@ import { standardStyles } from '../utils/styles';
 
 const Wrap = styled.div`
   position: relative;
-  padding: 3vh 1vh 1vh 1vh;
-  min-height: 5vh;
+  padding: 3rem 1rem 1rem 1rem;
+  min-height: 5rem;
 `;
 
 const InputWrap = styled.div`
   position: relative;
-  border-radius: 1vh;
-  font-family: JetBrains;
+  border-radius: 1rem;
   font-weight: 600;
   height: ${(props) => (props.styles?.height ? props.styles.height : '100%')};
 `;
 
 const Label = styled.label`
   position: absolute;
-  font-size: ${standardStyles.fontSizeSmall};
+  font-size: ${standardStyles.fontSizeMedium};
   transition: 0.5s;
-  left: -2vh;
-  top: -2.5vh;
-  font-family: Arame;
+  left: -2rem;
+  top: -3rem;
 `;
 
 // invalid and valid pseudo classes are used as react-hook-form
@@ -58,16 +56,13 @@ const inputStyles = css`
   box-sizing: border-box;
   display: absolute;
   width: 100%;
-  height: 5vh;
+  height: 5rem;
   background: ${standardStyles.quinaryColor};
   border: none;
-  border-radius: 1vh;
+  border-radius: 1rem;
   z-index: 5;
-  padding: 1.5vh;
-  font-family: JetBrains;
-  font-weight: 600;
-  word-spacing: -0.5vh;
-  font-size: ${standardStyles.fontSizeVerySmall};
+  padding: 1.5rem;
+  font-size: ${standardStyles.fontSizeMedium};
 
   &::placeholder {
     transition: 0.5s;
@@ -82,7 +77,7 @@ const inputStyles = css`
   }
 
   &:focus + label {
-    transform: translateX(3vh);
+    transform: translateX(3rem);
     opacity: 1;
   }
 
@@ -109,21 +104,21 @@ const TextArea = styled.textarea`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-  font-size: 2vh;
+  font-size: ${standardStyles.fontSizeMedium};
   opacity: 0;
-  margin-right: 1vh;
+  margin-right: 1rem;
   transition: 0.5s;
 `;
 
 const Validation = styled.span`
   position: absolute;
   box-sizing: border-box;
-  width: 1vh;
+  width: 1rem;
   height: 100%;
   left: 0;
   top: 0;
   z-index: 0;
-  border-radius: 1vh 0 0 1vh;
+  border-radius: 1rem 0 0 1rem;
   transition: 0.5s;
 `;
 
@@ -132,7 +127,7 @@ const ErrorMsg = styled.div`
   opacity: 1;
   font-family: JetBrains;
   font-weight: 600;
-  word-spacing: -0.5vh;
+  word-spacing: -0.5rem;
   font-size: ${standardStyles.fontSizeVerySmall};
 `;
 

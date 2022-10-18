@@ -2,16 +2,16 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import '../../utils/shared.css';
+import { standardStyles } from '../../utils/styles';
 import Loader from '../loaders/loader';
 
 const Default = styled.button`
   position: relative;
   box-sizing: border-box;
-  border: 0.3vh solid #ffffff;
-  border-radius: 1.5vh;
-  padding: 1.5vh 3vh 1.5vh 3vh;
-  font-size: 2.5vh;
-  color: #ffffff;
+  border: 0.3rem solid ${standardStyles.fontColorPrimary};
+  border-radius: 1.5rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  font-size: ${standardStyles.fontSizeMedium};
   width: fit-content;
   animation-duration: 0.3s;
 
@@ -23,8 +23,8 @@ const Default = styled.button`
 const LoaderWrap = styled.span.attrs((props) => ({
   style: {
     opacity: props.isLoading ? 1 : 0,
-    transform: `translateX(${props.isLoading ? 0 : -2}vh)`,
-    marginLeft: `${-props.size / 2}vh`,
+    transform: `translateX(${props.isLoading ? 0 : -2}rem)`,
+    marginLeft: `${-props.size / 2}rem`,
   },
 }))`
   position: absolute;
@@ -38,16 +38,15 @@ const Text = styled.span.attrs((props) => ({
   },
 }))`
   transition: 0.5s;
-  font-family: Arame;
 `;
 
 const Primary = styled(Default)`
-  background: #ffffff;
-  color: #333333;
+  background: ${standardStyles.fontColorPrimary};
+  color: ${standardStyles.fontColorSecondary};
 `;
 
 const Secondary = styled(Default)`
-  color: #333333;
+  color: ${standardStyles.fontColorSecondary};
 `;
 
 export default function Button({

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { standardStyles, mediaQuery } from '../../../utils/styles';
-import TypeWriter from '../../../components/typewriter/typewriter';
+import TypeWriter from '../../../components/typewriter';
 
 const Wrap = styled.div`
   position: absolute;

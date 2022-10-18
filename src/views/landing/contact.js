@@ -8,15 +8,17 @@ import { standardStyles } from '../../utils/styles';
 import InputField from '../../components/input';
 import Button from '../../components/buttons/button';
 import GlassMorphism from '../../components/glassmorphism';
-import telecaster from '../../images/telecaster.jpg';
+import backgroundImg from '../../images/contact-background.jpg';
 import useAxiosRequest from '../../hooks/useAxiosRequest';
 import { openModal } from '../../features/modal/modalSlice';
 import { handleApi } from '../../utils/apis';
 
-const WrapBounds = styled.div`
+const Wrap = styled.div`
   position: relative;
-  height: 100vh;
+  margin-top: -1%;
+  height: 110vh;
   width: 100%;
+  background: ${standardStyles.colorPrimary};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +27,7 @@ const WrapBounds = styled.div`
 
 const BackgroundImg = styled.img`
   position: absolute;
-  min-height: 100vh;
+  height: auto;
   width: 100%;
 `;
 
@@ -42,21 +44,21 @@ const ContactWrap = styled.div.attrs((props) => ({
   text-align: center;
   width: 100%;
   font-size: ${standardStyles.fontSizeMedium};
-  padding: 5vh 0 5vh 0;
+  padding: 5rem 0 5rem 0;
 `;
 
 const TextGrid = styled.div`
   display: grid;
   position: relative;
-  grid-template-columns: 30vw auto;
-  margin-top: 5vh;
+  grid-template-columns: 30rem auto;
+  margin-top: 5rem;
 `;
 
 const PersonalDetails = styled.div`
   display: flex;
   flex-direction: column;
   transition: 1s;
-  gap: 1vh;
+  gap: 1rem;
 
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -69,18 +71,19 @@ const PersonalDetails = styled.div`
 `;
 
 const ButtonWrap = styled.div`
-  margin-top: 3vh;
+  margin-top: 3rem;
 `;
 
 const Heading = styled.div`
-  font-family: Arame;
+  text-align: left;
+  font-size: ${standardStyles.fontSizeVeryLarge};
 `;
 
 const InputFields = [
   {
     type: 'text',
     placeholder: 'Required*',
-    label: 'name',
+    label: 'Name',
     key: 'contact_name',
     errorMsg: 'Please enter your fullname.',
     icon: 'fa-solid fa-user',
@@ -91,7 +94,7 @@ const InputFields = [
   {
     type: 'text',
     placeholder: 'Required*',
-    label: 'email',
+    label: 'Email',
     key: 'email',
     errorMsg: 'Please enter your email address.',
     icon: 'fa-solid fa-envelope',
@@ -101,10 +104,11 @@ const InputFields = [
   },
   {
     type: 'text',
-    placeholder: 'Optional',
-    label: 'company',
-    key: 'company',
+    placeholder: 'Required*',
+    label: 'Subject',
+    key: 'subject',
     icon: 'fa-solid fa-building',
+    required: true,
     maxLength: 250,
   },
 ];
@@ -116,7 +120,7 @@ const defaultValues = {
   message: null,
 };
 
-export default function ContactMe({ mockCallback }) {
+export default function UserContact({ mockCallback }) {
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
   const payload = useRef(null);
@@ -178,7 +182,8 @@ export default function ContactMe({ mockCallback }) {
   const onSubmit = (data) => {
     payload.current = data;
     if (mockCallback) mockCallback(data);
-    triggerRequest();
+    dispatch(openModal({ size: 'medium', name: 'SUCCESSFORM' }));
+    // triggerRequest();
   };
 
   const onError = (e) => {
@@ -189,21 +194,23 @@ export default function ContactMe({ mockCallback }) {
   };
 
   return (
-    <WrapBounds id="contact">
-      <BackgroundImg src={telecaster} />
-      <GlassMorphism styles={{ width: '80vw', padding: '5vh' }}>
+    <Wrap id="contact">
+      {/* <BackgroundImg src={backgroundImg} /> */}
+      <GlassMorphism styles={{ width: '100rem', padding: '5rem' }}>
         <ContactWrap>
-          <Heading>Contact Me</Heading>
+          <Heading>Send me a message.</Heading>
           <form onSubmit={handleSubmit(onSubmit, onError)}>
             <TextGrid>
               <PersonalDetails>{renderInputFields}</PersonalDetails>
               <InputField
-                {...register('message')}
-                label="message"
+                {...register('message', {
+                  required: true,
+                })}
+                label="Message"
                 id="message"
                 placeholder="Maximum of 250 characters allowed"
                 icon="fa-solid fa-message"
-                styles={{ height: '25vh' }}
+                styles={{ height: '25rem' }}
                 isTouched={touchedFields['message']}
                 getFieldState={getFieldState('message')}
                 isSubmitted={isSubmitted}
@@ -224,6 +231,6 @@ export default function ContactMe({ mockCallback }) {
           </form>
         </ContactWrap>
       </GlassMorphism>
-    </WrapBounds>
+    </Wrap>
   );
 }
