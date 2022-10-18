@@ -30,7 +30,7 @@ const Span = styled.span`
   margin: 0 auto;
   border-right: 0.2rem solid transparent;
   list-style: none;
-  font-family: Arame;
+  font-weight: 500;
   animation-delay: ${(props) => props.styles.delay}s;
   animation: ${(props) =>
     props.styles.backtyping

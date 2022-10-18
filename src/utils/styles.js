@@ -2,12 +2,18 @@
 
 export const standardStyles = {
   colorPrimary: 'rgb(20, 20, 20)',
-  colorSecondary: '#6D9886',
+  colorSecondary: '#F5A539',
   colorTertiary: '#D9CAB3',
   colorQuaternary: '#F6F6F6',
   colorQuinary: '#ffffff',
   fontColorPrimary: '#ffffff',
   fontColorSecondary: '#333333',
+  fontSizeVerySmall: '1.0rem',
+  fontSizeSmall: '1.3rem',
+  fontSizeNormal: '1.6rem',
+  fontSizeMedium: '2rem',
+  fontSizeLarge: '3rem',
+  fontSizeVeryLarge: '4rem',
   fontSizeVerySmallMobile: '1rem',
   fontSizeSmallMobile: '1.3rem',
   fontSizeMediumMobile: '1.5rem',
@@ -24,11 +30,17 @@ export const standardStyles = {
   fontSizeMediumDesktop: '3vh',
   fontSizeLargeDesktop: '4vh',
   fontSizeVeryLargeDesktop: '5vh',
-  fontSizeVerySmall: '1.7vh',
-  fontSizeSmall: '2vh',
-  fontSizeMedium: '3vh',
-  fontSizeLarge: '4vh',
-  fontSizeVeryLarge: '5vh',
+  // fontSizeVerySmall: '1.7vh',
+  // fontSizeSmall: '2vh',
+  // fontSizeMedium: '3vh',
+  // fontSizeLarge: '4vh',
+  // fontSizeVeryLarge: '5vh',
+};
+
+export const mediaSizes = {
+  mobile: 'min-width: 320px',
+  tablet: 'min-width: 768px',
+  desktop: 'min-width: 1024px',
 };
 
 export const mediaQuery = (device, styled) => {
