@@ -14,6 +14,7 @@ Build is done on local computer, not remote server instance. Folder needs write 
 ```console
 $ npm run build
 $ rsync -avP build/ exampleuser@mydomain.com:/var/www/mydomain.com/
+$ rsync -avP build/ daronphang@daronphang.com:/var/www/daronphang.com/
 ```
 
 ## Testing

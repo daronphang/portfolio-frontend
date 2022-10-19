@@ -43,7 +43,7 @@ export default function LandingMinion() {
       <Text>
         Meet Jack, my hardworking minion who labors day and night, constantly
         scraping on Stack Overflow for answers when a code unexpectedly breaks
-        (else he cannot sleep). He is also quite sensitive when people invade
+        (else he cannot sleep). He is also quite conscious when people invade
         his space.
       </Text>
     </Wrap>
