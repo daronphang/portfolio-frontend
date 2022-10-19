@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useInView } from 'react-intersection-observer';
 
 import TimelineContent from './content';
 import useScrollContent from '../../../hooks/useScrollContent';
@@ -30,12 +29,12 @@ const ScrollContentWrap = styled.div.attrs((props) => ({
     opacity: props.scroll > 10 && props.scroll < 100 ? 1 : 0,
   },
 }))`
-  position: relative;
+  position: fixed;
+  top: 0%;
   transition: 0.5s;
-  top: 7rem;
-  width: 80%;
-  left: 10%;
-  height: 1rem;
+  width: 50%;
+  left: 25%;
+  height: 0.5rem;
   background: ${standardStyles.colorPrimary};
   border-radius: 2rem;
   overflow: hidden;
@@ -48,7 +47,7 @@ const ScrollContentBar = styled.span.attrs((props) => ({
 }))`
   position: absolute;
   transition: 0.5s;
-  height: 1rem;
+  height: 0.5rem;
   width: 100%;
   background: ${standardStyles.colorQuinary};
   border-radius: 2rem;
@@ -110,11 +109,10 @@ export default function Timeline() {
 
   return (
     <Wrap ref={ref} id="timeline">
-      <StickyWrap>
-        <ScrollContentWrap scroll={scrollContent}>
-          <ScrollContentBar scroll={scrollContent}></ScrollContentBar>
-        </ScrollContentWrap>
-      </StickyWrap>
+      <ScrollContentWrap scroll={scrollContent}>
+        <ScrollContentBar scroll={scrollContent}></ScrollContentBar>
+      </ScrollContentWrap>
+      <StickyWrap></StickyWrap>
 
       <TimelineContent heading="prelude" digit={0} content={firstContent} />
       <TimelineContent heading="virgin" digit={1} content={secondContent} />

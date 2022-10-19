@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Timeline from './timeline/timeline';
 import UserContact from './contact';
 import Introduction from './introduction/introduction';
-import HorizonProfile from './horizon/profile';
+import Horizon from './horizon/horizon';
 
 const Wrap = styled.div``;
 
@@ -13,7 +13,7 @@ export default function LandingPageComponent() {
     <Wrap>
       <Introduction />
       <Timeline />
-      <HorizonProfile />
+      <Horizon />
       <UserContact />
     </Wrap>
   );

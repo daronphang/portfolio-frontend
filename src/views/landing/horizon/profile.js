@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import profilePic from '../../../images/horizon-background.jpg';
 import SocialMedia from './social-media';
 import { mediaSizes, standardStyles } from '../../../utils/styles';
+import { useInView } from 'react-intersection-observer';
 
 const Wrap = styled.div.attrs((props) => ({
   style: {
-    opacity: Math.min(1, (0.5 - (props.ratio || -1)) * 4.5),
+    opacity: Math.min(1, props.entry * 3),
   },
 }))`
   position: relative;
@@ -38,9 +39,18 @@ const ProfileImg = styled.img`
   }
 `;
 
+const threshold = [];
+for (let i = 0; i < 1; i += 0.01) {
+  threshold.push(i);
+}
+
 export default function HorizonProfile() {
+  const { ref, inView, entry } = useInView({
+    threshold,
+  });
+
   const content = `
-  Professionally, I am an engineer by heart, a fullstack developer.
+  Professionally, I am an engineer by heart.
   I enjoy the process of building and assembling: from desktop, to IKEA drawers, guitar pedalboard and web applications.
   When not at my desk, you can find me hitting the gym, playing the drums and guitar, and reading up on finance, global news, and tech.
   Dilligence, determination and honesty are the principles I deeply value.
@@ -48,7 +58,7 @@ export default function HorizonProfile() {
   `;
 
   return (
-    <Wrap>
+    <Wrap ref={ref} entry={entry?.intersectionRatio}>
       <Content>{content}</Content>
       <SocialMedia />
       <ProfileImg src={profilePic}></ProfileImg>

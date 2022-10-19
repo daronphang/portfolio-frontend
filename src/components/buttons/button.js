@@ -61,7 +61,7 @@ export default function Button({
   useEffect(() => {
     const handleAnimation = () => {
       const element = document.getElementById(id);
-      element.style.animationName = '';
+      if (element) element.style.animationName = '';
     };
     document.addEventListener('animationend', handleAnimation);
 

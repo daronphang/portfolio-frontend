@@ -8,7 +8,6 @@ import { standardStyles } from '../../utils/styles';
 import InputField from '../../components/input';
 import Button from '../../components/buttons/button';
 import GlassMorphism from '../../components/glassmorphism';
-import backgroundImg from '../../images/contact-background.jpg';
 import useAxiosRequest from '../../hooks/useAxiosRequest';
 import { openModal } from '../../features/modal/modalSlice';
 import { handleApi } from '../../utils/apis';
@@ -114,9 +113,9 @@ const InputFields = [
 ];
 
 const defaultValues = {
-  username: null,
+  contact_name: null,
   email: null,
-  company: null,
+  subject: null,
   message: null,
 };
 
@@ -146,8 +145,6 @@ export default function UserContact({ mockCallback }) {
       variant: 'error',
       autoHideDuration: 5000,
     });
-    // dispatch(openModal({ size: 'medium', name: 'SUCCESSFORM' }));
-    // reset(defaultValues);
   };
 
   const [_, isLoading, triggerRequest] = useAxiosRequest(
@@ -182,8 +179,7 @@ export default function UserContact({ mockCallback }) {
   const onSubmit = (data) => {
     payload.current = data;
     if (mockCallback) mockCallback(data);
-    dispatch(openModal({ size: 'medium', name: 'SUCCESSFORM' }));
-    // triggerRequest();
+    triggerRequest();
   };
 
   const onError = (e) => {
@@ -208,7 +204,7 @@ export default function UserContact({ mockCallback }) {
                 })}
                 label="Message"
                 id="message"
-                placeholder="Maximum of 250 characters allowed"
+                placeholder="Maximum of 250 characters allowed, Required*"
                 icon="fa-solid fa-message"
                 styles={{ height: '25rem' }}
                 isTouched={touchedFields['message']}

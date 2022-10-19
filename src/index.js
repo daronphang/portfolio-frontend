@@ -23,7 +23,7 @@ root.render(
         maxSnack={1}
         sx={{
           '& .SnackbarContent-root': {
-            fontSize: standardStyles.fontSizeVerySmall,
+            fontSize: standardStyles.fontSizeNormal,
           },
         }}
         dense
