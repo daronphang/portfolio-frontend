@@ -66,7 +66,7 @@ export default function Timeline() {
   optimized a coating recipe with 4% Cpk improvement and 55% recovery of baseline thickness performance, and many more.
   Through these projects, I gained strong expertise in problem-solving, data-mining and analysis.
   However, as I thought about the next chapter of my professional life, I yearned for something different.
-  A career that I am passionate about and can create a meaningful impact to society.
+  A career that I am passionate about and can improve the quality of people's lives through technology.
   `;
 
   const secondContent = `
@@ -86,7 +86,7 @@ export default function Timeline() {
   `;
 
   const fourthContent = `
-  Knowing vanilla was important, but I wanted to expand my horizon and take advantage of the many open-sourced frameworks and libraries that have been painstakingly developed and tested by the coding community.
+  After learning the vanilla languages, I wanted to expand my horizon and take advantage of the many open-sourced frameworks and libraries that have been painstakingly developed and tested by the coding community.
   I learned Bootstrap, React, Angular, NodeJS, ExpressJS, Gin, Celery, MongoDB, Docker.
   Picked up Golang and familiarized with Linux OS along the way.
   The countless documentations and articles were overwheming. 

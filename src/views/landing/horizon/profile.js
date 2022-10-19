@@ -54,7 +54,7 @@ export default function HorizonProfile() {
   I enjoy the process of building and assembling: from desktop, to IKEA drawers, guitar pedalboard and web applications.
   When not at my desk, you can find me hitting the gym, playing the drums and guitar, and reading up on finance, global news, and tech.
   Dilligence, determination and honesty are the principles I deeply value.
-  My progressive Christian faith is where I find hope, strength and motivation: to do my work heartily, being responsible with the duties entrusted to me.
+  My Christian faith is where I find hope, strength and motivation: to do my work heartily, being responsible with the duties entrusted to me.
   `;
 
   return (
