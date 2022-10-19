@@ -5,6 +5,7 @@ import Timeline from './timeline/timeline';
 import UserContact from './contact';
 import Introduction from './introduction/introduction';
 import Horizon from './horizon/horizon';
+import LandingMinion from './minion';
 
 const Wrap = styled.div``;
 
@@ -13,6 +14,7 @@ export default function LandingPageComponent() {
     <Wrap>
       <Introduction />
       <Timeline />
+      <LandingMinion />
       <Horizon />
       <UserContact />
     </Wrap>
