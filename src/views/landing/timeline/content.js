@@ -44,6 +44,10 @@ const BottomCorner = styled(Corner)`
   bottom: 0%;
 `;
 
+// for text, need specify line-height and height to remove
+// extra white spacing at top and bottom of text
+// needed if explicitly setting a font
+
 const Heading = styled.span.attrs((props) => ({
   style: {
     opacity: Math.min(1, ((props.ratio || 0) - 0.7) * 4.5),
@@ -55,6 +59,8 @@ const Heading = styled.span.attrs((props) => ({
   font-family: Arame;
   font-size: ${standardStyles.fontSizeVeryLarge};
   top: 10rem;
+  height: 3rem;
+  line-height: 3rem;
 `;
 
 const Square = styled.span.attrs((props) => ({
@@ -78,10 +84,12 @@ const ZeroDigit = styled.span.attrs((props) => ({
 }))`
   position: absolute;
   transition: 0.5s;
+  top: 2rem;
+  height: 19rem;
+  line-height: 19rem;
   font-family: Arame;
   font-size: 25rem;
   left: calc(50% + 2.5rem);
-  top: 2rem;
 `;
 
 const SecondDigit = styled(ZeroDigit).attrs((props) => ({
@@ -117,9 +125,9 @@ export default function TimelineContent({ id, heading, content, digit }) {
       <StickyWrap id="content">
         <TopCorner ratio={entry?.intersectionRatio} />
         <BottomCorner ratio={entry?.intersectionRatio} />
+        <Heading ratio={entry?.intersectionRatio}>{heading}</Heading>
         <Square ratio={entry?.intersectionRatio} />
         <ZeroDigit ratio={entry?.intersectionRatio}>0</ZeroDigit>
-        <Heading ratio={entry?.intersectionRatio}>{heading}</Heading>
         <SecondDigit ratio={entry?.intersectionRatio}>{digit}</SecondDigit>
         <Content ratio={entry?.intersectionRatio}>{content}</Content>
       </StickyWrap>
