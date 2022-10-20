@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 
+const unit = (val) => `${val}rem`;
+
 const Wrap = styled.div`
   position: relative;
   background: #ffffff;
@@ -9,20 +11,20 @@ const Wrap = styled.div`
 
 const MinionBodyWrap = styled.div`
   position: absolute;
-  height: 25vh;
-  width: 14vh;
+  height: ${unit(25)};
+  width: ${unit(14)};
   left: 30%;
-  top: calc(48% - 12.5vh);
+  top: calc(48% - ${unit(12.5)});
 `;
 
 const MinionBody = styled.div`
   position: absolute;
-  height: 25vh;
-  width: 14vh;
-  left: calc(50% - 7vh);
-  top: calc(48% - 12.5vh);
+  height: ${unit(25)};
+  width: ${unit(14)};
+  left: calc(50% - ${unit(7)});
+  top: calc(48% - ${unit(12.5)});
   background: #ffcb4f;
-  border-radius: 8vh 8vh 5vh 5vh;
+  border-radius: ${unit(8)} ${unit(8)} ${unit(5)} ${unit(5)};
   overflow: hidden;
   z-index: 1;
 `;
@@ -30,200 +32,200 @@ const MinionBody = styled.div`
 const Hair = styled.li`
   list-style: none;
   position: absolute;
-  height: 3vh;
-  width: 1.5vh;
-  margin-top: -0.5vh;
+  height: ${unit(3)};
+  width: ${unit(1.5)};
+  margin-top: ${unit(-0.5)};
   z-index: 2;
 `;
 
 const LeftHair = styled(Hair)`
-  top: -0.5vh;
-  left: 5vh;
+  top: ${unit(-0.5)};
+  left: ${unit(5)};
   border-radius: 0 90% 0 0;
-  border-right: 0.1vh solid #333333;
+  border-right: ${unit(0.1)} solid #333333;
 
   &:nth-child(1) {
-    top: -0.8vh;
+    top: ${unit(-0.8)};
   }
 
   &:nth-child(2) {
     transform: rotate(-15deg);
-    left: 4vh;
-    top: -0.2vh;
+    left: ${unit(4)};
+    top: ${unit(-0.2)};
   }
 
   &:nth-child(3) {
-    left: 3vh;
-    top: 0vh;
+    left: ${unit(3)};
+    top: ${unit(0)};
     transform: rotate(-30deg);
   }
 
   &:nth-child(4) {
-    left: 2vh;
-    top: 0.5vh;
+    left: ${unit(2)};
+    top: ${unit(0.5)};
     transform: rotate(-45deg);
   }
 
   &:nth-child(5) {
-    left: 1vh;
-    top: 1.5vh;
+    left: ${unit(1)};
+    top: ${unit(1.5)};
     transform: rotate(-60deg);
   }
 `;
 
 const RightHair = styled(Hair)`
-  top: -0.5vh;
-  left: 7.5vh;
+  top: ${unit(-0.5)};
+  left: ${unit(7.5)};
   border-radius: 80% 0 0 0;
-  border-left: 0.1vh solid #333333;
+  border-left: ${unit(0.1)} solid #333333;
 
   &:nth-child(7) {
-    left: 8.5vh;
-    top: -0.2vh;
+    left: ${unit(8.5)};
+    top: ${unit(-0.2)};
     transform: rotate(15deg);
   }
 
   &:nth-child(8) {
-    left: 9.5vh;
-    top: 0vh;
+    left: ${unit(9.5)};
+    top: ${unit(0)};
     transform: rotate(30deg);
   }
 
   &:nth-child(9) {
-    left: 11vh;
-    top: 0.5vh;
+    left: ${unit(11)};
+    top: ${unit(0.5)};
     transform: rotate(45deg);
   }
 
   &:nth-child(10) {
-    left: 12vh;
-    top: 1.5vh;
+    left: ${unit(12)};
+    top: ${unit(1.5)};
     transform: rotate(60deg);
   }
 `;
 
 const LeftHairBack = styled(LeftHair)`
-  height: 1.5vh;
-  left: 0.6vh;
+  height: ${unit(1.5)};
+  left: ${unit(0.6)};
 
   &:nth-child(1) {
-    top: -0.5vh;
-    left: 6vh;
+    top: ${unit(-0.5)};
+    left: ${unit(6)};
   }
 
   &:nth-child(2) {
-    left: 4vh;
-    top: -0.5vh;
+    left: ${unit(4)};
+    top: ${unit(-0.5)};
     transform: rotate(-10deg);
   }
 
   &:nth-child(3) {
-    left: 0.5vh;
-    top: 1.5vh;
+    left: ${unit(0.5)};
+    top: ${unit(1.5)};
     transform: rotate(-60deg);
   }
 `;
 
 const RightHairBack = styled(RightHair)`
-  height: 1.5vh;
-  left: 7vh;
+  height: ${unit(1.5)};
+  left: ${unit(7)};
 
   &:nth-child(4) {
-    left: 10vh;
-    top: 0vh;
+    left: ${unit(10)};
+    top: ${unit(0)};
     transform: rotate(30deg);
   }
 
   &:nth-child(5) {
-    left: 12vh;
-    top: 1.5vh;
+    left: ${unit(12)};
+    top: ${unit(1.5)};
     transform: rotate(60deg);
   }
 `;
 
 const Goggle = styled.div`
-  margin-top: 6vh;
+  margin-top: ${unit(6)};
 `;
 
 const StrapLeft = styled.div`
   position: absolute;
   height: 0;
-  width: 1.5vh;
-  border-left: 0.2vh solid transparent;
-  border-right: 0.2vh solid transparent;
-  border-bottom: 2vh solid #444444;
-  margin-top: 0vh;
-  margin-left: 0.1vh;
+  width: ${unit(1.5)};
+  border-left: ${unit(0.2)} solid transparent;
+  border-right: ${unit(0.2)} solid transparent;
+  border-bottom: ${unit(2)} solid #444444;
+  margin-top: ${unit(0)};
+  margin-left: ${unit(0.1)};
   transform: rotate(-90deg);
 `;
 
 const StrapRight = styled(StrapLeft)`
   transform: rotate(90deg);
-  margin-left: 12vh;
+  margin-left: ${unit(12)};
 `;
 
 const FrameLeft = styled.div`
   position: absolute;
-  top: 4vh;
-  left: 1.8vh;
+  top: ${unit(4)};
+  left: ${unit(1.8)};
   border-radius: 100%;
-  height: 4.5vh;
-  width: 4.5vh;
-  border: 0.5vh solid #cccccc;
+  height: ${unit(4.5)};
+  width: ${unit(4.5)};
+  border: ${unit(0.5)} solid #cccccc;
 `;
 
 const FrameRight = styled(FrameLeft)`
-  margin-left: 5vh;
+  margin-left: ${unit(5)};
 `;
 
 const FrameBorderLeft = styled.div`
   position: absolute;
-  border: 0.3vh solid #666666;
+  border: ${unit(0.3)} solid #666666;
   border-radius: 100%;
-  height: 4.1vh;
-  width: 4.1vh;
-  top: 4.4vh;
-  left: 2.2vh;
+  height: ${unit(4.1)};
+  width: ${unit(4.1)};
+  top: ${unit(4.4)};
+  left: ${unit(2.2)};
 `;
 
 const FrameBorderRight = styled(FrameBorderLeft)`
-  left: 7.2vh;
+  left: ${unit(7.2)};
 `;
 
 const EyeLeft = styled.div`
   position: absolute;
   border-radius: 100%;
-  height: 4.1vh;
-  width: 4.1vh;
+  height: ${unit(4.1)};
+  width: ${unit(4.1)};
   background: #ffffff;
-  box-shadow: inset 0vh 0.2vh 0.8vh 0vh #a0a0a0;
-  left: 2.5vh;
-  top: 4.7vh;
+  box-shadow: inset ${unit(0)} ${unit(0.2)} ${unit(0.8)} ${unit(0)} #a0a0a0;
+  left: ${unit(2.5)};
+  top: ${unit(4.7)};
   transform: rotate(0deg);
 `;
 
 const EyeRight = styled(EyeLeft)`
-  left: 7.5vh;
+  left: ${unit(7.5)};
 `;
 
 const Iris = styled.div`
   position: relative;
   border-radius: 100%;
   background-color: #e7a452;
-  width: 1.5vh;
-  height: 1.5vh;
-  left: 1vh;
-  top: 1vh;
+  width: ${unit(1.5)};
+  height: ${unit(1.5)};
+  left: ${unit(1)};
+  top: ${unit(1)};
 `;
 
 const Pupil = styled.div`
   position: relative;
   border-radius: 100%;
   background-color: #333333;
-  width: 0.5vh;
-  height: 0.5vh;
-  left: 0.5vh;
-  top: 0.3vh;
+  width: ${unit(0.5)};
+  height: ${unit(0.5)};
+  left: ${unit(0.5)};
+  top: ${unit(0.3)};
 `;
 
 const BatEyeLids = keyframes`
@@ -244,9 +246,9 @@ const EyeLids = styled.div`
   position: absolute;
   border-radius: 50%;
   background: #ffcb4f;
-  height: 4.1vh;
-  width: 4.1vh;
-  top: 4.7vh;
+  height: ${unit(4.1)};
+  width: ${unit(4.1)};
+  top: ${unit(4.7)};
   animation-name: ${BatEyeLids};
   animation-iteration-count: infinite;
   animation-duration: 5s;
@@ -254,206 +256,206 @@ const EyeLids = styled.div`
   &:before {
     content: '';
     position: absolute;
-    height: 0.3vh;
-    width: 4.1vh;
-    top: 2vh;
+    height: ${unit(0.3)};
+    width: ${unit(4.1)};
+    top: ${unit(2)};
     background: #a29d9d;
   }
 `;
 
 const EyeLidsLeft = styled(EyeLids)`
-  left: 2.5vh;
+  left: ${unit(2.5)};
 `;
 
 const EyeLidsRight = styled(EyeLids)`
-  left: 7.5vh;
+  left: ${unit(7.5)};
 `;
 
 const Mouth = styled.div`
   position: absolute;
-  width: 7vh;
-  height: 3vh;
-  border-bottom: 0.4vh solid #de9a33;
+  width: ${unit(7)};
+  height: ${unit(3)};
+  border-bottom: ${unit(0.4)} solid #de9a33;
   border-radius: 45%;
-  margin-top: 3.2vh;
-  left: 3.5vh;
+  margin-top: ${unit(3.2)};
+  left: ${unit(3.5)};
 `;
 
 const Reflection = styled.div`
   position: absolute;
-  width: 6vh;
-  height: 8vh;
+  width: ${unit(6)};
+  height: ${unit(8)};
   background: #ffffff;
   filter: blur(25px);
   opacity: 0.3;
-  margin-top: 3vh;
-  left: 2vh;
+  margin-top: ${unit(3)};
+  left: ${unit(2)};
   z-index: 1;
 `;
 
 const Dungarees = styled.div`
   position: relative;
   background: #6d9cc6;
-  height: 12vh;
-  top: 8vh;
+  height: ${unit(12)};
+  top: ${unit(8)};
 `;
 
 const AdjusterTop = styled.div`
   position: absolute;
   height: 0;
-  width: 6vh;
+  width: ${unit(6)};
   transform: rotate(180deg);
-  border-left: 4vh solid transparent;
-  border-right: 4vh solid transparent;
-  border-bottom: 2.5vh solid #ffcb4f;
-  top: 14vh;
+  border-left: ${unit(4)} solid transparent;
+  border-right: ${unit(4)} solid transparent;
+  border-bottom: ${unit(2.5)} solid #ffcb4f;
+  top: ${unit(14)};
 `;
 
 const Thread = styled.span`
   position: absolute;
-  border-top: 0.1vh dashed #333333;
+  border-top: ${unit(0.1)} dashed #333333;
 `;
 
 const Button = styled.div`
   position: absolute;
   border-radius: 100%;
   background: #333333;
-  height: 0.5vh;
-  width: 0.5vh;
+  height: ${unit(0.5)};
+  width: ${unit(0.5)};
 `;
 
 const Adjuster = styled.div`
   position: absolute;
   height: 0;
   width: 0;
-  margin-top: -2vh;
-  border-bottom: 2.5vh solid #ffcb4f;
+  margin-top: ${unit(-2)};
+  border-bottom: ${unit(2.5)} solid #ffcb4f;
   z-index: 3;
 `;
 
 const AdjusterBottomLeft = styled(Adjuster)`
-  border-right: 4vh solid transparent;
+  border-right: ${unit(4)} solid transparent;
 
   & span:nth-child(1) {
     transform: rotate(32deg);
-    width: 6.3vh;
-    left: -0.5vh;
-    top: -0.3vh;
+    width: ${unit(6.3)};
+    left: ${unit(-0.5)};
+    top: ${unit(-0.3)};
   }
 
   & span:nth-child(2) {
     transform: rotate(32deg);
-    width: 6.3vh;
-    left: -0.5vh;
-    top: 1.5vh;
+    width: ${unit(6.3)};
+    left: ${unit(-0.5)};
+    top: ${unit(1.5)};
   }
 
   & span:nth-child(3) {
     transform: rotate(90deg);
-    width: 1.8vh;
-    left: 4.5vh;
-    top: 2.3vh;
+    width: ${unit(1.8)};
+    left: ${unit(4.5)};
+    top: ${unit(2.3)};
   }
 
   & span:nth-child(4) {
     transform: rotate(150deg);
-    border-left: 0.1vh dashed #333333;
+    border-left: ${unit(0.1)} dashed #333333;
     border-right: none;
     border-radius: 50%;
-    width: 4vh;
-    height: 4vh;
-    top: 4vh;
+    width: ${unit(4)};
+    height: ${unit(4)};
+    top: ${unit(4)};
   }
 
   & div {
-    left: 4.5vh;
-    top: 1.7vh;
+    left: ${unit(4.5)};
+    top: ${unit(1.7)};
   }
 `;
 
 const AdjusterBottomRight = styled(Adjuster)`
-  border-left: 4vh solid transparent;
-  margin-left: 10vh;
+  border-left: ${unit(4)} solid transparent;
+  margin-left: ${unit(10)};
 
   & span:nth-child(1) {
     transform: rotate(-32deg);
-    width: 6.3vh;
-    left: -5.8vh;
-    top: -0.3vh;
+    width: ${unit(6.3)};
+    left: ${unit(-5.8)};
+    top: ${unit(-0.3)};
   }
 
   & span:nth-child(2) {
     transform: rotate(-32deg);
-    width: 6.3vh;
-    left: -5.8vh;
-    top: 1.5vh;
+    width: ${unit(6.3)};
+    left: ${unit(-5.8)};
+    top: ${unit(1.5)};
   }
 
   & span:nth-child(3) {
     transform: rotate(90deg);
-    width: 1.8vh;
-    left: -6.3vh;
-    top: 2.3vh;
+    width: ${unit(1.8)};
+    left: ${unit(-6.3)};
+    top: ${unit(2.3)};
   }
 
   & span:nth-child(4) {
     transform: rotate(-150deg);
-    border-right: 0.1vh dashed #333333;
+    border-right: ${unit(0.1)} dashed #333333;
     border-left: none;
     border-radius: 50%;
-    width: 4vh;
-    height: 4vh;
-    left: -4.1vh;
-    top: 4vh;
+    width: ${unit(4)};
+    height: ${unit(4)};
+    left: ${unit(-4.1)};
+    top: ${unit(4)};
   }
 
   & div {
-    left: -5vh;
-    top: 1.7vh;
+    left: ${unit(-5)};
+    top: ${unit(1.7)};
   }
 `;
 
 const ExposedArmsLeft = styled.div`\
   position: absolute;
-  margin-top: 0.5vh;
-  height: 3vh;
-  width: 4vh;
+  margin-top: ${unit(0.5)};
+  height: ${unit(3)};
+  width: ${unit(4)};
   background: #ffcb4f;
   z-index: 3;
 `;
 
 const ExposedArmsRight = styled(ExposedArmsLeft)`
-  margin-left: 10vh;
+  margin-left: ${unit(10)};
 `;
 
 const Arm = styled.div``;
 
 const Shoulder = styled.div`
   position: absolute;
-  height: 7vh;
-  width: 1.5vh;
-  border-radius: 50% 50% 0.5vh 0.5vh;
+  height: ${unit(7)};
+  width: ${unit(1.5)};
+  border-radius: 50% 50% ${unit(0.5)} ${unit(0.5)};
   background: #ffcb4f;
-  top: 16vh;
+  top: ${unit(16)};
   z-index: 1;
 
   &:before {
     content: '';
     position: absolute;
     border-radius: 50%;
-    height: 5vh;
-    width: 2vh;
+    height: ${unit(5)};
+    width: ${unit(2)};
     background: #ffcb4f;
-    top: -0.4vh;
+    top: ${unit(-0.4)};
   }
 
   &:after {
     content: '';
     position: absolute;
-    height: 3vh;
-    width: 0.5vh;
+    height: ${unit(3)};
+    width: ${unit(0.5)};
     border-radius: 50%;
-    top: 2vh;
+    top: ${unit(2)};
 
     z-index: 3;
   }
@@ -462,142 +464,144 @@ const Shoulder = styled.div`
 const Finger = styled.span`
   background: #333333;
   position: absolute;
-  height: 1vh;
-  width: 2vh;
-  border-radius: 0.5vh;
+  height: ${unit(1)};
+  width: ${unit(2)};
+  border-radius: ${unit(0.5)};
 `;
 
 // consists of arm shadow
 const LeftShoulder = styled(Shoulder)`
-  left: -1.4vh;
+  left: ${unit(-1.4)};
 
   &:before {
-    left: 0.2vh;
+    left: ${unit(0.2)};
   }
 
   &:after {
-    left: 1.3vh;
-    box-shadow: inset 0.2vh 0 0.3vh -0.1vh rgba(0, 0, 0, 0.3);
+    left: ${unit(1.3)};
+    box-shadow: inset ${unit(0.2)} 0 ${unit(0.3)} ${unit(-0.1)}
+      rgba(0, 0, 0, 0.3);
   }
 
   & span:nth-child(1) {
     transform: rotate(-80deg);
-    margin-left: -0.9vh;
-    margin-top: 7.5vh;
-    border-radius: 0.5vh 0 0 0.5vh;
+    margin-left: ${unit(-0.9)};
+    margin-top: ${unit(7.5)};
+    border-radius: ${unit(0.5)} 0 0 ${unit(0.5)};
   }
 
   & span:nth-child(2) {
     transform: rotate(90deg);
-    margin-left: -0.1vh;
-    margin-top: 7.6vh;
-    width: 2.2vh;
+    margin-left: ${unit(-0.1)};
+    margin-top: ${unit(7.6)};
+    width: ${unit(2.2)};
   }
 
   & span:nth-child(3) {
     transform: rotate(65deg);
-    margin-left: 0.7vh;
-    margin-top: 7.4vh;
-    border-radius: 0 0.5vh 0.5vh 0;
+    margin-left: ${unit(0.7)};
+    margin-top: ${unit(7.4)};
+    border-radius: 0 ${unit(0.5)} ${unit(0.5)} 0;
   }
 `;
 
 const RightShoulder = styled(Shoulder)`
-  left: 13.9vh;
+  left: ${unit(13.9)};
 
   &:before {
-    left: -0.7vh;
+    left: ${unit(-0.7)};
   }
 
   &:after {
-    left: -0.3vh;
-    box-shadow: inset -0.2vh 0 0.3vh -0.1vh rgba(0, 0, 0, 0.3);
+    left: ${unit(-0.3)};
+    box-shadow: inset ${unit(-0.2)} 0 ${unit(0.3)} ${unit(-0.1)}
+      rgba(0, 0, 0, 0.3);
   }
 
   & span:nth-child(1) {
     transform: rotate(-65deg);
-    margin-left: -1.1vh;
-    margin-top: 7.5vh;
-    border-radius: 0.5vh 0 0 0.5vh;
+    margin-left: ${unit(-1.1)};
+    margin-top: ${unit(7.5)};
+    border-radius: ${unit(0.5)} 0 0 ${unit(0.5)};
   }
 
   & span:nth-child(2) {
     transform: rotate(90deg);
-    margin-left: -0.4vh;
-    margin-top: 7.6vh;
-    width: 2.2vh;
+    margin-left: ${unit(-0.4)};
+    margin-top: ${unit(7.6)};
+    width: ${unit(2.2)};
   }
 
   & span:nth-child(3) {
     transform: rotate(80deg);
-    margin-left: 0.5vh;
-    margin-top: 7.4vh;
-    border-radius: 0 0.5vh 0.5vh 0;
+    margin-left: ${unit(0.5)};
+    margin-top: ${unit(7.4)};
+    border-radius: 0 ${unit(0.5)} ${unit(0.5)} 0;
   }
 `;
 
 const Gloves = styled.div`
   position: absolute;
   background: #333333;
-  height: 2vh;
-  width: 2vh;
+  height: ${unit(2)};
+  width: ${unit(2)};
   border-radius: 40%;
-  top: 22.2vh;
+  top: ${unit(22.2)};
 `;
 
 const LeftGloves = styled(Gloves)`
-  left: -1.6vh;
+  left: ${unit(-1.6)};
 `;
 
 const RightGloves = styled(Gloves)`
-  left: 13.7vh;
+  left: ${unit(13.7)};
 `;
 
 const Leg = styled.div`
   position: absolute;
   z-index: 0;
   height: 0;
-  width: 4.5vh;
-  top: 24vh;
-  margin-left: 3.3vh;
-  border-left: 1.5vh solid transparent;
-  border-right: 1.5vh solid transparent;
-  border-bottom: 3vh solid #4b6587;
+  width: ${unit(4.5)};
+  top: ${unit(24)};
+  margin-left: ${unit(3.3)};
+  border-left: ${unit(1.5)} solid transparent;
+  border-right: ${unit(1.5)} solid transparent;
+  border-bottom: ${unit(3)} solid #4b6587;
   transform: rotate(180deg);
 
   &:before {
     content: '';
     position: absolute;
     background: #7fa3b8;
-    height: 4vh;
-    width: 1vh;
-    left: 1.7vh;
-    top: 0vh;
+    height: ${unit(4)};
+    width: ${unit(1)};
+    left: ${unit(1.7)};
+    top: ${unit(0)};
   }
 
   & span:nth-child(1) {
-    left: 2.5vh;
-    top: 0.5vh;
+    left: ${unit(2.5)};
+    top: ${unit(0.5)};
   }
 
   & span:nth-child(2) {
-    left: 2.9vh;
-    top: -0.6vh;
-    height: 2.2vh;
-    width: 1.8vh;
+    left: ${unit(2.9)};
+    top: ${unit(-0.6)};
+    height: ${unit(2.2)};
+    width: ${unit(1.8)};
     transform: rotate(90deg);
     border-radius: 40%;
   }
 
   & span:nth-child(3) {
-    top: 0.6vh;
+    top: ${unit(0.6)};
   }
 
   & span:nth-child(4) {
-    left: -0.2vh;
-    top: -0.6vh;
-    height: 2.2vh;
-    width: 1.8vh;
+    left: ${unit(-0.2)};
+    top: ${unit(-0.6)};
+    height: ${unit(2.2)};
+    width: ${unit(1.8)};
     transform: rotate(90deg);
     border-radius: 40%;
   }
@@ -605,26 +609,26 @@ const Leg = styled.div`
 
 const LegFats = styled.span`
   position: absolute;
-  height: 2vh;
-  width: 2vh;
+  height: ${unit(2)};
+  width: ${unit(2)};
   border-radius: 40%;
   background: #4b6587;
 `;
 
 const Shoe = styled.div`
   position: absolute;
-  height: 1.5vh;
-  width: 2vh;
+  height: ${unit(1.5)};
+  width: ${unit(2)};
   background: #333333;
-  top: 26.6vh;
-  left: 6.5vh;
+  top: ${unit(26.6)};
+  left: ${unit(6.5)};
   border-radius: 30%;
 
   &:before {
     content: '';
     position: absolute;
-    height: 1.5vh;
-    width: 1.5vh;
+    height: ${unit(1.5)};
+    width: ${unit(1.5)};
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     background: #333333;
@@ -632,30 +636,23 @@ const Shoe = styled.div`
 `;
 
 const LeftShoe = styled(Shoe)`
-  margin-left: 1vh;
+  margin-left: ${unit(1)};
 
   &:before {
     border-top-left-radius: 0;
     border-top-right-radius: 100%;
-    left: 1.4vh;
+    left: ${unit(1.4)};
   }
 `;
 
 const RightShoe = styled(Shoe)`
-  margin-left: -1.8vh;
+  margin-left: ${unit(-1.8)};
 
   &:before {
-    left: -0.8vh;
+    left: ${unit(-0.8)};
     border-top-left-radius: 100%;
     border-top-right-radius: 0;
   }
-`;
-
-const Text = styled.span`
-  position: absolute;
-  font-size: 25px;
-  left: 30vh;
-  width: 50vh;
 `;
 
 export default function Minion({ clientX, clientY }) {
@@ -771,11 +768,6 @@ export default function Minion({ clientX, clientY }) {
         </Leg>
         <LeftShoe></LeftShoe>
         <RightShoe></RightShoe>
-        {/* <Text>
-          Meet my personal minion Mac. He is very shy and conscious if you
-          invade his space. Nonetheless, he has been a tremendous help in
-          teaching me how to code :&#41;
-        </Text> */}
       </MinionBodyWrap>
     </Wrap>
   );

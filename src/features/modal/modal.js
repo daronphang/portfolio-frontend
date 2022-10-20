@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled, { keyframes } from 'styled-components';
+import { standardStyles } from '../../utils/styles';
 
 import ModalFormSuccess from './modal-form-success';
 import { closeModal, selectModalName } from './modalSlice';
@@ -22,21 +23,21 @@ const Wrap = styled.div`
 
 const Backdrop = styled.div`
   position: fixed;
-  background-color: #333333;
+  background-color: ${standardStyles.colorPrimary};
   opacity: 0.9;
   overflow: hidden;
   inset: 0;
   z-index: 999;
-  padding: 3vh;
+  padding: 3rem;
 `;
 
 const ModalWrap = styled.div`
-  border-radius: 2vh;
+  border-radius: 2rem;
   background: #ffffff;
   box-sizing: border-box;
   z-index: 1000;
-  padding: 2.5vh;
-  width: ${(props) => props.width}vh;
+  padding: 2.5rem;
+  width: ${(props) => props.width}rem;
   overflow: auto;
   font-weight: 600;
 `;

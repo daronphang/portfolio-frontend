@@ -13,7 +13,7 @@ const NavLink = styled(HashLink).attrs((props) => ({
 }))`
   position: relative;
   border: 0.1rem solid ${standardStyles.fontColorSecondary};
-  padding: 1rem;
+  padding: 0.7rem;
   overflow: hidden;
   cursor: pointer;
   text-decoration: none;

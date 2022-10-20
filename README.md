@@ -1,3 +1,22 @@
+## Bug Fixes
+
+### 1.0.0
+
+- Name field showing invalid with spaces.
+- Firefox displaying white space at bottom for zoomed image.
+- Profile description disappearing upon page refresh.
+- Incorrect formatting when viewed on mobile devices.
+
+## Deployment
+
+Build is done on local computer, not remote server instance. Folder needs write access for SSH user.
+
+```console
+$ npm run build
+$ rsync -avP build/ exampleuser@mydomain.com:/var/www/mydomain.com/
+$ rsync -avP build/ daronphang@daronphang.com:/var/www/daronphang.com/
+```
+
 ## Testing
 
 Modal, navigation, redux.
