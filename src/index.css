@@ -12,6 +12,7 @@ body {
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
   font-size: 1.6rem;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -114,6 +115,11 @@ code {
   font-weight: 600;
   font-family: 'NeueMontreal';
   src: local('NeueMontreal'), url(./fonts/NeueMontreal-Bold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Devant Horgen';
+  src: local('Devant Horgen'), url(./fonts/Devant-Horgen.ttf) format('truetype');
 }
 
 

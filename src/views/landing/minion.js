@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Minion from '../../components/minion';
-import { standardStyles } from '../../utils/styles';
+import { standardStyles, mediaQuery } from '../../utils/styles';
 
 const Wrap = styled.div`
   position: relative;
@@ -15,15 +15,72 @@ const MinionWrap = styled.div`
   width: auto;
   height: 100%;
   top: 45%;
-  left: calc(45% - 20rem);
+
+  ${mediaQuery(
+    'mobile',
+    `
+    left: calc(55% - 18rem);
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    left: calc(45% - 18rem);
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    left: calc(45% - 20rem);
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    left: calc(45% - 20rem);
+  `
+  )};
 `;
 
 const Text = styled.div`
   position: absolute;
-  width: 60rem;
-  top: 35%;
-  left: 45%;
   height: 100%;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    top: 30%;
+    left: 55%;
+    font-size: ${standardStyles.fontSizeSmall};
+    width: 15rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    top: 35%;
+    left: 45%;
+    width: 40rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    top: 35%;
+    left: 45%;
+    width: 60rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    top: 35%;
+    left: 45%;
+    width: 60rem;
+  `
+  )};
 `;
 
 export default function LandingMinion() {

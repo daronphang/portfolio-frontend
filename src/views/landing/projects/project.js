@@ -1,0 +1,127 @@
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+
+import { mediaQuery, standardStyles } from '../../../utils/styles';
+
+const Wrap = styled.div`
+  display: grid;
+  margin-top: 5rem;
+  grid-template-rows: 8rem auto;
+  grid-template-columns: auto;
+  padding: 2rem;
+  border-left: 0.5rem solid ${standardStyles.fontColorPrimary};
+`;
+
+const HeadingWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Heading = styled.div`
+  color: ${standardStyles.fontColorPrimary};
+  font-family: Devant Horgen;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    font-size: 5rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: 6rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    font-size: 7rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: 7rem;
+  `
+  )};
+`;
+
+const Date = styled.div`
+  color: ${standardStyles.fontColorPrimary};
+  font-family: Devant Horgen;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    font-size: 2.5rem;
+    margin-left: 1rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: 3rem;
+    margin-left: 1.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    font-size: 4rem;
+    margin-left: 2rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: 4rem;
+    margin-left: 2rem;
+  `
+  )};
+`;
+
+const Content = styled.div`
+  color: ${standardStyles.fontColorPrimary};
+
+  ${mediaQuery(
+    'mobile',
+    `
+    font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+`;
+
+export default function Project({ heading, content, date }) {
+  return (
+    <Wrap>
+      <HeadingWrap>
+        <Heading>{heading}</Heading>
+        <Date>{date}</Date>
+      </HeadingWrap>
+
+      <Content>{content}</Content>
+    </Wrap>
+  );
+}

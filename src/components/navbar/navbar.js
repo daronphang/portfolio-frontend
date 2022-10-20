@@ -14,6 +14,32 @@ const Wrap = styled.div.attrs((props) => ({
   display: flex;
   position: fixed;
   transition: 0.5s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+  font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+  font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+  font-size: ${standardStyles.fontSizeNormal};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+  font-size: ${standardStyles.fontSizeNormal};
+  `
+  )};
 `;
 
 const Break = styled.div`
@@ -40,24 +66,6 @@ const NavWrap = styled.div`
 const Heading = styled.span`
   position: relative;
   z-index: 2;
-  ${mediaQuery(
-    'mobile',
-    `
-  font-size: ${standardStyles.fontSizeSmall};
-  `
-  )};
-  ${mediaQuery(
-    'tablet',
-    `
-  font-size: ${standardStyles.fontSizeSmall};
-  `
-  )};
-  ${mediaQuery(
-    'desktop',
-    `
-  font-size: ${standardStyles.fontSizeNormal};
-  `
-  )};
 `;
 
 export default function NavBar() {
@@ -70,6 +78,9 @@ export default function NavBar() {
       <NavWrap>
         <CustomNavLink to="/#introduction" id="introduction">
           <Heading>Intro</Heading>
+        </CustomNavLink>
+        <CustomNavLink to="/#projects" id="projects">
+          <Heading>Projects</Heading>
         </CustomNavLink>
         <CustomNavLink to="/#timeline" id="timeline">
           <Heading>Journey</Heading>

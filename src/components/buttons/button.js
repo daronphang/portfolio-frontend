@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import '../../utils/shared.css';
-import { standardStyles } from '../../utils/styles';
+import { standardStyles, mediaQuery } from '../../utils/styles';
 import Loader from '../loaders/loader';
 
 const Default = styled.button`
@@ -10,10 +10,38 @@ const Default = styled.button`
   box-sizing: border-box;
   border: 0.3rem solid ${standardStyles.fontColorPrimary};
   border-radius: 1.5rem;
-  padding: 1.5rem 3rem 1.5rem 3rem;
-  font-size: ${standardStyles.fontSizeMedium};
   width: fit-content;
   animation-duration: 0.3s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
 
   &:hover {
     cursor: pointer;

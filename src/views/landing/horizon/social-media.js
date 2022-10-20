@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { standardStyles } from '../../../utils/styles';
+import { standardStyles, mediaQuery } from '../../../utils/styles';
 
 const Input = styled.input`
   display: none;
@@ -23,25 +23,124 @@ const Input = styled.input`
   &:checked + label + div {
     span:nth-child(1) {
       opacity: 1;
-      transform: translate(-7rem, -4rem);
+
+      ${mediaQuery(
+        'mobile',
+        `
+        transform: translate(-4rem, -3rem);
+      `
+      )};
+      ${mediaQuery(
+        'tablet',
+        `
+        transform: translate(-7rem, -4rem);
+      `
+      )};
+      ${mediaQuery(
+        'laptop',
+        `
+        transform: translate(-7rem, -4rem);
+      `
+      )};
+
+      ${mediaQuery(
+        'desktop',
+        `
+        transform: translate(-7rem, -4rem);
+      `
+      )};
     }
 
     span:nth-child(2) {
       transition-delay: 0.25s;
       opacity: 1;
-      transform: translate(7rem, -4rem);
+
+      ${mediaQuery(
+        'mobile',
+        `
+        transform: translate(4rem, -3rem);
+      `
+      )};
+      ${mediaQuery(
+        'tablet',
+        `
+        transform: translate(7rem, -4rem);
+      `
+      )};
+      ${mediaQuery(
+        'laptop',
+        `
+        transform: translate(7rem, -4rem);
+      `
+      )};
+
+      ${mediaQuery(
+        'desktop',
+        `
+        transform: translate(7rem, -4rem);
+      `
+      )};
     }
 
     span:nth-child(3) {
       transition-delay: 0.5s;
       opacity: 1;
-      transform: translate(7rem, 4rem);
+
+      ${mediaQuery(
+        'mobile',
+        `
+        transform: translate(4rem, 3rem);
+      `
+      )};
+      ${mediaQuery(
+        'tablet',
+        `
+        transform: translate(7rem, 4rem);
+      `
+      )};
+      ${mediaQuery(
+        'laptop',
+        `
+        transform: translate(7rem, 4rem);
+      `
+      )};
+
+      ${mediaQuery(
+        'desktop',
+        `
+        transform: translate(7rem, 4rem);
+      `
+      )};
     }
 
     span:nth-child(4) {
       transition-delay: 0.75s;
       opacity: 1;
-      transform: translate(-7rem, 4rem);
+      ${mediaQuery(
+        'mobile',
+        `
+        transform: translate(-4rem, 3rem);
+      `
+      )};
+      ${mediaQuery(
+        'tablet',
+        `
+        transform: translate(-7rem, 4rem);
+      `
+      )};
+      ${mediaQuery(
+        'laptop',
+        `
+        transform: translate(-7rem, 4rem);
+      `
+      )};
+
+      ${mediaQuery(
+        'desktop',
+        `
+        transform: translate(-7rem, 4rem);
+      `
+      )};
     }
   }
 `;
@@ -50,16 +149,50 @@ const Label = styled.label`
   position: relative;
   all: unset;
   display: flex;
-  height: 5rem;
-  width: 5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
   border-radius: 50%;
   background: none;
-  border: 0.5rem solid #ffffff;
   z-index: 2;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    height: 4rem;
+    width: 4rem;
+    gap: 0.6rem;
+    border: 0.3rem solid ${standardStyles.fontColorPrimary};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    height: 5rem;
+    width: 5rem;
+    gap: 0.5rem;
+    border: 0.5rem solid ${standardStyles.fontColorPrimary};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    height: 5rem;
+    width: 5rem;
+    gap: 0.5rem;
+    border: 0.5rem solid ${standardStyles.fontColorPrimary};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    height: 5rem;
+    width: 5rem;
+    gap: 0.5rem;
+    border: 0.5rem solid ${standardStyles.fontColorPrimary};
+  `
+  )};
 
   &:hover {
     cursor: pointer;
@@ -67,25 +200,79 @@ const Label = styled.label`
 `;
 
 const Line = styled.span`
-  height: 0.25rem;
-  width: 3rem;
   background: #ffffff;
   transition: 0.5s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    height: 0.1rem;
+    width: 2rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    height: 0.25rem;
+    width: 3rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    height: 0.25rem;
+    width: 3rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    height: 0.25rem;
+    width: 3rem;
+  `
+  )};
 `;
 
 const Wrap = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 20%;
-  top: 55%;
 `;
 
 const IconsWrap = styled.div`
   position: absolute;
-  height: 7rem;
-  width: 7rem;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    height: 4rem;
+    width: 4rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    height: 7rem;
+    width: 7rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    height: 7rem;
+    width: 7rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    height: 7rem;
+    width: 7rem;
+  `
+  )};
 `;
 
 const IconWrap = styled.span`
@@ -95,18 +282,71 @@ const IconWrap = styled.span`
   justify-content: center;
   border-radius: 50%;
   background-color: ${standardStyles.fontColorPrimary};
-  height: 6.5rem;
-  width: 6.5rem;
   opacity: 0;
   transition: 1s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    height: 4rem;
+    width: 4rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    height: 5rem;
+    width: 5rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    height: 6.5rem;
+    width: 6.5rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    height: 6.5rem;
+    width: 6.5rem;
+  `
+  )};
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
   transition: 0.5s;
   display: inline-block;
   cursor: pointer;
-  font-size: 4.7rem;
   color: #aeabab;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    font-size: 3rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: 4rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    font-size: 4.7rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: 4.7rem;
+  `
+  )};
 `;
 
 const Anchor = styled.a`

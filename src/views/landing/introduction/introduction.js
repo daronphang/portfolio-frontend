@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
 import useScrollContent from '../../../hooks/useScrollContent';
-import { standardStyles, mediaSizes } from '../../../utils/styles';
+import { standardStyles, mediaQuery } from '../../../utils/styles';
 import backgroundImg from '../../../images/intro-background.jpg';
 import TypingContent from './typing-content';
 
@@ -26,14 +26,37 @@ const BgdImg = styled.img.attrs((props) => ({
   },
 }))`
   z-index: -1;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 
-  @media (${mediaSizes.desktop}) {
+  ${mediaQuery(
+    'mobile',
+    `
+    width: 100%;
+    height: 100%;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    width: 100%;
+    height: 100%;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
     height: auto;
     width: 100%;
-  }
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    height: auto;
+    width: 100%;
+  `
+  )};
 `;
 
 const BgdHideWhiteSpace = styled.div`
@@ -55,13 +78,41 @@ const Placeholder = styled.div`
 `;
 
 const Content = styled.div`
-  width: 50rem;
   position: absolute;
   top: 60%;
   right: 0%;
   font-weight: 500;
   color: ${standardStyles.fontColorPrimary};
-  font-size: ${standardStyles.fontSizeVeryLarge};
+
+  ${mediaQuery(
+    'mobile',
+    `
+    width: 25rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    width: 37rem;
+    font-size: ${standardStyles.fontSizeLarge};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    width: 50rem;
+    font-size: ${standardStyles.fontSizeVeryLarge};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    width: 50rem;
+    font-size: ${standardStyles.fontSizeVeryLarge};
+  `
+  )};
 `;
 
 const threshold = [];

@@ -114,16 +114,16 @@ export default function Timeline() {
       </ScrollContentWrap>
       <StickyWrap></StickyWrap>
 
-      <TimelineContent heading="prelude" digit={0} content={firstContent} />
-      <TimelineContent heading="virgin" digit={1} content={secondContent} />
-      <TimelineContent heading="foundation" digit={2} content={thirdContent} />
+      <TimelineContent heading="PRELUDE" digit={0} content={firstContent} />
+      <TimelineContent heading="VIRGIN" digit={1} content={secondContent} />
+      <TimelineContent heading="FOUNDATION" digit={2} content={thirdContent} />
       <TimelineContent
-        heading="exploration"
+        heading="EXPLORATION"
         digit={3}
         content={fourthContent}
       />
-      <TimelineContent heading="practice" digit={4} content={fifthContent} />
-      <TimelineContent heading="present" digit={5} content={sixthContent} />
+      <TimelineContent heading="PRACTICE" digit={4} content={fifthContent} />
+      <TimelineContent heading="PRESENT" digit={5} content={sixthContent} />
     </Wrap>
   );
 }

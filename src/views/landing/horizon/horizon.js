@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
@@ -6,7 +6,7 @@ import tvBackground from '../../../images/tv-background.jpg';
 
 import TypeWriter from '../../../components/typewriter';
 import HorizonProfile from './profile';
-import { mediaSizes, standardStyles } from '../../../utils/styles';
+import { mediaQuery, standardStyles } from '../../../utils/styles';
 import useScrollContent from '../../../hooks/useScrollContent';
 
 const Wrap = styled.div`
@@ -26,13 +26,38 @@ const ZoomWrap = styled.div.attrs((props) => ({
       props.scroll < 90
         ? (props.scroll / 100 - 0.1) * 3.5
         : ((100 - props.scroll) / 100) * 2,
-    transform: `scale(${1 + Math.max(0, (props.scroll / 100 - 0.6) * 1.5)})`,
+    transform: `scale(${1 + Math.max(0, (props.scroll / 100 - 0.6) * 2.5)})`,
   },
 }))`
-  top: 0%;
   position: sticky;
   transition: 0.5s;
   height: 100vh;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    top: 30%;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    top: 15%;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    top: 0%;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    top: 0%;
+  `
+  )};
 `;
 
 const BgdImg = styled.img`
@@ -45,10 +70,38 @@ const BgdImg = styled.img`
 const TerminalWrap = styled.div`
   position: absolute;
   width: 100%;
-  top: 40vmax;
   color: ${standardStyles.fontColorPrimary};
-  font-size: 0.7vmax;
   text-align: center;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    top: 19vmax;
+    font-size: 0.3vmax;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    top: 30vmax;
+    font-size: 0.5vmax;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    top: 40vmax;
+    font-size: 0.7vmax;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    top: 40vmax;
+    font-size: 0.7vmax;
+  `
+  )};
 `;
 
 const threshold = [];

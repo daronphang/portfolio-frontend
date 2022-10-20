@@ -2,15 +2,43 @@ import React, { forwardRef } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { standardStyles } from '../utils/styles';
+import { standardStyles, mediaQuery } from '../utils/styles';
 
 // for input focus to target label, label must be AFTER input tag
 // input:focus + label
 
 const Wrap = styled.div`
   position: relative;
-  padding: 3rem 1rem 1rem 1rem;
-  min-height: 5rem;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    padding: 2rem 0.5rem 0.5rem 0.5rem;
+    min-height: 3rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    padding: 3rem 1rem 1rem 1rem;
+    min-height: 5rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    padding: 3rem 1rem 1rem 1rem;
+    min-height: 5rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    padding: 3rem 1rem 1rem 1rem;
+    min-height: 5rem;
+  `
+  )};
 `;
 
 const InputWrap = styled.div`
@@ -22,10 +50,41 @@ const InputWrap = styled.div`
 
 const Label = styled.label`
   position: absolute;
-  font-size: ${standardStyles.fontSizeMedium};
   transition: 0.5s;
-  left: -2rem;
-  top: -3rem;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    left: -1rem;
+    top: -1.5rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    left: -2rem;
+    top: -3rem;
+    font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    left: -2rem;
+    top: -3rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    left: -2rem;
+    top: -3rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
 `;
 
 // invalid and valid pseudo classes are used as react-hook-form
@@ -56,13 +115,44 @@ const inputStyles = css`
   box-sizing: border-box;
   display: absolute;
   width: 100%;
-  height: 5rem;
   background: ${standardStyles.quinaryColor};
   border: none;
   border-radius: 1rem;
   z-index: 5;
-  padding: 1.5rem;
-  font-size: ${standardStyles.fontSizeMedium};
+
+  ${mediaQuery(
+    'mobile',
+    `
+    height: 3rem;
+    padding: 1rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    height: 5rem;
+    padding: 1.5rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    height: 5rem;
+    padding: 1.5rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    height: 5rem;
+    padding: 1.5rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
 
   &::placeholder {
     transition: 0.5s;
@@ -77,8 +167,33 @@ const inputStyles = css`
   }
 
   &:focus + label {
-    transform: translateX(3rem);
     opacity: 1;
+
+    ${mediaQuery(
+      'mobile',
+      `
+      transform: translateX(1.5rem);
+    `
+    )};
+    ${mediaQuery(
+      'tablet',
+      `
+      transform: translateX(3rem);
+    `
+    )};
+    ${mediaQuery(
+      'laptop',
+      `
+      transform: translateX(3rem);
+    `
+    )};
+
+    ${mediaQuery(
+      'desktop',
+      `
+      transform: translateX(3rem);
+    `
+    )};
   }
 
   &:focus + label svg {
@@ -104,10 +219,38 @@ const TextArea = styled.textarea`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-  font-size: ${standardStyles.fontSizeMedium};
   opacity: 0;
-  margin-right: 1rem;
   transition: 0.5s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    margin-right: 0.5rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    margin-right: 1rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    margin-right: 1rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    margin-right: 1rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
 `;
 
 const Validation = styled.span`

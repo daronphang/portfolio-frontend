@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack';
 import { useDispatch } from 'react-redux';
 
-import { standardStyles } from '../../utils/styles';
+import { standardStyles, mediaQuery } from '../../utils/styles';
 import InputField from '../../components/input';
 import Button from '../../components/buttons/button';
 import GlassMorphism from '../../components/glassmorphism';
@@ -24,12 +24,6 @@ const Wrap = styled.div`
   color: ${standardStyles.fontColorPrimary};
 `;
 
-const BackgroundImg = styled.img`
-  position: absolute;
-  height: auto;
-  width: 100%;
-`;
-
 const ContactWrap = styled.div.attrs((props) => ({
   style: {
     opacity: 1, // Math.min(1, ((props.ratio || 0) - 0.3) * 3)
@@ -42,15 +36,71 @@ const ContactWrap = styled.div.attrs((props) => ({
   justify-content: center;
   text-align: center;
   width: 100%;
-  font-size: ${standardStyles.fontSizeMedium};
-  padding: 5rem 0 5rem 0;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    font-size: ${standardStyles.fontSizeSmall};
+    padding: 3rem 0 3rem 0;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: ${standardStyles.fontSizeMedium};
+    padding: 5rem 0 5rem 0;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    font-size: ${standardStyles.fontSizeMedium};
+    padding: 5rem 0 5rem 0;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: ${standardStyles.fontSizeMedium};
+    padding: 5rem 0 5rem 0;
+  `
+  )};
 `;
 
 const TextGrid = styled.div`
   display: grid;
   position: relative;
-  grid-template-columns: 30rem auto;
-  margin-top: 5rem;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    grid-template-columns: 10rem auto;
+    margin-top: 2rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    grid-template-columns: 20rem auto;
+    margin-top: 4rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    grid-template-columns: 30rem auto;
+    margin-top: 5rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    grid-template-columns: 30rem auto;
+    margin-top: 5rem;
+  `
+  )};
 `;
 
 const PersonalDetails = styled.div`
@@ -75,7 +125,32 @@ const ButtonWrap = styled.div`
 
 const Heading = styled.div`
   text-align: left;
-  font-size: ${standardStyles.fontSizeVeryLarge};
+
+  ${mediaQuery(
+    'mobile',
+    `
+    font-size: ${standardStyles.fontSizeLarge};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: ${standardStyles.fontSizeLarge};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    font-size: ${standardStyles.fontSizeVeryLarge};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: ${standardStyles.fontSizeVeryLarge};
+  `
+  )};
 `;
 
 const InputFields = [
