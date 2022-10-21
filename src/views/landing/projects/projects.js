@@ -77,12 +77,16 @@ const Spacing = styled.div`
 
 export default function Projects() {
   const maContent = `
-  Fullstack platform developed in Micron to facilitate the daily work of Process Engineers 
-  by bringing together tracking metrices and data from multiple sources into a single
-  consolidated view scoped to the individual owner, and to trigger automated workflows (eliminating manual tasks) with ~800 manhour savings per week.
-  Completed the migration from Monolith to Microservices for better scaling, resilience and freedom to integrate heterogenous technology stacks. 
-  Project was approved as a global BKM (best known method) and extended to other Micron sites (Taiwan, China, Japan and USA).
+  Scalable and resilient fullstack application (Microservices architecture) developed in Micron to improve productivity and facilitate the daily work of Process Engineers. 
+  Performs complex SQL queries across relational databases (Snowflake, Postgres, SQL Server),
+  triggering of asynchronous automated workflows (eliminating manual tasks),
+  data visualization of results (X-Y, bar, timeline), 
+  scheduling of jobs (CRON),
+  and integrates metrices from multiple in-house sources into a single consolidated platform that is scoped to the individual owner. 
+  Project was awarded as the Culture Champion for Q4 2022 with significant productivity gain of ~800 manhour savings per week.
+  Moreover, it was approved as a global BKM (best known method) and extended to other Micron sites (Taiwan, China, Japan and USA).
   `;
+
   return (
     <Wrap id="projects">
       <Heading>PROJECTS</Heading>
@@ -91,6 +95,7 @@ export default function Projects() {
         date="APR 2021-PRESENT"
         content={maContent}
       />
+
       <Spacing />
     </Wrap>
   );

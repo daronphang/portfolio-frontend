@@ -5,6 +5,7 @@ import { mediaQuery, standardStyles } from '../../../utils/styles';
 
 const Wrap = styled.div`
   display: grid;
+  margin-left: ${(props) => props.left || 0}rem;
   margin-top: 5rem;
   grid-template-rows: 8rem auto;
   grid-template-columns: auto;
@@ -113,9 +114,9 @@ const Content = styled.div`
   )};
 `;
 
-export default function Project({ heading, content, date }) {
+export default function Project({ heading, content, date, left }) {
   return (
-    <Wrap>
+    <Wrap left={left}>
       <HeadingWrap>
         <Heading>{heading}</Heading>
         <Date>{date}</Date>
