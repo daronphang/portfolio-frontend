@@ -159,8 +159,8 @@ const Label = styled.label`
   ${mediaQuery(
     'mobile',
     `
-    height: 4rem;
-    width: 4rem;
+    height: 3.5rem;
+    width: 3.5rem;
     gap: 0.6rem;
     border: 0.3rem solid ${standardStyles.fontColorPrimary};
   `
