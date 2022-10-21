@@ -19,7 +19,7 @@ const Wrap = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    padding: 2.5rem 1rem 1rem 1rem;
+    padding: 2rem 0.5rem 0.5rem 0.5rem;
   `
   )};
   ${mediaQuery(
@@ -58,9 +58,9 @@ const Label = styled.label`
   ${mediaQuery(
     'tablet',
     `
-    left: -2rem;
-    top: -3rem;
-    font-size: ${standardStyles.fontSizeSmall};
+    left: -1.5rem;
+    top: -2.5rem;
+    font-size: ${standardStyles.fontSizeNormal};
   `
   )};
   ${mediaQuery(
@@ -125,9 +125,9 @@ const inputStyles = css`
   ${mediaQuery(
     'tablet',
     `
-    border-radius: 1rem;
-    padding: 1.5rem;
-    font-size: ${standardStyles.fontSizeMedium};
+    border-radius: 0.7rem;
+    padding: 1.2rem;
+    font-size: ${standardStyles.fontSizeNormal};
   `
   )};
   ${mediaQuery(
@@ -172,7 +172,7 @@ const inputStyles = css`
     ${mediaQuery(
       'tablet',
       `
-      transform: translateX(3rem);
+      transform: translateX(2rem);
     `
     )};
     ${mediaQuery(
@@ -227,8 +227,8 @@ const Icon = styled(FontAwesomeIcon)`
   ${mediaQuery(
     'tablet',
     `
-    margin-right: 1rem;
-    font-size: ${standardStyles.fontSizeMedium};
+    margin-right: 0.7rem;
+    font-size: ${standardStyles.fontSizeNormal};
   `
   )};
   ${mediaQuery(
@@ -267,7 +267,7 @@ const Validation = styled.span`
   ${mediaQuery(
     'tablet',
     `
-    width: 1rem;
+    width: 0.8rem;
   `
   )};
   ${mediaQuery(

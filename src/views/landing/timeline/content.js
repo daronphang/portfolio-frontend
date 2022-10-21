@@ -28,9 +28,9 @@ const StickyWrap = styled.div`
     'tablet',
     `
     top: calc(50% - 25rem);
-    left: calc(50% - 40rem);
+    left: calc(50% - 27rem);
     height: 50rem;
-    width: 80rem;
+    width: 54rem;
   `
   )};
   ${mediaQuery(
@@ -73,8 +73,8 @@ const Corner = styled.div.attrs((props) => ({
   ${mediaQuery(
     'tablet',
     `
-    width: 60rem;
-    border: 0.5rem solid ${standardStyles.fontColorPrimary};
+    width: 40rem;
+    border: 0.4rem solid ${standardStyles.fontColorPrimary};
   `
   )};
   ${mediaQuery(
@@ -138,10 +138,10 @@ const Heading = styled.span.attrs((props) => ({
   ${mediaQuery(
     'tablet',
     `
-    font-size: 10rem;
-    top: 10rem;
-    height: 3rem;
-    line-height: 3rem;
+    font-size: 7.5rem;
+    top: 7.5rem;
+    height: 6rem;
+    line-height: 6rem;
   `
   )};
   ${mediaQuery(
@@ -149,8 +149,8 @@ const Heading = styled.span.attrs((props) => ({
     `
     font-size: 13rem;
     top: 10rem;
-    height: 3rem;
-    line-height: 3rem;
+    height: 9rem;
+    line-height: 10rem;
   `
   )};
 
@@ -187,8 +187,8 @@ const Square = styled.span.attrs((props) => ({
   ${mediaQuery(
     'tablet',
     `
-    height: 1rem;
-    width: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
     top: 16.5rem;
   `
   )};
@@ -236,11 +236,11 @@ const ZeroDigit = styled.span.attrs((props) => ({
   ${mediaQuery(
     'tablet',
     `
-    font-size: 23rem;
-    top: 3rem;
+    font-size: 20rem;
+    top: 4.2rem;
     left: calc(53% + 2rem);
-    height: 17rem;
-    line-height: 18rem;
+    height: 14rem;
+    line-height: 15rem;
   `
   )};
   ${mediaQuery(
@@ -281,7 +281,7 @@ const SecondDigit = styled(ZeroDigit).attrs((props) => ({
   ${mediaQuery(
     'tablet',
     `
-    left: calc(53% + 8.5rem);
+    left: calc(53% + 7rem);
   `
   )};
   ${mediaQuery(
@@ -320,8 +320,8 @@ const Content = styled.span.attrs((props) => ({
   ${mediaQuery(
     'tablet',
     `
-    width: 50rem;
-    left: calc(50% - 25rem);
+    width: 40rem;
+    left: calc(50% - 20rem);
     font-size: ${standardStyles.fontSizeSmall};
   `
   )};

@@ -43,11 +43,11 @@ const Content = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    top: 10%;
-    width: 50rem;
-    padding: 3rem;
-    font-size: ${standardStyles.fontSizeMedium};
-    left: calc(50% - 25rem);
+    top: 5%;
+    width: 30rem;
+    padding: 2rem;
+    font-size: ${standardStyles.fontSizeSmall};
+    left: calc(50% - 15rem);
   `
   )};
   ${mediaQuery(
@@ -94,8 +94,8 @@ const SocialMediaWrap = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    top: calc(30% + 50rem);
-    left: calc(10% + 8rem);
+    top: calc(30% + 35rem);
+    left: calc(10% + 1rem);
   `
   )};
   ${mediaQuery(
@@ -128,8 +128,8 @@ const SkillLevelWrap = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    top: 30%;
-    left: 10%;
+    top: 40%;
+    left: 5%;
   `
   )};
   ${mediaQuery(

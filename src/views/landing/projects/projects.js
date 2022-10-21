@@ -79,7 +79,7 @@ export default function Projects() {
   const maContent = `
   Fullstack platform developed in Micron to facilitate the daily work of Process Engineers 
   by bringing together tracking metrices and data from multiple sources into a single
-  consolidated view scoped to the individual owner, and to trigger automated workflows (eliminating manual tasks) for 25% productivity gain and 700h manpower savings per week.
+  consolidated view scoped to the individual owner, and to trigger automated workflows (eliminating manual tasks) with ~800 manhour savings per week.
   Completed the migration from Monolith to Microservices for better scaling, resilience and freedom to integrate heterogenous technology stacks. 
   Project was approved as a global BKM (best known method) and extended to other Micron sites (Taiwan, China, Japan and USA).
   `;

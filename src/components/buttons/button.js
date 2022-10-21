@@ -23,8 +23,8 @@ const Default = styled.button`
   ${mediaQuery(
     'tablet',
     `
-    padding: 1.5rem 3rem 1.5rem 3rem;
-    font-size: ${standardStyles.fontSizeSmall};
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: ${standardStyles.fontSizeNormal};
   `
   )};
   ${mediaQuery(

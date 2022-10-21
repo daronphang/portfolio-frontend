@@ -25,7 +25,7 @@ const MinionWrap = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    left: calc(45% - 18rem);
+    left: calc(45% - 20rem);
   `
   )};
   ${mediaQuery(
@@ -61,7 +61,7 @@ const Text = styled.div`
     `
     top: 35%;
     left: 45%;
-    width: 40rem;
+    width: 28rem;
     font-size: ${standardStyles.fontSizeSmall};
   `
   )};

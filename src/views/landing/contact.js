@@ -63,8 +63,8 @@ const GlassWrap = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    width: 80rem;
-    left: calc(50% - 40rem);
+    width: 50rem;
+    left: calc(50% - 25rem);
 `
   )};
   ${mediaQuery(
@@ -107,8 +107,8 @@ const ContactWrap = styled.div.attrs((props) => ({
   ${mediaQuery(
     'tablet',
     `
-    font-size: ${standardStyles.fontSizeMedium};
-    padding: 5rem;
+    font-size: ${standardStyles.fontSizeNormal};
+    padding: 1rem;
   `
   )};
   ${mediaQuery(
@@ -142,8 +142,8 @@ const TextGrid = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    grid-template-columns: 20rem auto;
-    margin-top: 4rem;
+    grid-template-columns: 17rem auto;
+    margin-top: 3rem;
   `
   )};
   ${mediaQuery(
@@ -189,7 +189,7 @@ const ButtonWrap = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    margin-top: 3rem;
+    margin-top: 2rem;
   `
   )};
   ${mediaQuery(

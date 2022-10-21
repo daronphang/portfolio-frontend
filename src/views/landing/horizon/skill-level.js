@@ -54,8 +54,8 @@ const SkillBarWrap = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    width: 20rem;
-    height: 2rem;
+    width: 15rem;
+    height: 1.5rem;
   `
   )};
   ${mediaQuery(
@@ -96,7 +96,7 @@ const SkillBar = styled.span.attrs((props) => ({
   ${mediaQuery(
     'tablet',
     `
-    height: 2rem;
+    height: 1.5rem;
   `
   )};
   ${mediaQuery(
@@ -130,7 +130,7 @@ const Text = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    top: -3rem;
+    top: -2rem;
     font-size: ${standardStyles.fontSizeSmall};
   `
   )};

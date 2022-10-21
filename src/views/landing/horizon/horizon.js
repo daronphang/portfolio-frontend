@@ -86,8 +86,8 @@ const TerminalWrap = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    top: 30vmax;
-    font-size: 0.5vmax;
+    top: 60vmax;
+    font-size: 1.2vmax;
   `
   )};
   ${mediaQuery(

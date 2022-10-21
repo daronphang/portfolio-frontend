@@ -33,7 +33,7 @@ const Input = styled.input`
       ${mediaQuery(
         'tablet',
         `
-        transform: translate(-7rem, -4rem);
+        transform: translate(-5rem, -3rem);
       `
       )};
       ${mediaQuery(
@@ -64,7 +64,7 @@ const Input = styled.input`
       ${mediaQuery(
         'tablet',
         `
-        transform: translate(7rem, -4rem);
+        transform: translate(5rem, -3rem);
       `
       )};
       ${mediaQuery(
@@ -95,7 +95,7 @@ const Input = styled.input`
       ${mediaQuery(
         'tablet',
         `
-        transform: translate(7rem, 4rem);
+        transform: translate(5rem, 3rem);
       `
       )};
       ${mediaQuery(
@@ -125,7 +125,7 @@ const Input = styled.input`
       ${mediaQuery(
         'tablet',
         `
-        transform: translate(-7rem, 4rem);
+        transform: translate(-5rem, 3rem);
       `
       )};
       ${mediaQuery(
@@ -168,8 +168,8 @@ const Label = styled.label`
   ${mediaQuery(
     'tablet',
     `
-    height: 5rem;
-    width: 5rem;
+    height: 4rem;
+    width: 4rem;
     gap: 0.5rem;
     border: 0.5rem solid ${standardStyles.fontColorPrimary};
   `
@@ -213,8 +213,8 @@ const Line = styled.span`
   ${mediaQuery(
     'tablet',
     `
-    height: 0.25rem;
-    width: 3rem;
+    height: 0.2rem;
+    width: 2.5rem;
   `
   )};
   ${mediaQuery(
@@ -254,8 +254,8 @@ const IconsWrap = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    height: 7rem;
-    width: 7rem;
+    height: 5rem;
+    width: 5rem;
   `
   )};
   ${mediaQuery(
@@ -331,7 +331,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
   ${mediaQuery(
     'tablet',
     `
-    font-size: 4rem;
+    font-size: 3.7rem;
   `
   )};
   ${mediaQuery(

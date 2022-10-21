@@ -29,7 +29,7 @@ const Grid = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    grid-template-columns: 5rem 30rem;
+    grid-template-columns: 4.5rem 23rem;
   font-size: ${standardStyles.fontSizeMedium};
   `
   )};
