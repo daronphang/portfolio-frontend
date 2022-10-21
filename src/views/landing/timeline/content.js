@@ -67,18 +67,21 @@ const Corner = styled.div.attrs((props) => ({
     'mobile',
     `
     width: 26rem;
+    border: 0.25rem solid ${standardStyles.fontColorPrimary};
   `
   )};
   ${mediaQuery(
     'tablet',
     `
     width: 60rem;
+    border: 0.5rem solid ${standardStyles.fontColorPrimary};
   `
   )};
   ${mediaQuery(
     'laptop',
     `
     width: 80rem;
+    border: 0.5rem solid ${standardStyles.fontColorPrimary};
   `
   )};
 
@@ -86,20 +89,21 @@ const Corner = styled.div.attrs((props) => ({
     'desktop',
     `
     width: 88rem;
+    border: 0.5rem solid ${standardStyles.fontColorPrimary};
   `
   )};
 `;
 
 const TopCorner = styled(Corner)`
-  border-bottom: 0.5rem solid ${standardStyles.fontColorPrimary};
-  border-left: 0.5rem solid ${standardStyles.fontColorPrimary};
+  border-top: none;
+  border-right: none;
   left: 10%;
   top: -30%;
 `;
 
 const BottomCorner = styled(Corner)`
-  border-top: 0.5rem solid ${standardStyles.fontColorPrimary};
-  border-right: 0.5rem solid ${standardStyles.fontColorPrimary};
+  border-bottom: none;
+  border-left: none;
   right: 10%;
   bottom: 0%;
   bottom: -30%;

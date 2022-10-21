@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack';
@@ -16,33 +16,62 @@ const Wrap = styled.div`
   position: relative;
   box-sizing: border-box;
   margin-top: -1%;
-  min-height: 110vh;
+  display: flex;
+  align-items: center;
   padding: 5rem 0 5rem 0;
   width: 100%;
   background: ${standardStyles.colorPrimary};
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: ${standardStyles.fontColorPrimary};
+
+  ${mediaQuery(
+    'mobile',
+    `
+    height: 100%;
+`
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    height: 100%;
+`
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    min-height: 100vh;
+`
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    min-height: 100vh;
+`
+  )};
 `;
 
 const GlassWrap = styled.div`
+  position: relative;
+
   ${mediaQuery(
     'mobile',
     `
     width: 35rem;
+    left: calc(50% - 17.5rem);
 `
   )};
   ${mediaQuery(
     'tablet',
     `
     width: 80rem;
+    left: calc(50% - 40rem);
 `
   )};
   ${mediaQuery(
     'laptop',
     `
     width: 100rem;
+    left: calc(50% - 50rem);
 `
   )};
 
@@ -50,6 +79,7 @@ const GlassWrap = styled.div`
     'desktop',
     `
     width: 100rem;
+    left: calc(50% - 50rem);
 `
   )};
 `;

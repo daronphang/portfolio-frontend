@@ -1,11 +1,6 @@
-## Bug Fixes
+## Bugs
 
-### 1.0.0
-
-- Name field showing invalid with spaces.
-- Firefox displaying white space at bottom for zoomed image.
-- Profile description disappearing upon page refresh.
-- Incorrect formatting when viewed on mobile devices.
+- Mobile keyboard will push content up when input is selected; unable to use vh for container but need set either absolute values of %.
 
 ## Deployment
 

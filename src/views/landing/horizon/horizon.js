@@ -32,39 +32,42 @@ const ZoomWrap = styled.div.attrs((props) => ({
   position: sticky;
   transition: 0.5s;
   height: 100vh;
+  top: 0%;
+`;
+
+const BgdImg = styled.img`
+  position: absolute;
+  object-fit: cover;
 
   ${mediaQuery(
     'mobile',
     `
-    top: 30%;
+    width: 100%;
+    height: 100%;
   `
   )};
   ${mediaQuery(
     'tablet',
     `
-    top: 15%;
+    width: 100%;
+    height: 100%;
   `
   )};
   ${mediaQuery(
     'laptop',
     `
-    top: 0%;
+    height: 100%;
+    width: 100%;
   `
   )};
 
   ${mediaQuery(
     'desktop',
     `
-    top: 0%;
+    height: auto;
+    width: 100%;
   `
   )};
-`;
-
-const BgdImg = styled.img`
-  position: absolute;
-  object-fit: cover;
-  height: auto;
-  width: 100%;
 `;
 
 const TerminalWrap = styled.div`
@@ -76,8 +79,8 @@ const TerminalWrap = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    top: 19vmax;
-    font-size: 0.3vmax;
+    top: 60vmax;
+    font-size: 1.2vmax;
   `
   )};
   ${mediaQuery(

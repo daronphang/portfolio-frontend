@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -112,12 +112,12 @@ const inputStyles = css`
   height: 100%;
   background: ${standardStyles.quinaryColor};
   border: none;
-  border-radius: 1rem;
   z-index: 5;
 
   ${mediaQuery(
     'mobile',
     `
+    border-radius: 0.5rem;
     padding: 0.9rem;
     font-size: ${standardStyles.fontSizeVerySmall};
   `
@@ -125,6 +125,7 @@ const inputStyles = css`
   ${mediaQuery(
     'tablet',
     `
+    border-radius: 1rem;
     padding: 1.5rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
@@ -132,6 +133,7 @@ const inputStyles = css`
   ${mediaQuery(
     'laptop',
     `
+    border-radius: 1rem;
     padding: 1.5rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
@@ -140,6 +142,7 @@ const inputStyles = css`
   ${mediaQuery(
     'desktop',
     `
+    border-radius: 1rem;
     padding: 1.5rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
