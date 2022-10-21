@@ -52,12 +52,37 @@ const LoaderWrap = styled.span.attrs((props) => ({
   style: {
     opacity: props.isLoading ? 1 : 0,
     transform: `translateX(${props.isLoading ? 0 : -2}rem)`,
-    marginLeft: `${-props.size / 2}rem`,
   },
 }))`
   position: absolute;
   transition: 0.5s;
   left: 50%;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    margin-left: -0.75rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    margin-left: -1rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    margin-left: -1.5rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    margin-left: -1.5rem;
+  `
+  )};
 `;
 
 const Text = styled.span.attrs((props) => ({
