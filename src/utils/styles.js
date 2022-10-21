@@ -30,3 +30,10 @@ export const mediaQuery = (device, styled) => {
       return '';
   }
 };
+
+export const mediaSizes = {
+  mobile: '320px',
+  tablet: '480px',
+  laptop: '768px',
+  desktop: '1024px',
+};

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled, { keyframes } from 'styled-components';
-import { standardStyles } from '../../utils/styles';
+import { standardStyles, mediaQuery } from '../../utils/styles';
 
 import ModalFormSuccess from './modal-form-success';
 import { closeModal, selectModalName } from './modalSlice';
@@ -37,9 +37,34 @@ const ModalWrap = styled.div`
   box-sizing: border-box;
   z-index: 1000;
   padding: 2.5rem;
-  width: ${(props) => props.width}rem;
   overflow: auto;
   font-weight: 600;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    width: 30rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    width: 45rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    width: 60rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    width: 75rem;
+  `
+  )};
 `;
 
 export default function Modal({ size, clickable, children }) {
