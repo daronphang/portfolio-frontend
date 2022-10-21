@@ -26,7 +26,7 @@ const Wrap = styled.div.attrs((props) => ({
   ${mediaQuery(
     'laptop',
     `
-    margin-top: 5rem;
+    margin-top: 4rem;
   `
   )};
 
@@ -61,8 +61,8 @@ const SkillBarWrap = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    width: 25rem;
-    height: 2.5rem;
+    width: 20rem;
+    height: 2rem;
   `
   )};
 
@@ -102,7 +102,7 @@ const SkillBar = styled.span.attrs((props) => ({
   ${mediaQuery(
     'laptop',
     `
-    height: 2.5rem;
+    height: 2rem;
   `
   )};
 

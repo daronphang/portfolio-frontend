@@ -36,10 +36,10 @@ const StickyWrap = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    top: calc(50% - 30rem);
-    left: calc(50% - 57.5rem);
-    height: 60rem;
-    width: 115rem;
+    top: calc(50% - 32.5rem);
+    left: calc(50% - 38rem);
+    height: 65rem;
+    width: 76rem;
   `
   )};
 
@@ -80,8 +80,8 @@ const Corner = styled.div.attrs((props) => ({
   ${mediaQuery(
     'laptop',
     `
-    width: 80rem;
-    border: 0.5rem solid ${standardStyles.fontColorPrimary};
+    width: 57rem;
+    border: 0.4rem solid ${standardStyles.fontColorPrimary};
   `
   )};
 
@@ -147,10 +147,10 @@ const Heading = styled.span.attrs((props) => ({
   ${mediaQuery(
     'laptop',
     `
-    font-size: 13rem;
-    top: 10rem;
-    height: 9rem;
-    line-height: 10rem;
+    font-size: 10rem;
+    top: 8rem;
+    height: 7rem;
+    line-height: 8rem;
   `
   )};
 
@@ -307,7 +307,6 @@ const Content = styled.span.attrs((props) => ({
   position: absolute;
   text-align: left;
   transition: 0.5s;
-  top: 42%;
 
   ${mediaQuery(
     'mobile',
@@ -315,6 +314,7 @@ const Content = styled.span.attrs((props) => ({
     width: 25rem;
     left: calc(50% - 12.5rem);
     font-size: ${standardStyles.fontSizeVerySmall};
+    top: 42%;
   `
   )};
   ${mediaQuery(
@@ -323,14 +323,16 @@ const Content = styled.span.attrs((props) => ({
     width: 40rem;
     left: calc(50% - 20rem);
     font-size: ${standardStyles.fontSizeSmall};
+    top: 42%;
   `
   )};
   ${mediaQuery(
     'laptop',
     `
-    width: 80rem;
-    left: calc(50% - 40rem);
+    width: 55rem;
+    left: calc(50% - 27.5rem);
     font-size: ${standardStyles.fontSizeMedium};
+    top: 37%;
   `
   )};
 
@@ -340,6 +342,7 @@ const Content = styled.span.attrs((props) => ({
     width: 80rem;
     left: calc(50% - 40rem);
     font-size: ${standardStyles.fontSizeMedium};
+    top: 42%;
   `
   )};
 `;

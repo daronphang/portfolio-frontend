@@ -93,8 +93,8 @@ const TerminalWrap = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    top: 40vmax;
-    font-size: 0.7vmax;
+    top: 60vmax;
+    font-size: 1.2vmax;
   `
   )};
 

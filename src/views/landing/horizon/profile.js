@@ -53,7 +53,7 @@ const Content = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    top: 10%;
+    top: 5%;
     width: 50rem;
     padding: 3rem;
     font-size: ${standardStyles.fontSizeMedium};
@@ -101,8 +101,8 @@ const SocialMediaWrap = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    top: calc(30% + 50rem);
-    left: calc(10% + 8rem);
+    top: calc(40% + 38rem);
+    left: calc(5% + 7rem);
   `
   )};
 
@@ -135,8 +135,8 @@ const SkillLevelWrap = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    top: 30%;
-    left: 10%;
+    top: 40%;
+    left: 5%;
   `
   )};
 

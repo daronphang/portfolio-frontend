@@ -38,7 +38,7 @@ const Wrap = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    min-height: 100vh;
+    height: 100%;
 `
   )};
 
@@ -70,8 +70,8 @@ const GlassWrap = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    width: 100rem;
-    left: calc(50% - 50rem);
+    width: 70rem;
+    left: calc(50% - 35rem);
 `
   )};
 
@@ -149,7 +149,7 @@ const TextGrid = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    grid-template-columns: 30rem auto;
+    grid-template-columns: 23rem auto;
     margin-top: 5rem;
   `
   )};

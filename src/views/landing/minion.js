@@ -31,7 +31,7 @@ const MinionWrap = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    left: calc(45% - 20rem);
+    left: calc(40% - 20rem);
   `
   )};
 
@@ -69,8 +69,8 @@ const Text = styled.div`
     'laptop',
     `
     top: 35%;
-    left: 45%;
-    width: 60rem;
+    left: 40%;
+    width: 40rem;
     font-size: ${standardStyles.fontSizeNormal};
   `
   )};
