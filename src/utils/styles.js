@@ -16,22 +16,13 @@ export const standardStyles = {
   fontSizeVeryLarge: '4rem',
 };
 
-export const mediaSizes = {
-  mobile: 'max-width: 480px',
-  tablet: 'max-width: 768px',
-  laptop: 'max-width: 1024px',
-  desktop: 'min-width: 1024px',
-};
-
 export const mediaQuery = (device, styled) => {
   switch (device) {
     case 'mobile':
       return `@media (min-width: 320px) { ${styled}}`;
-    case 'mobilePotrait':
-      return `@media (min-width: 320px) and (orientation: potrait) { ${styled}}`;
-    case 'mobileLandscape':
-      return `@media (min-width: 320px) and (orientation: landscape)  { ${styled}}`;
     case 'tablet':
+      return `@media (min-width: 480px) { ${styled}}`;
+    case 'laptop':
       return `@media (min-width: 768px) { ${styled}}`;
     case 'desktop':
       return `@media (min-width: 1024px) { ${styled}}`;

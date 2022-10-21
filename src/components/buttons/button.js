@@ -16,7 +16,7 @@ const Default = styled.button`
   ${mediaQuery(
     'mobile',
     `
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
     font-size: ${standardStyles.fontSizeSmall};
   `
   )};

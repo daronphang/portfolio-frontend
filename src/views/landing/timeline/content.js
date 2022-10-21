@@ -19,9 +19,9 @@ const StickyWrap = styled.div`
     'mobile',
     `
     top: calc(50% - 22.5rem);
-    left: calc(50% - 19rem);
+    left: calc(50% - 18rem);
     height: 45rem;
-    width: 38rem;
+    width: 36rem;
   `
   )};
   ${mediaQuery(
@@ -85,7 +85,7 @@ const Corner = styled.div.attrs((props) => ({
   ${mediaQuery(
     'desktop',
     `
-    width: 80rem;
+    width: 88rem;
   `
   )};
 `;
@@ -121,14 +121,14 @@ const Heading = styled.span.attrs((props) => ({
   position: absolute;
   transition: 0.5s;
   font-family: Devant Horgen;
-  height: 3rem;
-  line-height: 3rem;
 
   ${mediaQuery(
     'mobile',
     `
     font-size: 5rem;
     top: 8rem;
+    height: 4rem;
+    line-height: 4rem;
   `
   )};
   ${mediaQuery(
@@ -136,6 +136,8 @@ const Heading = styled.span.attrs((props) => ({
     `
     font-size: 10rem;
     top: 10rem;
+    height: 3rem;
+    line-height: 3rem;
   `
   )};
   ${mediaQuery(
@@ -143,6 +145,8 @@ const Heading = styled.span.attrs((props) => ({
     `
     font-size: 13rem;
     top: 10rem;
+    height: 3rem;
+    line-height: 3rem;
   `
   )};
 
@@ -150,7 +154,9 @@ const Heading = styled.span.attrs((props) => ({
     'desktop',
     `
     font-size: 13rem;
-    top: 10rem;
+    top: 7rem;
+    height: 9rem;
+    line-height: 10rem;
   `
   )};
 `;
@@ -209,8 +215,6 @@ const ZeroDigit = styled.span.attrs((props) => ({
 }))`
   position: absolute;
   transition: 0.5s;
-  height: 19rem;
-  line-height: 19rem;
   font-family: Devant Horgen;
   font-size: 25rem;
   left: calc(53% + 3rem);
@@ -219,24 +223,30 @@ const ZeroDigit = styled.span.attrs((props) => ({
     'mobile',
     `
     font-size: 18rem;
-    top: 1rem;
+    top: 4rem;
     left: calc(53% + 1.5rem);
+    height: 13rem;
+    line-height: 13rem;
   `
   )};
   ${mediaQuery(
     'tablet',
     `
     font-size: 23rem;
-    top: 1rem;
+    top: 3rem;
     left: calc(53% + 2rem);
+    height: 17rem;
+    line-height: 18rem;
   `
   )};
   ${mediaQuery(
     'laptop',
     `
     font-size: 25rem;
-    top: 2rem;
+    top: 3rem;
     left: calc(53% + 3rem);
+    height: 17rem;
+    line-height: 18rem;
   `
   )};
 
@@ -244,8 +254,10 @@ const ZeroDigit = styled.span.attrs((props) => ({
     'desktop',
     `
     font-size: 25rem;
-    top: 2rem;
+    top: 3rem;
     left: calc(53% + 3rem);
+    height: 17rem;
+    line-height: 18rem;
   `
   )};
 `;

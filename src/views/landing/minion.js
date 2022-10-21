@@ -62,6 +62,7 @@ const Text = styled.div`
     top: 35%;
     left: 45%;
     width: 40rem;
+    font-size: ${standardStyles.fontSizeSmall};
   `
   )};
   ${mediaQuery(
@@ -70,6 +71,7 @@ const Text = styled.div`
     top: 35%;
     left: 45%;
     width: 60rem;
+    font-size: ${standardStyles.fontSizeNormal};
   `
   )};
 
@@ -79,6 +81,7 @@ const Text = styled.div`
     top: 35%;
     left: 45%;
     width: 60rem;
+    font-size: ${standardStyles.fontSizeNormal};
   `
   )};
 `;

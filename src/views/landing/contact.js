@@ -14,14 +14,44 @@ import { handleApi } from '../../utils/apis';
 
 const Wrap = styled.div`
   position: relative;
+  box-sizing: border-box;
   margin-top: -1%;
-  height: 110vh;
+  min-height: 110vh;
+  padding: 5rem 0 5rem 0;
   width: 100%;
   background: ${standardStyles.colorPrimary};
   display: flex;
   justify-content: center;
   align-items: center;
   color: ${standardStyles.fontColorPrimary};
+`;
+
+const GlassWrap = styled.div`
+  ${mediaQuery(
+    'mobile',
+    `
+    width: 35rem;
+`
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    width: 80rem;
+`
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    width: 100rem;
+`
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    width: 100rem;
+`
+  )};
 `;
 
 const ContactWrap = styled.div.attrs((props) => ({
@@ -41,21 +71,21 @@ const ContactWrap = styled.div.attrs((props) => ({
     'mobile',
     `
     font-size: ${standardStyles.fontSizeSmall};
-    padding: 3rem 0 3rem 0;
+    padding: 0.5rem;
   `
   )};
   ${mediaQuery(
     'tablet',
     `
     font-size: ${standardStyles.fontSizeMedium};
-    padding: 5rem 0 5rem 0;
+    padding: 5rem;
   `
   )};
   ${mediaQuery(
     'laptop',
     `
     font-size: ${standardStyles.fontSizeMedium};
-    padding: 5rem 0 5rem 0;
+    padding: 5rem;
   `
   )};
 
@@ -63,7 +93,7 @@ const ContactWrap = styled.div.attrs((props) => ({
     'desktop',
     `
     font-size: ${standardStyles.fontSizeMedium};
-    padding: 5rem 0 5rem 0;
+    padding: 5rem;
   `
   )};
 `;
@@ -120,7 +150,31 @@ const PersonalDetails = styled.div`
 `;
 
 const ButtonWrap = styled.div`
-  margin-top: 3rem;
+  ${mediaQuery(
+    'mobile',
+    `
+    margin-top: 1.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    margin-top: 3rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    margin-top: 3rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    margin-top: 3rem;
+  `
+  )};
 `;
 
 const Heading = styled.div`
@@ -129,7 +183,7 @@ const Heading = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    font-size: ${standardStyles.fontSizeLarge};
+    font-size: ${standardStyles.fontSizeMedium};
   `
   )};
   ${mediaQuery(
@@ -266,42 +320,43 @@ export default function UserContact({ mockCallback }) {
 
   return (
     <Wrap id="contact">
-      {/* <BackgroundImg src={backgroundImg} /> */}
-      <GlassMorphism styles={{ width: '100rem', padding: '5rem' }}>
-        <ContactWrap>
-          <Heading>Send me a message.</Heading>
-          <form onSubmit={handleSubmit(onSubmit, onError)}>
-            <TextGrid>
-              <PersonalDetails>{renderInputFields}</PersonalDetails>
-              <InputField
-                {...register('message', {
-                  required: true,
-                })}
-                label="Message"
-                id="message"
-                placeholder="Maximum of 250 characters allowed, Required*"
-                icon="fa-solid fa-message"
-                styles={{ height: '25rem' }}
-                isTouched={touchedFields['message']}
-                getFieldState={getFieldState('message')}
-                isSubmitted={isSubmitted}
-                type="textarea"
-                maxLength={250}
-              />
-            </TextGrid>
-            <ButtonWrap>
-              <Button
-                id="contactMeButton"
-                variant="primary"
-                isLoading={isLoading}
-                type="submit"
-              >
-                Submit
-              </Button>
-            </ButtonWrap>
-          </form>
-        </ContactWrap>
-      </GlassMorphism>
+      <GlassWrap>
+        <GlassMorphism>
+          <ContactWrap>
+            <Heading>Send me a message.</Heading>
+            <form onSubmit={handleSubmit(onSubmit, onError)}>
+              <TextGrid>
+                <PersonalDetails>{renderInputFields}</PersonalDetails>
+                <InputField
+                  {...register('message', {
+                    required: true,
+                  })}
+                  label="Message"
+                  id="message"
+                  placeholder="Maximum of 250 characters allowed, Required*"
+                  icon="fa-solid fa-message"
+                  isTouched={touchedFields['message']}
+                  getFieldState={getFieldState('message')}
+                  isSubmitted={isSubmitted}
+                  type="textarea"
+                  rows={9}
+                  maxLength={250}
+                />
+              </TextGrid>
+              <ButtonWrap>
+                <Button
+                  id="contactMeButton"
+                  variant="primary"
+                  isLoading={isLoading}
+                  type="submit"
+                >
+                  Submit
+                </Button>
+              </ButtonWrap>
+            </form>
+          </ContactWrap>
+        </GlassMorphism>
+      </GlassWrap>
     </Wrap>
   );
 }

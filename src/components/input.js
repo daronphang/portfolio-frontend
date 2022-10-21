@@ -13,30 +13,26 @@ const Wrap = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    padding: 2rem 0.5rem 0.5rem 0.5rem;
-    min-height: 3rem;
+    padding: 0.5rem 0.25rem 0.25rem 0.25rem;
   `
   )};
   ${mediaQuery(
     'tablet',
     `
-    padding: 3rem 1rem 1rem 1rem;
-    min-height: 5rem;
+    padding: 2.5rem 1rem 1rem 1rem;
   `
   )};
   ${mediaQuery(
     'laptop',
     `
-    padding: 3rem 1rem 1rem 1rem;
-    min-height: 5rem;
+    padding: 2.5rem 1rem 1rem 1rem;
   `
   )};
 
   ${mediaQuery(
     'desktop',
     `
-    padding: 3rem 1rem 1rem 1rem;
-    min-height: 5rem;
+    padding: 2.5rem 1rem 1rem 1rem;
   `
   )};
 `;
@@ -45,7 +41,6 @@ const InputWrap = styled.div`
   position: relative;
   border-radius: 1rem;
   font-weight: 600;
-  height: ${(props) => (props.styles?.height ? props.styles.height : '100%')};
 `;
 
 const Label = styled.label`
@@ -113,8 +108,8 @@ const handleValidation = (isTouched, invalid, type) => {
 
 const inputStyles = css`
   box-sizing: border-box;
-  display: absolute;
   width: 100%;
+  height: 100%;
   background: ${standardStyles.quinaryColor};
   border: none;
   border-radius: 1rem;
@@ -123,15 +118,13 @@ const inputStyles = css`
   ${mediaQuery(
     'mobile',
     `
-    height: 3rem;
-    padding: 1rem;
+    padding: 0.9rem;
     font-size: ${standardStyles.fontSizeVerySmall};
   `
   )};
   ${mediaQuery(
     'tablet',
     `
-    height: 5rem;
     padding: 1.5rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
@@ -139,7 +132,6 @@ const inputStyles = css`
   ${mediaQuery(
     'laptop',
     `
-    height: 5rem;
     padding: 1.5rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
@@ -148,7 +140,6 @@ const inputStyles = css`
   ${mediaQuery(
     'desktop',
     `
-    height: 5rem;
     padding: 1.5rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
@@ -215,7 +206,8 @@ const Input = styled.input`
 
 const TextArea = styled.textarea`
   ${inputStyles}
-  height: ${(props) => (props.styles?.height ? props.styles.height : '100%')};
+  resize: none;
+  vertical-align: top;
 `;
 
 const Icon = styled(FontAwesomeIcon)`
@@ -256,13 +248,38 @@ const Icon = styled(FontAwesomeIcon)`
 const Validation = styled.span`
   position: absolute;
   box-sizing: border-box;
-  width: 1rem;
   height: 100%;
   left: 0;
   top: 0;
   z-index: 0;
   border-radius: 1rem 0 0 1rem;
   transition: 0.5s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    width: 0.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    width: 1rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    width: 1rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    width: 1rem;
+  `
+  )};
 `;
 
 const ErrorMsg = styled.div`
@@ -308,6 +325,7 @@ const InputField = forwardRef(function renderInputField(props, ref) {
             styles={props.styles}
             isTouched={isTouched || props.isSubmitted}
             invalid={invalid}
+            rows={props.rows}
           ></TextArea>
         )}
         <Label htmlFor={props.id}>
