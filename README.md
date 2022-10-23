@@ -1,6 +1,7 @@
 ## Bugs
 
 - Mobile keyboard will push content up when input is selected; unable to use vh for container but need set either absolute values of %.
+- Using viewport for mobile would exclude address bar at the top and hence, would leave additional space when set at 100vh. Trick is to use min(window.innerheight, 100vh).
 
 ## Deployment
 

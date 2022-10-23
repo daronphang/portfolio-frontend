@@ -17,12 +17,12 @@ const Square = styled.div.attrs((props) => ({
     borderRight: `calc(50vw - ${props.size / 2}vw) solid ${
       standardStyles.colorPrimary
     }`,
-    borderTop: `calc(50vh - ${props.size / 2}vh) solid ${
-      standardStyles.colorPrimary
-    }`,
-    borderBottom: `calc(50vh - ${props.size / 2}vh) solid ${
-      standardStyles.colorPrimary
-    }`,
+    borderTop: `calc(min(${window.innerHeight / 2}px, 50vh)  - ${
+      props.size / 2
+    }vh) solid ${standardStyles.colorPrimary}`,
+    borderBottom: `calc(min(${window.innerHeight / 2}px, 50vh) - ${
+      props.size / 2
+    }vh) solid ${standardStyles.colorPrimary}`,
   },
 }))`
   position: absolute;

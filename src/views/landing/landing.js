@@ -12,11 +12,9 @@ import Entrance from './entrance';
 const Wrap = styled.div.attrs((props) => ({
   style: {
     overflow: props.overflow ? 'visible' : 'hidden',
+    height: props.overflow ? '100%' : `min(${window.innerHeight}px, 100vh)`,
   },
-}))`
-  height: 100vh;
-  width: 100vw;
-`;
+}))``;
 
 export default function LandingPageComponent() {
   const [overflow, setOverflow] = useState(false);

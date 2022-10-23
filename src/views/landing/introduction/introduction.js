@@ -14,13 +14,34 @@ deduct top position by 20vh. Set as 'absolute' so as to not take space.
 */
 
 const Wrap = styled.div`
-  position: relative;
+  ${mediaQuery(
+    'mobile',
+    `
+`
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+`
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+`
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    position: relative;
+`
+  )};
 `;
 
 const BgdImg = styled.img.attrs((props) => ({
   style: {
     position: props.content === 100 ? 'fixed' : 'absolute',
-    top: props.content === 100 ? '-20%' : 0,
+    top: props.content === 100 ? `-20vh` : 0,
     opacity: Math.max(
       0,
       !props.ratio ? 1 : props.ratio >= 0.5 ? 1 : props.ratio * 2 - 0.2
@@ -34,14 +55,14 @@ const BgdImg = styled.img.attrs((props) => ({
     'mobile',
     `
     width: 100%;
-    height: 100%;
+    height: 100vh;
   `
   )};
   ${mediaQuery(
     'tablet',
     `
     width: 100%;
-    height: 100%;
+    height: 100vh;
   `
   )};
   ${mediaQuery(
@@ -127,7 +148,7 @@ export default function Introduction() {
   const { ref, inView, entry } = useInView({
     threshold,
   });
-  const [scrollRef, scrollContent] = useScrollContent(false);
+  const [scrollRef, scrollContent, height] = useScrollContent(false);
 
   useEffect(() => {
     // display after entrance
@@ -136,12 +157,17 @@ export default function Introduction() {
     }, 4000);
   }, []);
 
+  useEffect(() => {
+    console.log(height);
+  }, [height]);
+
   return (
     <Wrap id="introduction">
       <BgdImg
         src={backgroundImg}
         ratio={entry?.intersectionRatio}
         content={scrollContent}
+        height={height}
       />
       <BgdHideWhiteSpace />
       {show && <TypingContent />}
