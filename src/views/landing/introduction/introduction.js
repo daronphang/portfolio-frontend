@@ -22,11 +22,13 @@ const Wrap = styled.div`
   ${mediaQuery(
     'tablet',
     `
+    position: relative;
 `
   )};
   ${mediaQuery(
     'laptop',
     `
+    position: relative;
 `
   )};
 
@@ -148,7 +150,7 @@ export default function Introduction() {
   const { ref, inView, entry } = useInView({
     threshold,
   });
-  const [scrollRef, scrollContent, height] = useScrollContent(false);
+  const [scrollRef, scrollContent] = useScrollContent(false);
 
   useEffect(() => {
     // display after entrance
@@ -157,17 +159,12 @@ export default function Introduction() {
     }, 4000);
   }, []);
 
-  useEffect(() => {
-    console.log(height);
-  }, [height]);
-
   return (
     <Wrap id="introduction">
       <BgdImg
         src={backgroundImg}
         ratio={entry?.intersectionRatio}
         content={scrollContent}
-        height={height}
       />
       <BgdHideWhiteSpace />
       {show && <TypingContent />}

@@ -11,22 +11,22 @@ import Entrance from './entrance';
 
 const Wrap = styled.div.attrs((props) => ({
   style: {
-    overflow: props.overflow ? 'visible' : 'hidden',
-    height: props.overflow ? '100%' : `min(${window.innerHeight}px, 100vh)`,
+    overflow: props.enableScroll ? 'visible' : 'hidden',
+    height: props.enableScroll ? '100%' : `min(${window.innerHeight}px, 100vh)`,
   },
 }))``;
 
 export default function LandingPageComponent() {
-  const [overflow, setOverflow] = useState(false);
+  const [enableScroll, setEnableScroll] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setOverflow(true);
+      setEnableScroll(true);
     }, 4000);
   }, []);
 
   return (
-    <Wrap overflow={overflow}>
+    <Wrap enableScroll={enableScroll}>
       <Entrance />
       <Introduction />
       <Projects />
