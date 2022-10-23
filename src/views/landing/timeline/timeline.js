@@ -97,7 +97,7 @@ export default function Timeline() {
   To put my theory knowledge into practice, I worked on multiple mock fullstack projects, including building a shopping app platform and stock screener.
   I explored working with CSS, Leetcode for DSA, and deep dived into OOP and design patterns, APIs, software architectures, and networking.
   At Micron, I completed the web application migration to microservices.
-  This platform averaged 366 requests daily, automating the work of engineers across Micron sites globally. 
+  This platform averaged 615 requests daily, automating the work of engineers across Micron sites globally. 
   Fullstack development calls to my passions, and I am constantly grabbing onto any other langauges, frameworks or principles that I can integrate into my coding.
   `;
 

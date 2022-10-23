@@ -35,76 +35,25 @@ const ZoomWrap = styled.div.attrs((props) => ({
   top: 0%;
 `;
 
-const BgdImg = styled.img`
+const BgdImg = styled.div`
   position: absolute;
   object-fit: cover;
-
-  ${mediaQuery(
-    'mobile',
-    `
-    width: 100%;
-    height: 100%;
-  `
-  )};
-  ${mediaQuery(
-    'tablet',
-    `
-    width: 100%;
-    height: 100%;
-  `
-  )};
-  ${mediaQuery(
-    'laptop',
-    `
-    height: 100%;
-    width: 100%;
-  `
-  )};
-
-  ${mediaQuery(
-    'desktop',
-    `
-    height: auto;
-    width: 100%;
-  `
-  )};
+  background-image: url(${tvBackground});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: ${standardStyles.fontColorPrimary};
+  height: 100%;
+  width: 100%;
 `;
 
 const TerminalWrap = styled.div`
-  position: absolute;
-  width: 100%;
-  color: ${standardStyles.fontColorPrimary};
-  text-align: center;
-
-  ${mediaQuery(
-    'mobile',
-    `
-    top: 60vmax;
-    font-size: 1.2vmax;
-  `
-  )};
-  ${mediaQuery(
-    'tablet',
-    `
-    top: 60vmax;
-    font-size: 1.2vmax;
-  `
-  )};
-  ${mediaQuery(
-    'laptop',
-    `
-    top: 60vmax;
-    font-size: 1.2vmax;
-  `
-  )};
-
-  ${mediaQuery(
-    'desktop',
-    `
-    top: 40vmax;
-    font-size: 0.7vmax;
-  `
-  )};
+  margin-top: max(23vh, 15%);
+  font-size: 0.8vmax;
 `;
 
 const threshold = [];
@@ -123,14 +72,15 @@ export default function Horizon() {
     <Wrap id="about">
       <ZoomBounds ref={scrollRef}>
         <ZoomWrap scroll={scrollContent}>
-          <BgdImg src={tvBackground} />
-          {scrollContent > 30 && (
-            <TerminalWrap>
-              <TypeWriter styles={{ duration: 2, steps: 26 }}>
-                Scroll down to continue...
-              </TypeWriter>
-            </TerminalWrap>
-          )}
+          <BgdImg>
+            {scrollContent > 30 && (
+              <TerminalWrap>
+                <TypeWriter styles={{ duration: 2, steps: 26 }}>
+                  Scroll down to continue...
+                </TypeWriter>
+              </TerminalWrap>
+            )}
+          </BgdImg>
         </ZoomWrap>
       </ZoomBounds>
       <HorizonProfile />

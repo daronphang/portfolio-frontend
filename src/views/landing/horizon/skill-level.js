@@ -5,7 +5,7 @@ import { mediaQuery, standardStyles } from '../../../utils/styles';
 
 const Wrap = styled.div.attrs((props) => ({
   style: {
-    opacity: props.onShow ? 1 : 0,
+    opacity: props.show ? 1 : 0,
   },
 }))`
   position: relative;
@@ -77,7 +77,9 @@ const SkillBarWrap = styled.div`
 
 const SkillBar = styled.span.attrs((props) => ({
   style: {
-    transform: props.onShow ? `translateX(${props.amount}%)` : 'translateX(0%)',
+    transform: props.show
+      ? `translateX(${props.amount || 0}%)`
+      : 'translateX(0%)',
   },
 }))`
   position: absolute;
@@ -152,21 +154,21 @@ const Text = styled.div`
 `;
 
 export default function SkillLevel({ trigger, scrollContent, amount, text }) {
-  const [onShow, setOnShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if (scrollContent >= trigger) {
-      setOnShow(true);
+      setShow(true);
     } else {
-      setOnShow(false);
+      setShow(false);
     }
   }, [scrollContent]);
 
   return (
-    <Wrap onShow={onShow}>
+    <Wrap show={show}>
       <Text>{text}</Text>
       <SkillBarWrap>
-        <SkillBar onShow={onShow} amount={amount} />
+        <SkillBar show={show} amount={amount} />
       </SkillBarWrap>
     </Wrap>
   );

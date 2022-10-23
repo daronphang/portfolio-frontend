@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
@@ -13,12 +13,14 @@ after scrolling certain amount (20vh). To prevent image from starting at top, ne
 deduct top position by 20vh. Set as 'absolute' so as to not take space.
 */
 
-const Wrap = styled.div``;
+const Wrap = styled.div`
+  position: relative;
+`;
 
 const BgdImg = styled.img.attrs((props) => ({
   style: {
     position: props.content === 100 ? 'fixed' : 'absolute',
-    top: props.content === 100 ? '-20vh' : 0,
+    top: props.content === 100 ? '-20%' : 0,
     opacity: Math.max(
       0,
       !props.ratio ? 1 : props.ratio >= 0.5 ? 1 : props.ratio * 2 - 0.2
@@ -46,7 +48,7 @@ const BgdImg = styled.img.attrs((props) => ({
     'laptop',
     `
     width: 100%;
-    height: 100%;
+    height: 100vh;
   `
   )};
 
@@ -121,10 +123,18 @@ for (let i = 0; i <= 0.51; i += 0.01) {
 }
 
 export default function Introduction() {
+  const [show, setShow] = useState(false);
   const { ref, inView, entry } = useInView({
     threshold,
   });
   const [scrollRef, scrollContent] = useScrollContent(false);
+
+  useEffect(() => {
+    // display after entrance
+    setTimeout(() => {
+      setShow(true);
+    }, 4000);
+  }, []);
 
   return (
     <Wrap id="introduction">
@@ -134,7 +144,7 @@ export default function Introduction() {
         content={scrollContent}
       />
       <BgdHideWhiteSpace />
-      <TypingContent />
+      {show && <TypingContent />}
       <Content>
         I am a process engineer transitioning into a fullstack developer. Scroll
         down to view my coding journey, or send me a message.

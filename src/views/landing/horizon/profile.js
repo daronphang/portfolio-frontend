@@ -10,7 +10,7 @@ import useScrollContent from '../../../hooks/useScrollContent';
 
 const Wrap = styled.div.attrs((props) => ({
   style: {
-    opacity: Math.min(1, props.entry * 3),
+    opacity: Math.min(1, (props.entry || 0) * 3),
   },
 }))`
   position: relative;

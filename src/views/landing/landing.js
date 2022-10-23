@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import Timeline from './timeline/timeline';
@@ -7,12 +7,29 @@ import Introduction from './introduction/introduction';
 import Horizon from './horizon/horizon';
 import LandingMinion from './minion';
 import Projects from './projects/projects';
+import Entrance from './entrance';
 
-const Wrap = styled.div``;
+const Wrap = styled.div.attrs((props) => ({
+  style: {
+    overflow: props.overflow ? 'visible' : 'hidden',
+  },
+}))`
+  height: 100vh;
+  width: 100vw;
+`;
 
 export default function LandingPageComponent() {
+  const [overflow, setOverflow] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOverflow(true);
+    }, 4000);
+  }, []);
+
   return (
-    <Wrap>
+    <Wrap overflow={overflow}>
+      <Entrance />
       <Introduction />
       <Projects />
       <Timeline />
