@@ -10,7 +10,6 @@ Build is done on local computer, not remote server instance. Folder needs write 
 ```console
 $ npm run build
 $ rsync -avP build/ exampleuser@mydomain.com:/var/www/mydomain.com/
-$ rsync -avP build/ daronphang@daronphang.com:/var/www/daronphang.com/
 ```
 
 ## Testing
@@ -33,3 +32,11 @@ https://github.com/testing-library/react-testing-library/pull/991
 Running tests in JSDOM would not be possible as it doesn't suport GUI/layout. Need to write tests in a real browser i.e. Cypress, TestCafe, Puppeteer.
 
 https://github.com/testing-library/react-testing-library/issues/671
+
+## Examples
+
+Bepatrickdavid.com
+
+www.danuekspatzek.com/home
+
+Y78.fr/4/
