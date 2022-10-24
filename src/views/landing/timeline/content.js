@@ -6,7 +6,7 @@ import { mediaQuery, standardStyles } from '../../../utils/styles';
 
 const Wrap = styled.div`
   position: relative;
-  height: 110vh;
+  height: 150vh;
   width: 100%;
 `;
 
@@ -56,7 +56,7 @@ const StickyWrap = styled.div`
 
 const Corner = styled.div.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.7) * 4.5),
+    opacity: Math.min(1, ((props.ratio || 0) - 0.65) * 100),
   },
 }))`
   position: absolute;
@@ -115,10 +115,10 @@ const BottomCorner = styled(Corner)`
 
 const Heading = styled.span.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.7) * 4.5),
+    opacity: Math.min(1, ((props.ratio || 0) - 0.5) * 6),
     transform: `translateX(${Math.min(
       -100,
-      -190 + (props.ratio || 0) * 100
+      -190 + (props.ratio || 0) * 140
     )}%)`,
   },
 }))`
@@ -167,7 +167,7 @@ const Heading = styled.span.attrs((props) => ({
 
 const Square = styled.span.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.5) * 4),
+    opacity: Math.min(1, ((props.ratio || 0) - 0.6) * 20),
   },
 }))`
   position: absolute;
@@ -213,8 +213,8 @@ const Square = styled.span.attrs((props) => ({
 
 const ZeroDigit = styled.span.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.5) * 3),
-    transform: `translateY(${Math.min(0, -100 + (props.ratio || 0) * 140)}%)`,
+    opacity: Math.min(1, ((props.ratio || 0) - 0.5) * 6),
+    transform: `translateY(${Math.min(0, -100 + (props.ratio || 0) * 150)}%)`,
   },
 }))`
   position: absolute;
@@ -268,8 +268,8 @@ const ZeroDigit = styled.span.attrs((props) => ({
 
 const SecondDigit = styled(ZeroDigit).attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.6) * 4),
-    transform: `translateY(${Math.min(0, -100 + (props.ratio || 0) * 120)}%)`,
+    opacity: Math.min(1, ((props.ratio || 0) - 0.6) * 20),
+    transform: `translateY(${Math.min(0, -100 + (props.ratio || 0) * 150)}%)`,
   },
 }))`
   ${mediaQuery(
@@ -301,7 +301,7 @@ const SecondDigit = styled(ZeroDigit).attrs((props) => ({
 
 const Content = styled.span.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.7) * 5),
+    opacity: Math.min(1, ((props.ratio || 0) - 0.6) * 20),
   },
 }))`
   position: absolute;

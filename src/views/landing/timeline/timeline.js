@@ -5,12 +5,12 @@ import TimelineContent from './content';
 import useScrollContent from '../../../hooks/useScrollContent';
 import { mediaQuery, standardStyles } from '../../../utils/styles';
 
-// each content is 110vh, total height is 6*110 + 10 (extra) = 680vh
+// each content is 150vh, total height is 6*150 + 10 (extra) = 910vh
 const Wrap = styled.div`
   position: relative;
   background: ${standardStyles.colorPrimary};
   color: ${standardStyles.fontColorPrimary};
-  height: 680vh;
+  height: 910vh;
   text-align: center;
 `;
 

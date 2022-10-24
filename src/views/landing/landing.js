@@ -22,12 +22,12 @@ export default function LandingPageComponent() {
   useEffect(() => {
     setTimeout(() => {
       setEnableScroll(true);
-    }, 4000);
+    }, 0);
   }, []);
 
   return (
     <Wrap enableScroll={enableScroll}>
-      <Entrance />
+      {/* <Entrance /> */}
       <Introduction />
       <Projects />
       <Timeline />
