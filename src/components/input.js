@@ -1,31 +1,85 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { standardStyles } from '../utils/styles';
+import { standardStyles, mediaQuery } from '../utils/styles';
 
 // for input focus to target label, label must be AFTER input tag
 // input:focus + label
 
 const Wrap = styled.div`
   position: relative;
-  padding: 3rem 1rem 1rem 1rem;
-  min-height: 5rem;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    padding: 2rem 0.5rem 0.5rem 0.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    padding: 2.5rem 1rem 1rem 1rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    padding: 2.5rem 1rem 1rem 1rem;
+  `
+  )};
 `;
 
 const InputWrap = styled.div`
   position: relative;
   border-radius: 1rem;
   font-weight: 600;
-  height: ${(props) => (props.styles?.height ? props.styles.height : '100%')};
 `;
 
 const Label = styled.label`
   position: absolute;
-  font-size: ${standardStyles.fontSizeMedium};
   transition: 0.5s;
-  left: -2rem;
-  top: -3rem;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    left: -1rem;
+    top: -1.5rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    left: -1.5rem;
+    top: -2.5rem;
+    font-size: ${standardStyles.fontSizeNormal};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    left: -2rem;
+    top: -3rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    left: -2rem;
+    top: -3rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
 `;
 
 // invalid and valid pseudo classes are used as react-hook-form
@@ -54,15 +108,45 @@ const handleValidation = (isTouched, invalid, type) => {
 
 const inputStyles = css`
   box-sizing: border-box;
-  display: absolute;
   width: 100%;
-  height: 5rem;
+  height: 100%;
   background: ${standardStyles.quinaryColor};
   border: none;
-  border-radius: 1rem;
   z-index: 5;
-  padding: 1.5rem;
-  font-size: ${standardStyles.fontSizeMedium};
+
+  ${mediaQuery(
+    'mobile',
+    `
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    border-radius: 0.7rem;
+    padding: 1.2rem;
+    font-size: ${standardStyles.fontSizeNormal};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    border-radius: 1rem;
+    padding: 1.5rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    border-radius: 1rem;
+    padding: 1.5rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
 
   &::placeholder {
     transition: 0.5s;
@@ -77,8 +161,33 @@ const inputStyles = css`
   }
 
   &:focus + label {
-    transform: translateX(3rem);
     opacity: 1;
+
+    ${mediaQuery(
+      'mobile',
+      `
+      transform: translateX(1.5rem);
+    `
+    )};
+    ${mediaQuery(
+      'tablet',
+      `
+      transform: translateX(2rem);
+    `
+    )};
+    ${mediaQuery(
+      'laptop',
+      `
+      transform: translateX(3rem);
+    `
+    )};
+
+    ${mediaQuery(
+      'desktop',
+      `
+      transform: translateX(3rem);
+    `
+    )};
   }
 
   &:focus + label svg {
@@ -100,26 +209,80 @@ const Input = styled.input`
 
 const TextArea = styled.textarea`
   ${inputStyles}
-  height: ${(props) => (props.styles?.height ? props.styles.height : '100%')};
+  resize: none;
+  vertical-align: top;
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-  font-size: ${standardStyles.fontSizeMedium};
   opacity: 0;
-  margin-right: 1rem;
   transition: 0.5s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    margin-right: 0.5rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    margin-right: 0.7rem;
+    font-size: ${standardStyles.fontSizeNormal};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    margin-right: 1rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    margin-right: 1rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
 `;
 
 const Validation = styled.span`
   position: absolute;
   box-sizing: border-box;
-  width: 1rem;
   height: 100%;
   left: 0;
   top: 0;
   z-index: 0;
   border-radius: 1rem 0 0 1rem;
   transition: 0.5s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    width: 0.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    width: 0.8rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    width: 1rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    width: 1rem;
+  `
+  )};
 `;
 
 const ErrorMsg = styled.div`
@@ -165,6 +328,7 @@ const InputField = forwardRef(function renderInputField(props, ref) {
             styles={props.styles}
             isTouched={isTouched || props.isSubmitted}
             invalid={invalid}
+            rows={props.rows}
           ></TextArea>
         )}
         <Label htmlFor={props.id}>

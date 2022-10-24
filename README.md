@@ -1,11 +1,7 @@
-## Bug Fixes
+## Bugs
 
-### 1.0.0
-
-- Name field showing invalid with spaces.
-- Firefox displaying white space at bottom for zoomed image.
-- Profile description disappearing upon page refresh.
-- Incorrect formatting when viewed on mobile devices.
+- Mobile keyboard will push content up when input is selected; unable to use vh for container but need set either absolute values of %.
+- Using viewport for mobile would exclude address bar at the top and hence, would leave additional space when set at 100vh. Trick is to use min(window.innerheight, 100vh).
 
 ## Deployment
 
@@ -14,7 +10,6 @@ Build is done on local computer, not remote server instance. Folder needs write 
 ```console
 $ npm run build
 $ rsync -avP build/ exampleuser@mydomain.com:/var/www/mydomain.com/
-$ rsync -avP build/ daronphang@daronphang.com:/var/www/daronphang.com/
 ```
 
 ## Testing
@@ -37,3 +32,11 @@ https://github.com/testing-library/react-testing-library/pull/991
 Running tests in JSDOM would not be possible as it doesn't suport GUI/layout. Need to write tests in a real browser i.e. Cypress, TestCafe, Puppeteer.
 
 https://github.com/testing-library/react-testing-library/issues/671
+
+## Examples
+
+Bepatrickdavid.com
+
+www.danuekspatzek.com/home
+
+Y78.fr/4/

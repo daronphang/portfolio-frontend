@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import '../../utils/shared.css';
-import { standardStyles } from '../../utils/styles';
+import { standardStyles, mediaQuery } from '../../utils/styles';
 import Loader from '../loaders/loader';
 
 const Default = styled.button`
@@ -10,10 +10,38 @@ const Default = styled.button`
   box-sizing: border-box;
   border: 0.3rem solid ${standardStyles.fontColorPrimary};
   border-radius: 1.5rem;
-  padding: 1.5rem 3rem 1.5rem 3rem;
-  font-size: ${standardStyles.fontSizeMedium};
   width: fit-content;
   animation-duration: 0.3s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: ${standardStyles.fontSizeNormal};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
 
   &:hover {
     cursor: pointer;
@@ -24,12 +52,37 @@ const LoaderWrap = styled.span.attrs((props) => ({
   style: {
     opacity: props.isLoading ? 1 : 0,
     transform: `translateX(${props.isLoading ? 0 : -2}rem)`,
-    marginLeft: `${-props.size / 2}rem`,
   },
 }))`
   position: absolute;
   transition: 0.5s;
   left: 50%;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    margin-left: -0.75rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    margin-left: -1rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    margin-left: -1.5rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    margin-left: -1.5rem;
+  `
+  )};
 `;
 
 const Text = styled.span.attrs((props) => ({

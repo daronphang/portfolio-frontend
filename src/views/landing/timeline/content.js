@@ -6,7 +6,7 @@ import { mediaQuery, standardStyles } from '../../../utils/styles';
 
 const Wrap = styled.div`
   position: relative;
-  height: 110vh;
+  height: 150vh;
   width: 100%;
 `;
 
@@ -14,34 +14,99 @@ const Wrap = styled.div`
 const StickyWrap = styled.div`
   -webkit-position: sticky;
   position: sticky;
-  top: calc(50% - 30rem);
-  left: calc(50% - 57.5rem);
-  height: 60rem;
-  width: 115rem;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    top: calc(50% - 22.5rem);
+    left: calc(50% - 18rem);
+    height: 45rem;
+    width: 36rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    top: calc(50% - 25rem);
+    left: calc(50% - 27rem);
+    height: 50rem;
+    width: 54rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    top: calc(50% - 32.5rem);
+    left: calc(50% - 38rem);
+    height: 65rem;
+    width: 76rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    top: calc(50% - 30rem);
+    left: calc(50% - 57.5rem);
+    height: 60rem;
+    width: 115rem;
+  `
+  )};
 `;
 
 const Corner = styled.div.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.7) * 4.5),
+    opacity: Math.min(1, ((props.ratio || 0) - 0.65) * 100),
   },
 }))`
   position: absolute;
-  height: 12rem;
-  width: 12rem;
+  height: 130%;
   transition: 0.5s;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    width: 26rem;
+    border: 0.25rem solid ${standardStyles.fontColorPrimary};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    width: 40rem;
+    border: 0.4rem solid ${standardStyles.fontColorPrimary};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    width: 57rem;
+    border: 0.4rem solid ${standardStyles.fontColorPrimary};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    width: 88rem;
+    border: 0.5rem solid ${standardStyles.fontColorPrimary};
+  `
+  )};
 `;
 
 const TopCorner = styled(Corner)`
-  border-top: 1.5rem solid ${standardStyles.fontColorPrimary};
-  border-left: 1.5rem solid ${standardStyles.fontColorPrimary};
+  border-top: none;
+  border-right: none;
   left: 10%;
+  top: -30%;
 `;
 
 const BottomCorner = styled(Corner)`
-  border-bottom: 1.5rem solid ${standardStyles.fontColorPrimary};
-  border-right: 1.5rem solid ${standardStyles.fontColorPrimary};
+  border-bottom: none;
+  border-left: none;
   right: 10%;
   bottom: 0%;
+  bottom: -30%;
 `;
 
 // for text, need specify line-height and height to remove
@@ -50,69 +115,236 @@ const BottomCorner = styled(Corner)`
 
 const Heading = styled.span.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.7) * 4.5),
-    transform: `translateX(${Math.min(-120, -190 + (props.ratio || 0) * 75)}%)`,
+    opacity: Math.min(1, ((props.ratio || 0) - 0.5) * 6),
+    transform: `translateX(${Math.min(
+      -100,
+      -190 + (props.ratio || 0) * 140
+    )}%)`,
   },
 }))`
   position: absolute;
   transition: 0.5s;
-  font-family: Arame;
-  font-size: ${standardStyles.fontSizeVeryLarge};
-  top: 10rem;
-  height: 3rem;
-  line-height: 3rem;
+  font-family: Devant Horgen;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    font-size: 5rem;
+    top: 8rem;
+    height: 4rem;
+    line-height: 4rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: 7.5rem;
+    top: 7.5rem;
+    height: 6rem;
+    line-height: 6rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    font-size: 10rem;
+    top: 8rem;
+    height: 7rem;
+    line-height: 8rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: 13rem;
+    top: 7rem;
+    height: 9rem;
+    line-height: 10rem;
+  `
+  )};
 `;
 
 const Square = styled.span.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.5) * 4),
+    opacity: Math.min(1, ((props.ratio || 0) - 0.6) * 20),
   },
 }))`
   position: absolute;
   background: ${standardStyles.fontColorPrimary};
   transition: 0.5s;
-  height: 2rem;
-  width: 2rem;
-  top: 18rem;
+  left: 53%;
+  border-radius: 50%;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    height: 1rem;
+    width: 1rem;
+    top: 15rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    height: 1.5rem;
+    width: 1.5rem;
+    top: 16.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    height: 2rem;
+    width: 2rem;
+    top: 18rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    height: 2rem;
+    width: 2rem;
+    top: 18rem;
+  `
+  )};
 `;
 
 const ZeroDigit = styled.span.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.5) * 3),
-    transform: `translateY(${Math.min(0, -100 + (props.ratio || 0) * 140)}%)`,
+    opacity: Math.min(1, ((props.ratio || 0) - 0.5) * 6),
+    transform: `translateY(${Math.min(0, -100 + (props.ratio || 0) * 150)}%)`,
   },
 }))`
   position: absolute;
   transition: 0.5s;
-  top: 2rem;
-  height: 19rem;
-  line-height: 19rem;
-  font-family: Arame;
+  font-family: Devant Horgen;
   font-size: 25rem;
-  left: calc(50% + 2.5rem);
+  left: calc(53% + 3rem);
+
+  ${mediaQuery(
+    'mobile',
+    `
+    font-size: 18rem;
+    top: 4rem;
+    left: calc(53% + 1.5rem);
+    height: 13rem;
+    line-height: 13rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    font-size: 20rem;
+    top: 4.2rem;
+    left: calc(53% + 2rem);
+    height: 14rem;
+    line-height: 15rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    font-size: 25rem;
+    top: 3rem;
+    left: calc(53% + 3rem);
+    height: 17rem;
+    line-height: 18rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    font-size: 25rem;
+    top: 3rem;
+    left: calc(53% + 3rem);
+    height: 17rem;
+    line-height: 18rem;
+  `
+  )};
 `;
 
 const SecondDigit = styled(ZeroDigit).attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.6) * 4),
-    transform: `translateY(${Math.min(0, -100 + (props.ratio || 0) * 120)}%)`,
+    opacity: Math.min(1, ((props.ratio || 0) - 0.6) * 20),
+    transform: `translateY(${Math.min(0, -100 + (props.ratio || 0) * 150)}%)`,
   },
 }))`
-  left: calc(50% + 17rem);
+  ${mediaQuery(
+    'mobile',
+    `
+    left: calc(53% + 6.5rem);
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    left: calc(53% + 7rem);
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    left: calc(53% + 9.5rem);
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    left: calc(53% + 9.5rem);
+  `
+  )};
 `;
 
 const Content = styled.span.attrs((props) => ({
   style: {
-    opacity: Math.min(1, ((props.ratio || 0) - 0.7) * 5),
+    opacity: Math.min(1, ((props.ratio || 0) - 0.6) * 20),
   },
 }))`
   position: absolute;
-  width: 80rem;
   text-align: left;
-  left: calc(50% - 40rem);
   transition: 0.5s;
-  top: 42%;
-  font-size: ${standardStyles.fontSizeMedium};
+
+  ${mediaQuery(
+    'mobile',
+    `
+    width: 25rem;
+    left: calc(50% - 12.5rem);
+    font-size: ${standardStyles.fontSizeVerySmall};
+    top: 42%;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    width: 40rem;
+    left: calc(50% - 20rem);
+    font-size: ${standardStyles.fontSizeSmall};
+    top: 42%;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    width: 55rem;
+    left: calc(50% - 27.5rem);
+    font-size: ${standardStyles.fontSizeMedium};
+    top: 37%;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    width: 80rem;
+    left: calc(50% - 40rem);
+    font-size: ${standardStyles.fontSizeMedium};
+    top: 42%;
+  `
+  )};
 `;
 
 const threshold = [];

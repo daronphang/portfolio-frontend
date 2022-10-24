@@ -17,9 +17,37 @@ const Grid = styled.div`
   justify-self: start;
   align-items: start;
   justify-items: start;
-  font-size: ${standardStyles.fontSizeLarge};
   color: ${standardStyles.fontColorPrimary};
-  grid-template-columns: 7rem 37rem;
+
+  ${mediaQuery(
+    'mobile',
+    `
+    grid-template-columns: 3rem 15rem;
+  font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    grid-template-columns: 4.5rem 23rem;
+  font-size: ${standardStyles.fontSizeMedium};
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    grid-template-columns: 7rem 37rem;
+  font-size: ${standardStyles.fontSizeLarge};
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    grid-template-columns: 7rem 37rem;
+    font-size: ${standardStyles.fontSizeLarge};
+  `
+  )};
 `;
 
 export default function TypingContent() {

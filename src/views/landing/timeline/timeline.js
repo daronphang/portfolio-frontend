@@ -5,12 +5,12 @@ import TimelineContent from './content';
 import useScrollContent from '../../../hooks/useScrollContent';
 import { mediaQuery, standardStyles } from '../../../utils/styles';
 
-// each content is 110vh, total height is 6*110 + 10 (extra) = 680vh
+// each content is 150vh, total height is 6*150 + 10 (extra) = 910vh
 const Wrap = styled.div`
   position: relative;
   background: ${standardStyles.colorPrimary};
   color: ${standardStyles.fontColorPrimary};
-  height: 680vh;
+  height: 910vh;
   text-align: center;
 `;
 
@@ -97,7 +97,7 @@ export default function Timeline() {
   To put my theory knowledge into practice, I worked on multiple mock fullstack projects, including building a shopping app platform and stock screener.
   I explored working with CSS, Leetcode for DSA, and deep dived into OOP and design patterns, APIs, software architectures, and networking.
   At Micron, I completed the web application migration to microservices.
-  This platform averaged 366 requests daily, automating the work of engineers across Micron sites globally. 
+  This platform averaged 615 requests daily, automating the work of engineers across Micron sites globally. 
   Fullstack development calls to my passions, and I am constantly grabbing onto any other langauges, frameworks or principles that I can integrate into my coding.
   `;
 
@@ -114,16 +114,16 @@ export default function Timeline() {
       </ScrollContentWrap>
       <StickyWrap></StickyWrap>
 
-      <TimelineContent heading="prelude" digit={0} content={firstContent} />
-      <TimelineContent heading="virgin" digit={1} content={secondContent} />
-      <TimelineContent heading="foundation" digit={2} content={thirdContent} />
+      <TimelineContent heading="PRELUDE" digit={0} content={firstContent} />
+      <TimelineContent heading="VIRGIN" digit={1} content={secondContent} />
+      <TimelineContent heading="FOUNDATION" digit={2} content={thirdContent} />
       <TimelineContent
-        heading="exploration"
+        heading="EXPLORATION"
         digit={3}
         content={fourthContent}
       />
-      <TimelineContent heading="practice" digit={4} content={fifthContent} />
-      <TimelineContent heading="present" digit={5} content={sixthContent} />
+      <TimelineContent heading="PRACTICE" digit={4} content={fifthContent} />
+      <TimelineContent heading="PRESENT" digit={5} content={sixthContent} />
     </Wrap>
   );
 }
