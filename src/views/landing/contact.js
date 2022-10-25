@@ -137,6 +137,7 @@ const TextGrid = styled.div`
     `
     grid-template-columns: 10rem auto;
     margin-top: 2rem;
+    padding-top: 1.5rem;
   `
   )};
   ${mediaQuery(
@@ -144,13 +145,15 @@ const TextGrid = styled.div`
     `
     grid-template-columns: 17rem auto;
     margin-top: 3rem;
+    padding-top: 2.5rem;
   `
   )};
   ${mediaQuery(
     'laptop',
     `
     grid-template-columns: 23rem auto;
-    margin-top: 5rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
   `
   )};
 
@@ -159,6 +162,7 @@ const TextGrid = styled.div`
     `
     grid-template-columns: 30rem auto;
     margin-top: 5rem;
+    padding-top: 3rem;
   `
   )};
 `;
@@ -167,7 +171,6 @@ const PersonalDetails = styled.div`
   display: flex;
   flex-direction: column;
   transition: 1s;
-  gap: 1rem;
 
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -177,6 +180,36 @@ const PersonalDetails = styled.div`
   input[type='number'] {
     -moz-appearance: textfield;
   }
+
+  ${mediaQuery(
+    'mobile',
+    `
+    margin-right: 0.6rem;
+    gap: 2rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    margin-right: 0.8rem;
+    gap: 2.55rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    margin-right: 0.9rem;
+    gap: 3.3rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    margin-right: 1rem;
+    gap: 4.3rem;
+  `
+  )};
 `;
 
 const ButtonWrap = styled.div`
@@ -213,19 +246,19 @@ const Heading = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    font-size: ${standardStyles.fontSizeMedium};
+    font-size: ${standardStyles.fontSizeNormal};
   `
   )};
   ${mediaQuery(
     'tablet',
     `
-    font-size: ${standardStyles.fontSizeLarge};
+    font-size: ${standardStyles.fontSizeMedium};
   `
   )};
   ${mediaQuery(
     'laptop',
     `
-    font-size: ${standardStyles.fontSizeVeryLarge};
+    font-size: ${standardStyles.fontSizeLarge};
   `
   )};
 
