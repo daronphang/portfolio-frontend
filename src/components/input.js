@@ -117,7 +117,7 @@ const inputStyles = css`
     'desktop',
     `
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 1.6rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
   )};

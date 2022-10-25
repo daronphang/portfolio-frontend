@@ -145,7 +145,7 @@ const TextGrid = styled.div`
     `
     grid-template-columns: 17rem auto;
     margin-top: 3rem;
-    padding-top: 2.5rem;
+    padding-top: 2.3rem;
   `
   )};
   ${mediaQuery(
@@ -192,14 +192,14 @@ const PersonalDetails = styled.div`
     'tablet',
     `
     margin-right: 0.8rem;
-    gap: 2.55rem;
+    gap: 2.5rem;
   `
   )};
   ${mediaQuery(
     'laptop',
     `
     margin-right: 0.9rem;
-    gap: 3.3rem;
+    gap: 3rem;
   `
   )};
 
@@ -207,7 +207,7 @@ const PersonalDetails = styled.div`
     'desktop',
     `
     margin-right: 1rem;
-    gap: 4.3rem;
+    gap: 4.2rem;
   `
   )};
 `;
