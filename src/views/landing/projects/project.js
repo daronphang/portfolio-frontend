@@ -115,14 +115,22 @@ const Content = styled.div`
 `;
 
 export default function Project({ heading, content, date, left }) {
+  const [points, setPoints] = useState(null);
+
+  useEffect(() => {
+    const temp = [];
+    content.forEach((row) => temp.push(<li>{row}</li>));
+    setPoints(temp);
+  }, []);
   return (
     <Wrap left={left}>
       <HeadingWrap>
         <Heading>{heading}</Heading>
         <Date>{date}</Date>
       </HeadingWrap>
-
-      <Content>{content}</Content>
+      <Content>
+        <ul>{points}</ul>
+      </Content>
     </Wrap>
   );
 }

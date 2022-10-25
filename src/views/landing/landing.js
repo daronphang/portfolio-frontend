@@ -14,7 +14,10 @@ const Wrap = styled.div.attrs((props) => ({
     overflow: props.enableScroll ? 'visible' : 'hidden',
     height: props.enableScroll ? '100%' : `min(${window.innerHeight}px, 100vh)`,
   },
-}))``;
+}))`
+  width: 100vw;
+  position: static;
+`;
 
 export default function LandingPageComponent() {
   const [enableScroll, setEnableScroll] = useState(false);

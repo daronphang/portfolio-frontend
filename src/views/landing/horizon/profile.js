@@ -183,7 +183,7 @@ export default function HorizonProfile() {
           trigger={45}
           scrollContent={scrollContent}
           text="Python"
-          amount={75}
+          amount={70}
         />
         <SkillLevel
           trigger={50}
@@ -201,7 +201,7 @@ export default function HorizonProfile() {
           trigger={60}
           scrollContent={scrollContent}
           text="HTML"
-          amount={80}
+          amount={65}
         />
       </SkillLevelWrap>
       <SocialMediaWrap>
