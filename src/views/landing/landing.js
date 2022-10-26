@@ -16,7 +16,6 @@ const Wrap = styled.div.attrs((props) => ({
   },
 }))`
   width: 100vw;
-  position: static;
 `;
 
 export default function LandingPageComponent() {

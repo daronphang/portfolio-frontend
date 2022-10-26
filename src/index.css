@@ -12,8 +12,16 @@ body {
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
   font-size: 1.6rem;
-  overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
+
+html {
+  overflow: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+}
+
+
 
 ::-webkit-scrollbar {
   display: none;

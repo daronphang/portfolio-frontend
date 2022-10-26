@@ -1,7 +1,36 @@
 ## Bugs
 
-- Mobile keyboard will push content up when input is selected; unable to use vh for container but need set either absolute values of %.
-- Mobile calculates VH as (top bar + document + bottom bar = 100vh); trick is to use min(window.innerheight, 100vh) or (window.innerHeight)px.
+### Viewport
+
+Mobile keyboard will push content up when input fields are focused; unable to use vh for container but need set either absolute values of %.
+
+Mobile calculates VH as (top bar + document + bottom bar = 100vh); trick is to use min(window.innerheight, 100vh) or (window.innerHeight)px.
+
+
+### Scrolling
+
+For iOS, to prevent horizontal scroll, need set to both body and html.
+
+```css
+body{
+    overflow-x: hidden;
+}
+
+html {
+    overflow: hidden;
+    overflow-y: auto;
+}
+```
+
+### iOS Bounce
+
+Add CSS to prevent iOS bounce from scrolling to the bottom.
+
+```css
+div {
+    overscroll-behavior-y: none;
+}
+```
 
 ## Deployment
 
