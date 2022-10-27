@@ -60,8 +60,7 @@ export default function useAxiosRequest(
             break;
         }
       } catch (error) {
-        let msg =
-          'An unknown error has occurred while while making the request';
+        let msg = 'An unknown error has occurred while making the request';
 
         if (error.name === 'TimeoutError') {
           console.error('Timeout: The request took more than 5 seconds');
