@@ -9,32 +9,6 @@ import { standardStyles, mediaQuery } from '../utils/styles';
 
 const Wrap = styled.div`
   position: relative;
-
-  ${mediaQuery(
-    'mobile',
-    `
-    padding: 0.5rem 0.25rem 0.25rem 0.25rem;
-  `
-  )};
-  ${mediaQuery(
-    'tablet',
-    `
-    padding: 2rem 0.5rem 0.5rem 0.5rem;
-  `
-  )};
-  ${mediaQuery(
-    'laptop',
-    `
-    padding: 2.5rem 1rem 1rem 1rem;
-  `
-  )};
-
-  ${mediaQuery(
-    'desktop',
-    `
-    padding: 2.5rem 1rem 1rem 1rem;
-  `
-  )};
 `;
 
 const InputWrap = styled.div`
@@ -59,16 +33,16 @@ const Label = styled.label`
     'tablet',
     `
     left: -1.5rem;
-    top: -2.5rem;
-    font-size: ${standardStyles.fontSizeNormal};
+    top: -2rem;
+    font-size: ${standardStyles.fontSizeSmall};
   `
   )};
   ${mediaQuery(
     'laptop',
     `
     left: -2rem;
-    top: -3rem;
-    font-size: ${standardStyles.fontSizeMedium};
+    top: -2.5rem;
+    font-size: ${standardStyles.fontSizeNormal};
   `
   )};
 
@@ -118,7 +92,7 @@ const inputStyles = css`
     'mobile',
     `
     border-radius: 0.5rem;
-    padding: 0.9rem;
+    padding: 0.8rem;
     font-size: ${standardStyles.fontSizeVerySmall};
   `
   )};
@@ -126,16 +100,16 @@ const inputStyles = css`
     'tablet',
     `
     border-radius: 0.7rem;
-    padding: 1.2rem;
-    font-size: ${standardStyles.fontSizeNormal};
+    padding: 1.1rem;
+    font-size: ${standardStyles.fontSizeSmall};
   `
   )};
   ${mediaQuery(
     'laptop',
     `
     border-radius: 1rem;
-    padding: 1.5rem;
-    font-size: ${standardStyles.fontSizeMedium};
+    padding: 1.3rem;
+    font-size: ${standardStyles.fontSizeNormal};
   `
   )};
 
@@ -143,7 +117,7 @@ const inputStyles = css`
     'desktop',
     `
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 1.6rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
   )};
@@ -228,14 +202,14 @@ const Icon = styled(FontAwesomeIcon)`
     'tablet',
     `
     margin-right: 0.7rem;
-    font-size: ${standardStyles.fontSizeNormal};
+    font-size: ${standardStyles.fontSizeSmall};
   `
   )};
   ${mediaQuery(
     'laptop',
     `
     margin-right: 1rem;
-    font-size: ${standardStyles.fontSizeMedium};
+    font-size: ${standardStyles.fontSizeNormal};
   `
   )};
 

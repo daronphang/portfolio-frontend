@@ -76,17 +76,19 @@ const Spacing = styled.div`
 `;
 
 export default function Projects() {
-  const maContent = `
-  Scalable and resilient fullstack application (Microservices architecture) developed in Micron to improve productivity and facilitate the daily work of Process Engineers. 
-  Performs complex SQL queries across relational databases (Snowflake, Postgres, SQL Server),
-  triggering of asynchronous automated workflows (eliminating manual tasks),
-  data visualization of results (X-Y, bar, timeline), 
-  scheduling of jobs (CRON),
-  and integrates metrices from multiple in-house sources into a single consolidated platform that is scoped to the individual owner. 
-  Project was awarded as the Culture Champion for Q4 2022 with significant productivity gain of ~800 manhour savings per week.
-  Moreover, it was approved as a global BKM (best known method) and extended to other Micron sites (Taiwan, China, Japan and USA).
-  `;
-
+  const maContent = [
+    'Fullstack Microservices application developed in Micron (Singapore) serving as a consolidated platform for metrices integration and workflow automation that is scoped to the customization of a team member',
+    'Goal is to facilitate and streamline the daily work of Process Engineers by creating a one-stop shop portal',
+    `
+    Deploys frontend as an SPA instance (Angular) extended from an in-house framework that leverages Jenkins for CI/CD (managed separately),
+    implements RESTful APIs over HTTPS (Flask/Gin),
+    generates complex SQL dynamically (CRUD) across multiple RDBMS (Snowflake, Postgres, SQL Server),
+    triggers asynchronous automated workflows (Celery),
+    performs data visualization (Pandas/Highcharts) and job scheduling of Python scripts (CRON)
+    `,
+    'Awarded as the Culture Champion for Q4 2022 that scaled to ~615 daily requests with significant productivity gain of ~800 manhour savings per week',
+    'Approved as a global BKM (Best Known Method) and extended to other Micron sites (Taiwan, China, Japan and USA)',
+  ];
   return (
     <Wrap id="projects">
       <Heading>PROJECTS</Heading>

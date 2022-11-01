@@ -11,10 +11,12 @@ import Entrance from './entrance';
 
 const Wrap = styled.div.attrs((props) => ({
   style: {
-    overflow: props.enableScroll ? 'visible' : 'hidden',
+    overflowY: props.enableScroll ? 'visible' : 'hidden',
     height: props.enableScroll ? '100%' : `min(${window.innerHeight}px, 100vh)`,
   },
-}))``;
+}))`
+  width: 100%;
+`;
 
 export default function LandingPageComponent() {
   const [enableScroll, setEnableScroll] = useState(false);

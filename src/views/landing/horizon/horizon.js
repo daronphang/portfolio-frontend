@@ -18,6 +18,7 @@ const Wrap = styled.div`
 const ZoomBounds = styled.div`
   position: relative;
   height: 200vh;
+  overflow: clip;
 `;
 
 const ZoomWrap = styled.div.attrs((props) => ({

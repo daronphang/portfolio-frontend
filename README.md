@@ -1,7 +1,35 @@
 ## Bugs
 
-- Mobile keyboard will push content up when input is selected; unable to use vh for container but need set either absolute values of %.
-- Using viewport for mobile would exclude address bar at the top and hence, would leave additional space when set at 100vh. Trick is to use min(window.innerheight, 100vh).
+### Viewport
+
+Mobile keyboard will push content up when input fields are focused; unable to use vh for container but need set either absolute values of %.
+
+Mobile calculates VH as (top bar + document + bottom bar = 100vh); trick is to use min(window.innerheight, 100vh) or (window.innerHeight)px.
+
+
+### Overflow
+
+Zooming feature will cause content to overflow. For iOS, setting overflow to hidden in body does not prevent horizontal scrolling. Workaround is to set it for both html and body. However, this will cause sticky to not work. Alternative is to set overflow to clip.
+
+```css
+body, html {
+    overflow-x: hidden;
+}
+
+div {
+    overflow: clip;
+}
+```
+
+### iOS Bounce
+
+Add CSS to prevent iOS bounce from scrolling to the bottom.
+
+```css
+div {
+    overscroll-behavior-y: none;
+}
+```
 
 ## Deployment
 
