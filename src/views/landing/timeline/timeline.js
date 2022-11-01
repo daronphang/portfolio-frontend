@@ -62,9 +62,7 @@ export default function Timeline() {
   It seemed appropriate and safe, to pursue something I studied, but that didn't work out.
   Instead, I landed my first career in Micron as a Process Engineer.
   Although it was a steep learning curve, I worked hard and took pride in my responsibilities.
-  Authored a technical paper on a breakthrough solution that reduced process defects by 98% for a problem that was unresolved for 8 years, 
-  optimized a coating recipe with 4% Cpk improvement and 55% recovery of baseline thickness performance, and many more.
-  Through these projects, I gained strong expertise in problem-solving, data-mining and analysis.
+  Through my engineering projects, I gained strong expertise in problem-solving, data-mining and analysis.
   However, as I thought about the next chapter of my professional life, I yearned for something different.
   A career that I am passionate about and can improve the quality of people's lives through technology.
   `;
