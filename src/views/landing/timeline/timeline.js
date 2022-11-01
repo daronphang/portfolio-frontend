@@ -72,8 +72,7 @@ export default function Timeline() {
   const secondContent = `
   This was when it first started; in January 2021, I was graced with an opportunity to work on scaling up a web application project at Micron, migrating from monolith to microservices.
   Programming was something that I always wanted to pick up but found it too difficult and abstract to put into practical use.
-  Nonetheless, I was interested in giving a shot at it.
-  Kickstarted my coding journey with Python Flask.
+  Nonetheless, I was interested in giving a shot at it and kickstarted my coding journey with Python Flask.
   `;
 
   const thirdContent = `
@@ -87,7 +86,7 @@ export default function Timeline() {
 
   const fourthContent = `
   After learning the vanilla languages, I wanted to expand my horizon and take advantage of the many open-sourced frameworks and libraries that have been painstakingly developed and tested by the coding community.
-  I learned Bootstrap, React, Angular, NodeJS, ExpressJS, Gin, Celery, MongoDB, Docker.
+  I learned Bootstrap, React, Angular, NodeJS, ExpressJS, Gin, Celery, MongoDB and Docker.
   Picked up Golang and familiarized with Linux OS along the way.
   The countless documentations and articles were overwheming. 
   To make digesting of the information easier, I created a library to document my learnings, drawing understanding from different sources.

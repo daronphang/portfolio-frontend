@@ -7,18 +7,17 @@ Mobile keyboard will push content up when input fields are focused; unable to us
 Mobile calculates VH as (top bar + document + bottom bar = 100vh); trick is to use min(window.innerheight, 100vh) or (window.innerHeight)px.
 
 
-### Scrolling
+### Overflow
 
-For iOS, to prevent horizontal scroll, need set to both body and html.
+Zooming feature will cause content to overflow. For iOS, setting overflow to hidden in body does not prevent horizontal scrolling. Workaround is to set it for both html and body. However, this will cause sticky to not work. Alternative is to set overflow to clip.
 
 ```css
-body{
+body, html {
     overflow-x: hidden;
 }
 
-html {
-    overflow: hidden;
-    overflow-y: auto;
+div {
+    overflow: clip;
 }
 ```
 

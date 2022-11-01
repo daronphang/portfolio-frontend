@@ -16,11 +16,8 @@ body {
 }
 
 html {
-  overflow: hidden;
-  overflow-y: auto;
   overscroll-behavior-y: none;
 }
-
 
 
 ::-webkit-scrollbar {
