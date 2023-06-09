@@ -161,11 +161,10 @@ export default function HorizonProfile() {
   });
 
   const content = `
-  Professionally, I am an engineer by heart.
-  I enjoy the process of building and assembling: from desktop, to IKEA drawers, guitar pedalboard and web applications.
-  When not at my desk, you can find me hitting the gym, playing the drums and guitar, and reading up on finance, global news, and tech.
-  Dilligence, determination and honesty are the principles I deeply value.
-  My Christian faith is where I find hope, strength and motivation to do my best work and live a principled life.
+  I am a detail-oriented, creative and data-driven process engineer with a strong passion 
+  for lifelong learning and solving challenging problems. Diligence, determination and honesty 
+  are the principles I deeply value. When not at my desk, you can find me working out in the gym, 
+  playing the drums and guitar, and reading up on finance and tech news.
   `;
 
   return (
@@ -177,13 +176,13 @@ export default function HorizonProfile() {
           trigger={40}
           scrollContent={scrollContent}
           text="Javascript"
-          amount={75}
+          amount={80}
         />
         <SkillLevel
           trigger={45}
           scrollContent={scrollContent}
           text="Python"
-          amount={70}
+          amount={85}
         />
         <SkillLevel
           trigger={50}
@@ -195,13 +194,13 @@ export default function HorizonProfile() {
           trigger={55}
           scrollContent={scrollContent}
           text="CSS"
-          amount={70}
+          amount={75}
         />
         <SkillLevel
           trigger={60}
           scrollContent={scrollContent}
           text="HTML"
-          amount={65}
+          amount={80}
         />
       </SkillLevelWrap>
       <SocialMediaWrap>
