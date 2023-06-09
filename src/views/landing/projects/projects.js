@@ -76,18 +76,31 @@ const Spacing = styled.div`
 `;
 
 export default function Projects() {
-  const maContent = [
-    'Fullstack Microservices application developed in Micron (Singapore) serving as a consolidated platform for metrices integration and workflow automation that is scoped to the customization of a team member',
-    'Goal is to facilitate and streamline the daily work of Process Engineers by creating a one-stop shop portal',
-    `
-    Deploys frontend as an SPA instance (Angular) extended from an in-house framework that leverages Jenkins for CI/CD (managed separately),
-    implements RESTful APIs over HTTPS (Flask/Gin),
-    generates complex SQL dynamically (CRUD) across multiple RDBMS (Snowflake, Postgres, SQL Server),
-    triggers asynchronous automated workflows (Celery),
-    performs data visualization (Pandas/Highcharts) and job scheduling of Python scripts (CRON)
-    `,
-    'Awarded as the Culture Champion for Q4 2022 that scaled to ~615 daily requests with significant productivity gain of ~800 manhour savings per week',
-    'Approved as a global BKM (Best Known Method) and extended to other Micron sites (Taiwan, China, Japan and USA)',
+  const myAssistantContent = [
+    'Developed a scalable full-stack microservice web application at Micron Technology ' +
+      'that serves as a consolidated platform to improve productivity for Process Engineers ' +
+      'through workflow automation and metrices intergration',
+    'Deployed frontend as an SPA instance (Angular) that is extended from an in-house framework (Omelek)',
+    'Built backend microservices (Python, Golang) that implements an API gateway using REST (Flask, FastAPI, Gin), ' +
+      'choreographs async requests (Redis, RabbitMQ), ' +
+      'retrieves data through dynamic CRUD from SQL (Snowflake, SQL Server), ' +
+      'visualizes cleaned and transformed data (Matplotlib, Pandas, Highcharts), ' +
+      'executes async tasks using saga orchestration pattern as state machine with multi-threading (Celery), ' +
+      'and schedules CRON jobs on a daily basis',
+    'Services are deployed with Docker, automated with CI/CD (Jenkins) and monitored with ELK stack',
+    'Awarded as the Culture Champion for Q4 2022 with significant productivity gain of ' +
+      '~800 manhour savings per week',
+    'Approved as a global BKM (Best Known Method) and extended to other Micron sites ' +
+      '(Taiwan, China, Japan and USA)',
+  ];
+
+  const dynamoContent = [
+    'Developed a robust backend microservice platform (Python) that serves static HTML with Nginx, ' +
+      'implements an API gateway (FastAPI) using REST (external) and gRPC (internal), ' +
+      'utilizes a caching mechanism for large SQL queries, ' +
+      'and executes async tasks with multi-threading (Celery)',
+    'Services are deployed with Docker and monitored with ELK stack',
+    'Achieved productivity gain of ~3 manhour savings per day',
   ];
   return (
     <Wrap id="projects">
@@ -95,9 +108,13 @@ export default function Projects() {
       <Project
         heading="MYASSISTANT"
         date="APR 2021-PRESENT"
-        content={maContent}
+        content={myAssistantContent}
       />
-
+      <Project
+        heading="DYNAMO"
+        date="JAN 2023-PRESENT"
+        content={dynamoContent}
+      />
       <Spacing />
     </Wrap>
   );

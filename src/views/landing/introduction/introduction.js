@@ -168,7 +168,7 @@ export default function Introduction() {
       <BgdHideWhiteSpace />
       {show && <TypingContent />}
       <Content>
-        I am a process engineer transitioning into a fullstack developer. Scroll
+        I am a process engineer transitioning into a software developer. Scroll
         down to view my coding journey, or send me a message.
       </Content>
       <Placeholder ref={ref}></Placeholder>
