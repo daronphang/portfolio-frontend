@@ -56,8 +56,8 @@ const GlassWrap = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    width: 35rem;
-    left: calc(50% - 17.5rem);
+    width: 44rem;
+    left: calc(50% - 22rem);
 `
   )};
   ${mediaQuery(

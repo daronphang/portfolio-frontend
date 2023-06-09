@@ -9,8 +9,33 @@ const Wrap = styled.div`
   margin-top: 5rem;
   grid-template-rows: 8rem auto;
   grid-template-columns: auto;
-  padding: 2rem;
   border-left: 0.5rem solid ${standardStyles.fontColorPrimary};
+
+  ${mediaQuery(
+    'mobile',
+    `
+    padding: 0.7rem;
+  `
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+    padding: 1rem;
+  `
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+    padding: 2rem;
+  `
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+    padding: 2rem;
+  `
+  )};
 `;
 
 const HeadingWrap = styled.div`
@@ -25,7 +50,7 @@ const Heading = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    font-size: 5rem;
+    font-size: 6rem;
   `
   )};
   ${mediaQuery(
@@ -56,8 +81,8 @@ const Date = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    font-size: 2.5rem;
-    margin-left: 1rem;
+    font-size: 3rem;
+    margin-left: 1.5rem;
   `
   )};
   ${mediaQuery(

@@ -9,6 +9,8 @@ Mobile calculates VH as (top bar + document + bottom bar = 100vh); trick is to u
 
 ### Overflow
 
+When viewing on mobile devices, there is extra space on the right, and users are able to scroll horizontally. Main culprit is media query sizing; on Pixel 7, size rendered in potrait mode is 'tablet', not 'phone'.
+
 Zooming feature will cause content to overflow. For iOS, setting overflow to hidden in body does not prevent horizontal scrolling. Workaround is to set it for both html and body. However, this will cause sticky to not work. Alternative is to set overflow to clip.
 
 ```css

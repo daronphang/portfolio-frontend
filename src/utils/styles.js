@@ -21,11 +21,11 @@ export const mediaQuery = (device, styled) => {
     case 'mobile':
       return `@media (min-width: 320px) { ${styled}}`;
     case 'tablet':
-      return `@media (min-width: 480px) { ${styled}}`;
+      return `@media (min-width: 601px) { ${styled}}`;
     case 'laptop':
-      return `@media (min-width: 768px) { ${styled}}`;
+      return `@media (min-width: 769px) { ${styled}}`;
     case 'desktop':
-      return `@media (min-width: 1024px) { ${styled}}`;
+      return `@media (min-width: 1025px) { ${styled}}`;
     default:
       return '';
   }
@@ -33,7 +33,7 @@ export const mediaQuery = (device, styled) => {
 
 export const mediaSizes = {
   mobile: '320px',
-  tablet: '480px',
-  laptop: '768px',
-  desktop: '1024px',
+  tablet: '601px',
+  laptop: '769px',
+  desktop: '1025px',
 };

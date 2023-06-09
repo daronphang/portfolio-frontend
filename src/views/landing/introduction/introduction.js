@@ -14,29 +14,7 @@ deduct top position by 20vh. Set as 'absolute' so as to not take space.
 */
 
 const Wrap = styled.div`
-  ${mediaQuery(
-    'mobile',
-    `
-`
-  )};
-  ${mediaQuery(
-    'tablet',
-    `
-`
-  )};
-  ${mediaQuery(
-    'laptop',
-    `
-    position: relative;
-`
-  )};
-
-  ${mediaQuery(
-    'desktop',
-    `
-    position: relative;
-`
-  )};
+  position: relative;
 `;
 
 const BgdImg = styled.img.attrs((props) => ({
@@ -118,8 +96,8 @@ const Content = styled.div`
   ${mediaQuery(
     'tablet',
     `
-    width: 37rem;
-    font-size: ${standardStyles.fontSizeLarge};
+    width: 25rem;
+    font-size: ${standardStyles.fontSizeMedium};
   `
   )};
   ${mediaQuery(

@@ -37,6 +37,39 @@ const Wrap = styled.div`
   )};
 `;
 
+const ProjectsWrap = styled.div`
+  ${mediaQuery(
+    'mobile',
+    `
+  width: 44rem;
+  margin-left: calc(50% - 22rem);
+  
+`
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+  width: 40rem;
+  margin-left: calc(50% - 20rem);
+`
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+  width: 55rem;
+  margin-left: calc(50% - 27.5rem);
+`
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+  width: 80rem;
+  margin-left: calc(50% - 40rem);
+`
+  )};
+`;
+
 const Heading = styled.div`
   font-weight: 500;
   color: ${standardStyles.fontColorPrimary};
@@ -46,7 +79,7 @@ const Heading = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    font-size: 8rem;
+    font-size: 9rem;
   `
   )};
   ${mediaQuery(
@@ -104,17 +137,20 @@ export default function Projects() {
   ];
   return (
     <Wrap id="projects">
-      <Heading>PROJECTS</Heading>
-      <Project
-        heading="MYASSISTANT"
-        date="APR 2021-PRESENT"
-        content={myAssistantContent}
-      />
-      <Project
-        heading="DYNAMO"
-        date="JAN 2023-PRESENT"
-        content={dynamoContent}
-      />
+      <ProjectsWrap>
+        <Heading>PROJECTS</Heading>
+        <Project
+          heading="MYASSISTANT"
+          date="APR 2021-PRESENT"
+          content={myAssistantContent}
+        />
+        <Project
+          heading="DYNAMO"
+          date="JAN 2023-PRESENT"
+          content={dynamoContent}
+        />
+      </ProjectsWrap>
+
       <Spacing />
     </Wrap>
   );
