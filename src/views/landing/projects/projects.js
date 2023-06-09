@@ -41,8 +41,8 @@ const ProjectsWrap = styled.div`
   ${mediaQuery(
     'mobile',
     `
-  width: 25rem;
-  margin-left: calc(50% - 12.5rem);
+  width: 44rem;
+  margin-left: calc(50% - 22rem);
   
 `
   )};
@@ -79,7 +79,7 @@ const Heading = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    font-size: 8rem;
+    font-size: 9rem;
   `
   )};
   ${mediaQuery(

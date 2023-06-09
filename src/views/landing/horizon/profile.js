@@ -34,10 +34,10 @@ const Content = styled.div`
     'mobile',
     `
     top: 5%;
-    width: 25rem;
+    width: 30rem;
     padding: 1.5rem;
-    font-size: ${standardStyles.fontSizeVerySmall};
-    left: calc(50% - 12.5rem);
+    font-size: ${standardStyles.fontSizeSmall};
+    left: calc(50% - 15rem);
   `
   )};
   ${mediaQuery(
@@ -87,7 +87,7 @@ const SocialMediaWrap = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    top: calc(30% + 25rem);
+    top: calc(30% + 30rem);
     left: calc(10% + 1rem);
   `
   )};

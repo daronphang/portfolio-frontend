@@ -19,7 +19,7 @@ const MinionWrap = styled.div`
   ${mediaQuery(
     'mobile',
     `
-    left: calc(55% - 18rem);
+    left: calc(50% - 20rem);
   `
   )};
   ${mediaQuery(
@@ -51,9 +51,9 @@ const Text = styled.div`
     'mobile',
     `
     top: 30%;
-    left: 55%;
+    left: 50%;
     font-size: ${standardStyles.fontSizeSmall};
-    width: 15rem;
+    width: 20rem;
   `
   )};
   ${mediaQuery(

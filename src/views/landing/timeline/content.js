@@ -19,9 +19,9 @@ const StickyWrap = styled.div`
     'mobile',
     `
     top: calc(50% - 22.5rem);
-    left: calc(50% - 18rem);
+    left: calc(50% - 23rem);
     height: 45rem;
-    width: 36rem;
+    width: 46rem;
   `
   )};
   ${mediaQuery(
@@ -66,8 +66,8 @@ const Corner = styled.div.attrs((props) => ({
   ${mediaQuery(
     'mobile',
     `
-    width: 26rem;
-    border: 0.25rem solid ${standardStyles.fontColorPrimary};
+    width: 35rem;
+    border: 0.3rem solid ${standardStyles.fontColorPrimary};
   `
   )};
   ${mediaQuery(
@@ -129,8 +129,8 @@ const Heading = styled.span.attrs((props) => ({
   ${mediaQuery(
     'mobile',
     `
-    font-size: 5rem;
-    top: 8rem;
+    font-size: 6.5rem;
+    top: 8.5rem;
     height: 4rem;
     line-height: 4rem;
   `
@@ -311,9 +311,9 @@ const Content = styled.span.attrs((props) => ({
   ${mediaQuery(
     'mobile',
     `
-    width: 25rem;
-    left: calc(50% - 12.5rem);
-    font-size: ${standardStyles.fontSizeVerySmall};
+    width: 32rem;
+    left: calc(50% - 16rem);
+    font-size: ${standardStyles.fontSizeSmall};
     top: 42%;
   `
   )};
