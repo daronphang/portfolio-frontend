@@ -25,7 +25,13 @@ const Input = styled.input`
       opacity: 1;
 
       ${mediaQuery(
-        'mobile',
+        'ios',
+        `
+        transform: translate(-4rem, -3rem);
+      `
+      )};
+      ${mediaQuery(
+        'android',
         `
         transform: translate(-4rem, -3rem);
       `
@@ -56,7 +62,13 @@ const Input = styled.input`
       opacity: 1;
 
       ${mediaQuery(
-        'mobile',
+        'ios',
+        `
+        transform: translate(4rem, -3rem);
+      `
+      )};
+      ${mediaQuery(
+        'android',
         `
         transform: translate(4rem, -3rem);
       `
@@ -87,7 +99,13 @@ const Input = styled.input`
       opacity: 1;
 
       ${mediaQuery(
-        'mobile',
+        'ios',
+        `
+        transform: translate(4rem, 3rem);
+      `
+      )};
+      ${mediaQuery(
+        'android',
         `
         transform: translate(4rem, 3rem);
       `
@@ -117,7 +135,13 @@ const Input = styled.input`
       transition-delay: 0.75s;
       opacity: 1;
       ${mediaQuery(
-        'mobile',
+        'ios',
+        `
+        transform: translate(-4rem, 3rem);
+      `
+      )};
+      ${mediaQuery(
+        'android',
         `
         transform: translate(-4rem, 3rem);
       `
@@ -157,7 +181,16 @@ const Label = styled.label`
   z-index: 2;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    height: 3.5rem;
+    width: 3.5rem;
+    gap: 0.6rem;
+    border: 0.3rem solid ${standardStyles.fontColorPrimary};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     height: 3.5rem;
     width: 3.5rem;
@@ -204,7 +237,14 @@ const Line = styled.span`
   transition: 0.5s;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    height: 0.1rem;
+    width: 2rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     height: 0.1rem;
     width: 2rem;
@@ -245,7 +285,14 @@ const IconsWrap = styled.div`
   position: absolute;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    height: 4rem;
+    width: 4rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     height: 4rem;
     width: 4rem;
@@ -286,7 +333,14 @@ const IconWrap = styled.span`
   transition: 1s;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    height: 4rem;
+    width: 4rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     height: 4rem;
     width: 4rem;
@@ -323,7 +377,13 @@ const StyledIcon = styled(FontAwesomeIcon)`
   color: #aeabab;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    font-size: 3rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     font-size: 3rem;
   `

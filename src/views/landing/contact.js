@@ -24,7 +24,13 @@ const Wrap = styled.div`
   color: ${standardStyles.fontColorPrimary};
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    height: 100%;
+`
+  )};
+  ${mediaQuery(
+    'android',
     `
     height: 100%;
 `
@@ -54,7 +60,14 @@ const GlassWrap = styled.div`
   position: relative;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    width: 35rem;
+    left: calc(50% - 17.5rem);
+`
+  )};
+  ${mediaQuery(
+    'android',
     `
     width: 44rem;
     left: calc(50% - 22rem);
@@ -98,7 +111,14 @@ const ContactWrap = styled.div.attrs((props) => ({
   width: 100%;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    font-size: ${standardStyles.fontSizeSmall};
+    padding: 0.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     font-size: ${standardStyles.fontSizeSmall};
     padding: 0.5rem;
@@ -133,7 +153,15 @@ const TextGrid = styled.div`
   position: relative;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    grid-template-columns: 10rem auto;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     grid-template-columns: 10rem auto;
     margin-top: 2rem;
@@ -182,7 +210,14 @@ const PersonalDetails = styled.div`
   }
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    margin-right: 0.6rem;
+    gap: 2rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     margin-right: 0.6rem;
     gap: 2rem;
@@ -214,7 +249,13 @@ const PersonalDetails = styled.div`
 
 const ButtonWrap = styled.div`
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    margin-top: 1.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     margin-top: 1.5rem;
   `
@@ -244,7 +285,13 @@ const Heading = styled.div`
   text-align: left;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    font-size: ${standardStyles.fontSizeNormal};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     font-size: ${standardStyles.fontSizeNormal};
   `

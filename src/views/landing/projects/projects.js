@@ -11,7 +11,13 @@ const Wrap = styled.div`
   background: ${standardStyles.colorPrimary};
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    padding: 2rem 5rem 5rem 5rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     padding: 2rem 5rem 5rem 5rem;
   `
@@ -39,7 +45,15 @@ const Wrap = styled.div`
 
 const ProjectsWrap = styled.div`
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+  width: 32rem;
+  margin-left: calc(50% - 16rem);
+  
+`
+  )};
+  ${mediaQuery(
+    'android',
     `
   width: 44rem;
   margin-left: calc(50% - 22rem);
@@ -77,7 +91,13 @@ const Heading = styled.div`
   text-decoration: underline;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    font-size: 8rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     font-size: 9rem;
   `

@@ -16,9 +16,15 @@ const Wrap = styled.div.attrs((props) => ({
   transition: 0.5s;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
     `
   font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'android',
+    `
+  font-size: ${standardStyles.fontSizeSmall};
   `
   )};
   ${mediaQuery(

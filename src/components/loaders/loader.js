@@ -13,7 +13,16 @@ const Circle = styled.div`
   animation: ${rotate} 1s ease-in-out infinite;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 0.2rem solid ${standardStyles.colorPrimary};
+    border-bottom-color: transparent;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     height: 1.5rem;
     width: 1.5rem;

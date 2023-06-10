@@ -18,8 +18,10 @@ export const standardStyles = {
 
 export const mediaQuery = (device, styled) => {
   switch (device) {
-    case 'mobile':
+    case 'ios':
       return `@media (min-width: 320px) { ${styled}}`;
+    case 'android':
+      return `@media (min-width: 481px) { ${styled}}`;
     case 'tablet':
       return `@media (min-width: 601px) { ${styled}}`;
     case 'laptop':
@@ -32,7 +34,8 @@ export const mediaQuery = (device, styled) => {
 };
 
 export const mediaSizes = {
-  mobile: '320px',
+  ios: '320px',
+  android: '481px',
   tablet: '601px',
   laptop: '769px',
   desktop: '1025px',

@@ -12,7 +12,13 @@ const Wrap = styled.div`
   border-left: 0.5rem solid ${standardStyles.fontColorPrimary};
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    padding: 0.7rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     padding: 0.7rem;
   `
@@ -48,7 +54,13 @@ const Heading = styled.div`
   font-family: Devant Horgen;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    font-size: 5rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     font-size: 6rem;
   `
@@ -79,7 +91,14 @@ const Date = styled.div`
   font-family: Devant Horgen;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    font-size: 2.5rem;
+    margin-left: 1rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     font-size: 3rem;
     margin-left: 1.5rem;
@@ -113,7 +132,13 @@ const Content = styled.div`
   color: ${standardStyles.fontColorPrimary};
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     font-size: ${standardStyles.fontSizeSmall};
   `

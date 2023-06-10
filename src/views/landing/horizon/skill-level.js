@@ -12,7 +12,13 @@ const Wrap = styled.div.attrs((props) => ({
   transition: 1s;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    margin-top: 2rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     margin-top: 2rem;
   `
@@ -45,7 +51,14 @@ const SkillBarWrap = styled.div`
   overflow: hidden;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    width: 12rem;
+    height: 1rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     width: 12rem;
     height: 1rem;
@@ -90,7 +103,13 @@ const SkillBar = styled.span.attrs((props) => ({
   left: -100%;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    height: 1rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     height: 1rem;
   `
@@ -123,7 +142,14 @@ const Text = styled.div`
   color: ${standardStyles.fontColorPrimary};
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    top: -1.5rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     top: -1.5rem;
     font-size: ${standardStyles.fontSizeVerySmall};

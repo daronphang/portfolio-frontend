@@ -13,9 +13,7 @@ after scrolling certain amount (20vh). To prevent image from starting at top, ne
 deduct top position by 20vh. Set as 'absolute' so as to not take space.
 */
 
-const Wrap = styled.div`
-  position: relative;
-`;
+const Wrap = styled.div``;
 
 const BgdImg = styled.img.attrs((props) => ({
   style: {
@@ -31,7 +29,14 @@ const BgdImg = styled.img.attrs((props) => ({
   object-fit: cover;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    width: 100%;
+    height: ${window.innerHeight}px;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     width: 100%;
     height: ${window.innerHeight}px;
@@ -87,7 +92,14 @@ const Content = styled.div`
   color: ${standardStyles.fontColorPrimary};
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    width: 25rem;
+    font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     width: 25rem;
     font-size: ${standardStyles.fontSizeMedium};
