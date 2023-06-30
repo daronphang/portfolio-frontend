@@ -132,7 +132,7 @@ export default function Projects() {
   const myAssistantContent = [
     'Developed a scalable full-stack microservice web application at Micron Technology ' +
       'that serves as a consolidated platform to improve productivity for Process Engineers ' +
-      'through workflow automation and metrices intergration',
+      'through workflow automation and metrices integration',
     'Deployed frontend as an SPA instance (Angular) that is extended from an in-house framework (Omelek)',
     'Built backend microservices (Python, Golang) that implements an API gateway using REST (Flask, FastAPI, Gin), ' +
       'choreographs async requests (Redis, RabbitMQ), ' +
