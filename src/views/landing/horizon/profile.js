@@ -31,7 +31,17 @@ const Content = styled.div`
   opacity: 0.9;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    top: 5%;
+    width: 30rem;
+    padding: 1.5rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+    left: calc(50% - 15rem);
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     top: 5%;
     width: 30rem;
@@ -85,7 +95,14 @@ const SocialMediaWrap = styled.div`
   position: absolute;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    top: calc(30% + 25rem);
+    left: calc(10% + 1rem);
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     top: calc(30% + 30rem);
     left: calc(10% + 1rem);
@@ -119,7 +136,14 @@ const SkillLevelWrap = styled.div`
   position: absolute;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    top: 40%;
+    left: 5%;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     top: 40%;
     left: 5%;

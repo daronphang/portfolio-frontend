@@ -14,7 +14,14 @@ const Default = styled.button`
   animation-duration: 0.3s;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     padding: 0.5rem 1.5rem 0.5rem 1.5rem;
     font-size: ${standardStyles.fontSizeSmall};
@@ -59,7 +66,13 @@ const LoaderWrap = styled.span.attrs((props) => ({
   left: 50%;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    margin-left: -0.75rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     margin-left: -0.75rem;
   `

@@ -17,7 +17,13 @@ const MinionWrap = styled.div`
   top: 45%;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    left: calc(55% - 17rem);
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     left: calc(50% - 20rem);
   `
@@ -48,7 +54,16 @@ const Text = styled.div`
   height: 100%;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    top: 30%;
+    left: 55%;
+    font-size: ${standardStyles.fontSizeVerySmall};
+    width: 15rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     top: 30%;
     left: 50%;

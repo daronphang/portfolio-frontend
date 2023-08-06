@@ -22,7 +22,15 @@ const Label = styled.label`
   transition: 0.5s;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    left: -1rem;
+    top: -1.5rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     left: -1rem;
     top: -1.5rem;
@@ -89,7 +97,15 @@ const inputStyles = css`
   z-index: 5;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     border-radius: 0.5rem;
     padding: 0.8rem;
@@ -138,7 +154,13 @@ const inputStyles = css`
     opacity: 1;
 
     ${mediaQuery(
-      'mobile',
+      'ios',
+      `
+      transform: translateX(1.5rem);
+    `
+    )};
+    ${mediaQuery(
+      'android',
       `
       transform: translateX(1.5rem);
     `
@@ -192,7 +214,14 @@ const Icon = styled(FontAwesomeIcon)`
   transition: 0.5s;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    margin-right: 0.5rem;
+    font-size: ${standardStyles.fontSizeVerySmall};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     margin-right: 0.5rem;
     font-size: ${standardStyles.fontSizeVerySmall};
@@ -233,7 +262,13 @@ const Validation = styled.span`
   transition: 0.5s;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    width: 0.5rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     width: 0.5rem;
   `

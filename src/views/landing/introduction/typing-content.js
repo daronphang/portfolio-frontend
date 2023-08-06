@@ -20,7 +20,14 @@ const Grid = styled.div`
   color: ${standardStyles.fontColorPrimary};
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    grid-template-columns: 3rem 15rem;
+  font-size: ${standardStyles.fontSizeSmall};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     grid-template-columns: 3rem 15rem;
   font-size: ${standardStyles.fontSizeSmall};

@@ -16,7 +16,16 @@ const StickyWrap = styled.div`
   position: sticky;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    top: calc(50% - 22.5rem);
+    left: calc(50% - 18rem);
+    height: 45rem;
+    width: 36rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     top: calc(50% - 22.5rem);
     left: calc(50% - 23rem);
@@ -64,7 +73,14 @@ const Corner = styled.div.attrs((props) => ({
   transition: 0.5s;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    width: 26rem;
+    border: 0.3rem solid ${standardStyles.fontColorPrimary};
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     width: 35rem;
     border: 0.3rem solid ${standardStyles.fontColorPrimary};
@@ -127,7 +143,16 @@ const Heading = styled.span.attrs((props) => ({
   font-family: Devant Horgen;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    font-size: 5rem;
+    top: 8rem;
+    height: 4rem;
+    line-height: 4rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     font-size: 6.5rem;
     top: 8.5rem;
@@ -177,7 +202,15 @@ const Square = styled.span.attrs((props) => ({
   border-radius: 50%;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    height: 1rem;
+    width: 1rem;
+    top: 15rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     height: 1rem;
     width: 1rem;
@@ -224,7 +257,17 @@ const ZeroDigit = styled.span.attrs((props) => ({
   left: calc(53% + 3rem);
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    font-size: 18rem;
+    top: 4rem;
+    left: calc(53% + 1.5rem);
+    height: 13rem;
+    line-height: 13rem;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     font-size: 18rem;
     top: 4rem;
@@ -273,7 +316,13 @@ const SecondDigit = styled(ZeroDigit).attrs((props) => ({
   },
 }))`
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    left: calc(53% + 6.5rem);
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     left: calc(53% + 6.5rem);
   `
@@ -309,7 +358,16 @@ const Content = styled.span.attrs((props) => ({
   transition: 0.5s;
 
   ${mediaQuery(
-    'mobile',
+    'ios',
+    `
+    width: 25rem;
+    left: calc(50% - 12.5rem);
+    font-size: ${standardStyles.fontSizeVerySmall};
+    top: 42%;
+  `
+  )};
+  ${mediaQuery(
+    'android',
     `
     width: 32rem;
     left: calc(50% - 16rem);
