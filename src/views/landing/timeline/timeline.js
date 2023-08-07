@@ -78,7 +78,7 @@ export default function Timeline() {
   Behind the scenes, programming has catalyzed societal and technological advancements.
   We are hopelessly dependent on it.
   The monumental impact programming can create piqued my interest and I delved into it. 
-  Subsequently, I dedicated many hours building foundational knowledge in vanilla Python, Javscript, CSS, HTML and SQL.
+  Subsequently, I dedicated many hours building foundational knowledge in vanilla Python, Javascript, CSS, HTML and SQL.
   Udemy was exceptionally helpful.
   `;
 

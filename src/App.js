@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -31,6 +31,7 @@ library.add(
 
 import './App.css';
 import LandingPageComponent from './views/landing/landing';
+import SnakeComponent from './views/snake/snake';
 import NavBar from './components/navbar/navbar';
 import CreateReactPortal from './utils/create-portal';
 import Modal from './features/modal/modal';
@@ -42,10 +43,11 @@ const Wrap = styled.div``;
 function App() {
   const modalShow = useSelector(selectModalShow);
   const modalSize = useSelector(selectModalSize);
+  const location = useLocation();
 
   return (
     <Wrap>
-      <NavBar></NavBar>
+      {location.pathname == '/' && <NavBar></NavBar>}
 
       {modalShow && (
         <CreateReactPortal width={25} wrapperId="react-portal-modal">
@@ -56,6 +58,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPageComponent />} />
         <Route path="*" element={<LandingPageComponent />} />
+        <Route path="/snake" element={<SnakeComponent />} />
       </Routes>
     </Wrap>
   );
