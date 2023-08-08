@@ -109,7 +109,7 @@ export const Header = styled.div`
   ${mediaQuery(
     'desktop',
     `
-    font-size: 4rem;
+    font-size: 3.5rem;
     `
   )};
 `;
