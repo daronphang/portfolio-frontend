@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { GAME_STATES, Menu, Header, Button } from './models';
@@ -10,23 +10,21 @@ const CONTROLS = {
   SPACE: ' ',
 };
 
-export default function SnakeMenuComponent({ handleGameState }) {
+export default function SnakeMenuComponent({ keyDown, handleGameState }) {
   const [activeId, setActiveId] = useState('start-game');
   const activeNode = useRef(null);
   const navigate = useNavigate();
+  const testing = useCallback(() => {
+    console.log('hello');
+  }, [keyDown]);
 
   useEffect(() => {
     initNodes();
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
   }, []);
 
-  const handleKeyDown = (event) => {
+  useEffect(() => {
     let node = activeNode.current;
-    switch (event.key) {
+    switch (keyDown) {
       case CONTROLS.UP:
         node = node.prev;
         setActiveId(node.id);
@@ -43,7 +41,7 @@ export default function SnakeMenuComponent({ handleGameState }) {
         else navigate('/');
         break;
     }
-  };
+  }, [keyDown]);
 
   const initNodes = () => {
     const start = new DoublyLinkedListNode('start-game');

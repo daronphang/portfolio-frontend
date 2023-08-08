@@ -79,7 +79,6 @@ export const Menu = styled.div`
 
 export const Header = styled.div`
   font-family: RetroGaming;
-  color: #33ecf1;
   margin-bottom: 3rem;
   ${mediaQuery(
     'ios',
@@ -109,7 +108,7 @@ export const Header = styled.div`
   ${mediaQuery(
     'desktop',
     `
-    font-size: 3.5rem;
+    font-size: 3rem;
     `
   )};
 `;
@@ -121,19 +120,19 @@ export const Button = styled.button.attrs((props) => ({
   font-family: RetroGaming;
   margin-bottom: 1rem;
   width: fit-content;
-  color: #f0f967;
   text-align: center;
   position: relative;
+  color: #b6b6b2;
 
   &.active {
-    color: #37f840;
+    color: ${standardStyles.colorPrimary};
   }
 
   &.active:before {
     content: '';
     position: absolute;
     font-size: 2.5rem;
-    border: solid #37f840;
+    border: solid ${standardStyles.colorPrimary};
     border-width: 0 0.3rem 0.3rem 0;
     display: inline-block;
     padding: 0.3rem;
@@ -147,7 +146,7 @@ export const Button = styled.button.attrs((props) => ({
     content: '';
     position: absolute;
     font-size: 2.5rem;
-    border: solid #37f840;
+    border: solid ${standardStyles.colorPrimary};
     border-width: 0 0.3rem 0.3rem 0;
     display: inline-block;
     padding: 0.3rem;

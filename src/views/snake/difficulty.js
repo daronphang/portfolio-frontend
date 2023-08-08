@@ -10,6 +10,7 @@ const CONTROLS = {
 };
 
 export default function SnakeDifficultyComponent({
+  keyDown,
   handleDifficulty,
   handleGameState,
 }) {
@@ -18,16 +19,11 @@ export default function SnakeDifficultyComponent({
 
   useEffect(() => {
     initNodes();
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
   }, []);
 
-  const handleKeyDown = (event) => {
+  useEffect(() => {
     let node = activeNode.current;
-    switch (event.key) {
+    switch (keyDown) {
       case CONTROLS.UP:
         node = node.prev;
         setActiveId(node.id);
@@ -43,7 +39,7 @@ export default function SnakeDifficultyComponent({
         handleGameState(GAME_STATES.START);
         break;
     }
-  };
+  }, [keyDown]);
 
   const initNodes = () => {
     const easy = new DoublyLinkedListNode('easy-difficulty', DIFFICULTY.EASY);
