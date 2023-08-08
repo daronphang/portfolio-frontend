@@ -8,17 +8,23 @@ import backgroundImg from '../../../images/intro-background.jpg';
 import TypingContent from './typing-content';
 
 /*
+Scrolling is only enabled after entrance is completed.
+For background image, as it takes 100% height, need to set as fixed first
+
 Idea is to display background image that is scrollable and set it to 'fixed'
 after scrolling certain amount (20vh). To prevent image from starting at top, need to
 deduct top position by 20vh. Set as 'absolute' so as to not take space.
+
+bgImg position: on page load -> fixed -> entrance done -> absolute -> fixed
 */
 
 const Wrap = styled.div``;
 
 const BgdImg = styled.img.attrs((props) => ({
   style: {
-    position: props.content === 100 ? 'fixed' : 'absolute',
-    top: props.content === 100 ? `-20vh` : 0,
+    position:
+      props.content === 100 ? 'fixed' : props.show ? 'absolute' : 'fixed',
+    top: props.content === 100 ? '-20vh' : 0,
     opacity: Math.max(
       0,
       !props.ratio ? 1 : props.ratio >= 0.5 ? 1 : props.ratio * 2 - 0.2
@@ -52,16 +58,16 @@ const BgdImg = styled.img.attrs((props) => ({
   ${mediaQuery(
     'laptop',
     `
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    height: auto;
   `
   )};
 
   ${mediaQuery(
     'desktop',
     `
+    width: 100vw;
     height: auto;
-    width: 100%;
   `
   )};
 `;
@@ -151,6 +157,7 @@ export default function Introduction() {
   return (
     <Wrap id="introduction">
       <BgdImg
+        show={show}
         src={backgroundImg}
         ratio={entry?.intersectionRatio}
         content={scrollContent}

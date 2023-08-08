@@ -33,16 +33,16 @@ const GameBoy = styled.div`
   ${mediaQuery(
     'ios',
     `
-    height: 95rem;
-    width: 55rem;
-    padding: 3rem;
+    height: 70rem;
+    width: 36rem;
+    padding: 1.5rem;
   `
   )}
   ${mediaQuery(
     'android',
     `
-    height: 70rem;
-    width: 40rem;
+    height: 74rem;
+    width: 36rem;
     padding: 1.5rem;
   `
   )}
