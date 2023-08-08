@@ -3,14 +3,22 @@ import styled from 'styled-components';
 
 import { standardStyles, mediaQuery } from '../../utils/styles';
 
+export const CONTROLS = {
+  UP: 'ArrowUp',
+  DOWN: 'ArrowDown',
+  LEFT: 'ArrowLeft',
+  RIGHT: 'ArrowRight',
+  SPACE: ' ',
+};
+
 const Wrapper = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #d8d8d8;
-  padding: 2rem;
+  background: #f5f5f5;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 const GameBoy = styled.div`
@@ -25,29 +33,33 @@ const GameBoy = styled.div`
   ${mediaQuery(
     'ios',
     `
-    height: 50rem;
-    width: 40rem;
+    height: 95rem;
+    width: 55rem;
+    padding: 3rem;
   `
   )}
   ${mediaQuery(
     'android',
     `
-    height: 50rem;
+    height: 70rem;
     width: 40rem;
+    padding: 1.5rem;
   `
   )}
   ${mediaQuery(
     'tablet',
     `
-    height: 50rem;
+    height: 77rem;
     width: 40rem;
+    padding: 2rem;
   `
   )}
   ${mediaQuery(
     'laptop',
     `
-    height: 50rem;
-    width: 40rem;
+    height: 90rem;
+    width: 50rem;
+    padding: 2rem;
   `
   )}
   ${mediaQuery(
@@ -72,32 +84,36 @@ const ScreenWrapper = styled.div`
   ${mediaQuery(
     'ios',
     `
-    height: 10rem;
+    height: 39rem;
+    padding: 2rem;
 `
   )}
   ${mediaQuery(
     'android',
     `
-    height: 10rem;
+    height: 39rem;
+    padding: 2rem;
 `
   )}
 ${mediaQuery(
     'tablet',
     `
-    height: 10rem;
+    height: 40rem;
+    padding: 2rem;
 `
   )}
 ${mediaQuery(
     'laptop',
     `
-    height: 10rem;
+    height: 45rem;
+    padding: 3rem;
 `
   )}
 ${mediaQuery(
     'desktop',
     `
-  height: 45rem;
-  padding: 3rem;
+    height: 45rem;
+    padding: 3rem;
 `
   )}
 `;
@@ -108,19 +124,19 @@ const Screen = styled.div`
   ${mediaQuery(
     'ios',
     `
-    height: 37rem;
+    height: 31rem;
 `
   )}
   ${mediaQuery(
     'android',
     `
-    height: 37rem;
+    height: 33rem;
 `
   )}
 ${mediaQuery(
     'tablet',
     `
-    height: 37rem;
+    height: 34rem;
 `
   )}
 ${mediaQuery(
@@ -132,7 +148,7 @@ ${mediaQuery(
 ${mediaQuery(
     'desktop',
     `
-  height: 37rem;
+    height: 37rem;
 `
   )}
 `;
@@ -141,8 +157,42 @@ const MovementWrapper = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
-  left: -12rem;
-  top: 8rem;
+
+  ${mediaQuery(
+    'ios',
+    `
+    left: -9rem;
+    top: 8rem;
+    `
+  )}
+  ${mediaQuery(
+    'android',
+    `
+    left: -9rem;
+    top: 8rem;
+    `
+  )}
+    ${mediaQuery(
+    'tablet',
+    `
+    left: -9rem;
+    top: 8rem;
+    `
+  )}
+    ${mediaQuery(
+    'laptop',
+    `
+    left: -12rem;
+    top: 8rem;
+    `
+  )}
+    ${mediaQuery(
+    'desktop',
+    `
+    left: -12rem;
+    top: 8rem;
+    `
+  )}
 `;
 
 const FlexDiv = styled.div`
@@ -151,116 +201,138 @@ const FlexDiv = styled.div`
 `;
 
 const Text = styled.span`
-  display: inline-block;
   text-shadow: -1px -1px 1.2px rgb(255 255 255 / 50%),
     1px 1px 1px rgb(1 1 1 / 7%);
 
   ${mediaQuery(
     'ios',
     `
-        font-size: 4rem;
-        margin-left: 1.5rem;
+    font-size: 3rem;
+    margin-left: 0.5rem;
     `
   )}
   ${mediaQuery(
     'android',
     `
-        font-size: 4rem;
-        margin-left: 1.5rem;
+    font-size: 3rem;
+    margin-left: 0.5rem;
     `
   )}
     ${mediaQuery(
     'tablet',
     `
-        font-size: 4rem;
-        margin-left: 1.5rem;
+    font-size: 2rem;
+    margin-left: 0.5rem;
     `
   )}
     ${mediaQuery(
     'laptop',
     `
-        font-size: 4rem;
-        margin-left: 1.5rem;
+    font-size: 3rem;
+    margin-left: 0.5rem;
     `
   )}
     ${mediaQuery(
     'desktop',
     `
-        font-size: 3rem;
-        margin-left: 1.7rem;
-        margin-top: 0.5rem;
+    font-size: 3rem;
+    margin-left: 0.5rem;
     `
   )}
 `;
 
-const MovementButton = styled.div`
+const MovementButton = styled.button`
   position: relative;
   background: ${standardStyles.colorPrimary};
+  cursor: pointer;
+
+  &:active {
+    border: none;
+    box-shadow: inset 0px 0px 5px -1px rgb(255 255 255 / 50%),
+      inset -3px -3px 5px -1px rgb(0 0 0 / 99%),
+      1px 1px 1px 2px rgb(0 0 0 / 80%), 2.5px 5px 5px 1px rgb(0 0 0 / 90%);
+  }
 
   ${mediaQuery(
     'ios',
     `
-    height: 10rem;
+    height: 5rem;
     width: 5rem;
 `
   )}
   ${mediaQuery(
     'android',
     `
-    height: 10rem;
+    height: 5rem;
     width: 5rem;
 `
   )}
       ${mediaQuery(
     'tablet',
     `
-    height: 10rem;
-    width: 5rem;
+    height: 4rem;
+    width: 4rem;
 `
   )}
       ${mediaQuery(
     'laptop',
     `
-    height: 10rem;
+    height: 5rem;
     width: 5rem;
 `
   )}
       ${mediaQuery(
     'desktop',
     `
-  height: 5rem;
-  width: 5rem;
+    height: 5rem;
+    width: 5rem;
 `
   )};
 `;
 
-const MovementButtonTop = styled(MovementButton)`
+const MovementButtonUp = styled(MovementButton)`
   box-shadow: inset 3px 5px 5px -1px rgb(255 255 255 / 50%),
     inset -3px -3px 5px -1px rgb(0 0 0 / 99%), 1px 1px 1px 2px rgb(0 0 0 / 80%),
     2.5px 5px 5px 1px rgb(0 0 0 / 90%);
 `;
 
-const MovementButtonLeft = styled(MovementButtonTop)``;
-const MovementButtonRight = styled(MovementButton)`
-  box-shadow: inset -3px 5px 3px -1px rgb(255 255 255 / 50%),
+const MovementButtonLeft = styled(MovementButtonUp)``;
+const MovementButtonRight = styled(MovementButtonUp)`
+  transform: rotate(90deg);
+  box-shadow: inset 3px 1px 5px -1px rgb(255 255 255 / 50%),
     inset -3px -3px 5px -1px rgb(0 0 0 / 99%), 1px 1px 1px 2px rgb(0 0 0 / 80%),
     2.5px 5px 5px 1px rgb(0 0 0 / 90%);
 `;
-const MovementButtonBottom = styled(MovementButton)`
-  box-shadow: inset 3px 2px 3px -1px rgb(255 255 255 / 50%),
+const MovementButtonDown = styled(MovementButton)`
+  box-shadow: inset 3px -1px 3px -1px rgb(255 255 255 / 50%),
     inset -3px -3px 5px -1px rgb(0 0 0 / 99%), 1px 1px 1px 2px rgb(0 0 0 / 80%),
     2.5px 5px 5px 1px rgb(0 0 0 / 90%);
 `;
 const MovementButtonCenter = styled(MovementButton)`
+  cursor: auto;
+  box-shadow: inset -2px -1px -1px 0px rgb(255 255 255 / 50%),
+    inset -3px -3px 5px -1px rgb(0 0 0 / 99%), 1px 1px 1px 2px rgb(0 0 0 / 80%),
+    2.5px 5px 5px 1px rgb(0 0 0 / 90%);
+
+  &: active {
+    box-shadow: inset -2px -1px -1px 0px rgb(255 255 255 / 50%),
+      inset -3px -3px 5px -1px rgb(0 0 0 / 99%),
+      1px 1px 1px 2px rgb(0 0 0 / 80%), 2.5px 5px 5px 1px rgb(0 0 0 / 90%);
+  }
+`;
+
+/*
   box-shadow: inset 0px 0px 3px 0px rgb(255 255 255 / 50%),
     inset -3px -3px 5px -1px rgb(0 0 0 / 99%), 1px 1px 1px 2px rgb(0 0 0 / 80%),
     2.5px 5px 5px 1px rgb(0 0 0 / 90%);
-`;
+*/
 
-const ControlButton = styled.div`
+const ControlButton = styled.button`
   position: relative;
+  display: block;
   height: 5rem;
   width: 5rem;
+  cursor: pointer;
   background: ${standardStyles.colorPrimary};
   border-radius: 50%;
   top: -4rem;
@@ -271,16 +343,74 @@ const ControlButton = styled.div`
 `;
 
 const ControlButtonA = styled(ControlButton)`
-  left: 38rem;
+  ${mediaQuery(
+    'ios',
+    `
+    left: 28rem;
+    `
+  )}
+  ${mediaQuery(
+    'android',
+    `
+    left: 28rem;
+    `
+  )}
+    ${mediaQuery(
+    'tablet',
+    `
+    left: 28rem;
+    `
+  )}
+    ${mediaQuery(
+    'laptop',
+    `
+    left: 38rem;
+    `
+  )}
+    ${mediaQuery(
+    'desktop',
+    `
+    left: 38rem;
+    `
+  )}
 `;
 
 const ControlButtonB = styled(ControlButton)`
-  left: 31rem;
+  ${mediaQuery(
+    'ios',
+    `
+    left: 22rem;
+    `
+  )}
+  ${mediaQuery(
+    'android',
+    `
+    left: 22rem;
+    `
+  )}
+    ${mediaQuery(
+    'tablet',
+    `
+    left: 22rem;
+    `
+  )}
+    ${mediaQuery(
+    'laptop',
+    `
+    left: 31rem;
+    `
+  )}
+    ${mediaQuery(
+    'desktop',
+    `
+    left: 31rem;
+    `
+  )}
 `;
 
 export default function withGameboy(Component) {
   return function withGameBoyComponent() {
-    const [keyDown, setKeyDown] = useState(null);
+    const myRef = useRef();
 
     useEffect(() => {
       document.addEventListener('keydown', handleKeyDown);
@@ -290,7 +420,11 @@ export default function withGameboy(Component) {
     }, []);
 
     const handleKeyDown = (event) => {
-      setKeyDown(event.key);
+      if (myRef.current) myRef.current.handleKeyDown(event.key);
+    };
+
+    const handleClickButton = (key) => {
+      if (myRef.current) myRef.current.handleKeyDown(key);
     };
 
     return (
@@ -298,33 +432,39 @@ export default function withGameboy(Component) {
         <GameBoy>
           <ScreenWrapper>
             <Screen>
-              <Component keyDown={keyDown} />
+              <Component ref={myRef} />
             </Screen>
           </ScreenWrapper>
           <MovementWrapper>
             <FlexDiv>
-              <MovementButtonTop>
+              <MovementButtonUp onClick={() => handleClickButton(CONTROLS.UP)}>
                 <Text>&#8593;</Text>
-              </MovementButtonTop>
+              </MovementButtonUp>
             </FlexDiv>
 
             <FlexDiv>
-              <MovementButtonLeft>
+              <MovementButtonLeft
+                onClick={() => handleClickButton(CONTROLS.LEFT)}
+              >
                 <Text>&#8592;</Text>
               </MovementButtonLeft>
-              <MovementButtonCenter></MovementButtonCenter>
+              <MovementButtonCenter disabled></MovementButtonCenter>
 
-              <MovementButtonRight>
-                <Text>&#8594;</Text>
+              <MovementButtonRight
+                onClick={() => handleClickButton(CONTROLS.RIGHT)}
+              >
+                <Text>&#8593;</Text>
               </MovementButtonRight>
             </FlexDiv>
             <FlexDiv>
-              <MovementButtonBottom>
+              <MovementButtonDown
+                onClick={() => handleClickButton(CONTROLS.DOWN)}
+              >
                 <Text>&#8595;</Text>
-              </MovementButtonBottom>
+              </MovementButtonDown>
             </FlexDiv>
           </MovementWrapper>
-          <ControlButtonA>
+          <ControlButtonA onClick={() => handleClickButton(CONTROLS.SPACE)}>
             <Text>A</Text>
           </ControlButtonA>
           <ControlButtonB>

@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
 
 import { GAME_STATES, DIFFICULTY, Menu, Header, Button } from './models';
 import { DoublyLinkedListNode } from './node';
@@ -9,11 +15,10 @@ const CONTROLS = {
   SPACE: ' ',
 };
 
-export default function SnakeDifficultyComponent({
-  keyDown,
-  handleDifficulty,
-  handleGameState,
-}) {
+const SnakeDifficultyComponent = forwardRef(function renderSnakeDifficulty(
+  { handleGameState, handleDifficulty },
+  ref
+) {
   const [activeId, setActiveId] = useState('medium-difficulty');
   const activeNode = useRef(null);
 
@@ -21,9 +26,17 @@ export default function SnakeDifficultyComponent({
     initNodes();
   }, []);
 
-  useEffect(() => {
+  useImperativeHandle(
+    ref,
+    () => {
+      return { handleKeyDown };
+    },
+    []
+  );
+
+  const handleKeyDown = (key) => {
     let node = activeNode.current;
-    switch (keyDown) {
+    switch (key) {
       case CONTROLS.UP:
         node = node.prev;
         setActiveId(node.id);
@@ -39,7 +52,7 @@ export default function SnakeDifficultyComponent({
         handleGameState(GAME_STATES.START);
         break;
     }
-  }, [keyDown]);
+  };
 
   const initNodes = () => {
     const easy = new DoublyLinkedListNode('easy-difficulty', DIFFICULTY.EASY);
@@ -58,7 +71,7 @@ export default function SnakeDifficultyComponent({
   };
 
   return (
-    <Menu>
+    <Menu ref={ref}>
       <Header>SELECT DIFFICULTY</Header>
       <Button id="easy-difficulty" activeId={activeId}>
         EASY
@@ -71,4 +84,6 @@ export default function SnakeDifficultyComponent({
       </Button>
     </Menu>
   );
-}
+});
+
+export default SnakeDifficultyComponent;

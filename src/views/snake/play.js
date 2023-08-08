@@ -1,7 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
 import styled from 'styled-components';
 
-import { NODE_SIZES, GAME_STATES } from './models';
+import { GAME_STATES, GRID_SIZE } from './models';
 import { LinkedListNode } from './node';
 import { mediaQuery, standardStyles } from '../../utils/styles';
 
@@ -18,59 +24,49 @@ const DIRECTIONS = {
 };
 
 const setNodeBackground = (state) => {
-  if (state === NODE_STATES.EMPTY) return standardStyles.colorPrimary;
-  else if (state === NODE_STATES.FOOD) return '#38E886';
-  return '#4AE6E0';
+  if (state === NODE_STATES.EMPTY) return '#cfcfc3';
+  else return standardStyles.colorPrimary;
 };
+
+const GridWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(${GRID_SIZE}, 1fr);
+  grid-template-rows: repeat(${GRID_SIZE}, 1fr);
+`;
 
 const Node = styled.div.attrs((props) => ({
   style: {
     background: setNodeBackground(props.state),
   },
 }))`
-  ${mediaQuery(
-    'ios',
-    `
-    width: ${NODE_SIZES.EXTRA_SMALL}rem;
-    height: ${NODE_SIZES.EXTRA_SMALL}rem;
-`
-  )};
-  ${mediaQuery(
-    'android',
-    `
-    width: ${NODE_SIZES.EXTRA_SMALL}rem;
-    height: ${NODE_SIZES.EXTRA_SMALL}rem;
-`
-  )};
-  ${mediaQuery(
-    'tablet',
-    `
-    width: ${NODE_SIZES.SMALL}rem;
-    height: ${NODE_SIZES.SMALL}rem;
-`
-  )};
-  ${mediaQuery(
-    'laptop',
-    `
-    width: ${NODE_SIZES.MEDIUM}rem;
-    height: ${NODE_SIZES.MEDIUM}rem;
-`
-  )};
-
-  ${mediaQuery(
-    'desktop',
-    `
-    width: ${NODE_SIZES.LARGE}rem;
-    height: ${NODE_SIZES.LARGE}rem;
-`
-  )};
+  width: auto;
+  height: auto;
 `;
 
-export default function SnakePlayComponent({
-  gridLength,
-  difficulty,
-  handleGameState,
-}) {
+const GameOver = styled.div`
+  position: absolute;
+  font-family: RetroGaming;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  background: #cfcfc3;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 2rem;
+  font-size: 3rem;
+  width: 25rem;
+  height: 8rem;
+  left: calc(50% - 12.5rem);
+  top: calc(50% - 2.5rem);
+`;
+
+const SnakePlayComponent = forwardRef(function renderSnakeGame(
+  { difficulty, handleGameState },
+  ref
+) {
   // states that do not need to trigger rerender of component
   // should not use React hooks for optimization
   const grid = useRef(null);
@@ -78,11 +74,12 @@ export default function SnakePlayComponent({
   const tail = useRef(null);
   const direction = useRef(DIRECTIONS.RIGHT);
   const frameInterval = useRef(null);
-  const maxScore = Math.pow(gridLength, 2);
+  const maxScore = Math.pow(GRID_SIZE, 2);
 
   // requires rendering of DOM
   const [updateGrid, setUpdateGrid] = useState(false);
   const [gridNodes, setGridNodes] = useState(null);
+  const [message, setMessage] = useState(null);
 
   useEffect(() => {
     // initialization
@@ -92,17 +89,19 @@ export default function SnakePlayComponent({
       updateHeadinGrid();
       setUpdateGrid((prev) => !prev);
     }, difficulty.current);
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      clearInterval(frameInterval.current);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
   }, []);
 
-  const handleKeyDown = (event) => {
+  useImperativeHandle(
+    ref,
+    () => {
+      return { handleKeyDown };
+    },
+    []
+  );
+
+  const handleKeyDown = (key) => {
     let prev = direction.current;
-    switch (event.key) {
+    switch (key) {
       case DIRECTIONS.UP:
         if (prev !== DIRECTIONS.DOWN) direction.current = DIRECTIONS.UP;
         break;
@@ -124,9 +123,9 @@ export default function SnakePlayComponent({
 
   const initGrid = () => {
     const newGrid = [];
-    for (let i = 0; i < gridLength; i++) {
+    for (let i = 0; i < GRID_SIZE; i++) {
       const row = [];
-      for (let j = 0; j < gridLength; j++) {
+      for (let j = 0; j < GRID_SIZE; j++) {
         row.push(new LinkedListNode(i, j));
       }
       newGrid.push(row);
@@ -137,7 +136,7 @@ export default function SnakePlayComponent({
   };
 
   const initHead = (newGrid) => {
-    const mid = Math.floor(gridLength / 2);
+    const mid = Math.floor(GRID_SIZE / 2);
     const newHead = newGrid[mid][mid];
     newHead.setAsHead(NODE_STATES.SNAKE, 1);
     head.current = newHead;
@@ -145,12 +144,12 @@ export default function SnakePlayComponent({
   };
 
   const initFood = (newGrid) => {
-    const mid = Math.floor(gridLength / 2);
+    const mid = Math.floor(GRID_SIZE / 2);
     let row;
     let col;
     while (row !== mid && col !== mid) {
-      row = Math.floor(Math.random() * gridLength);
-      col = Math.floor(Math.random() * gridLength);
+      row = Math.floor(Math.random() * GRID_SIZE);
+      col = Math.floor(Math.random() * GRID_SIZE);
     }
     const node = newGrid[row][col];
     node.state = NODE_STATES.FOOD;
@@ -188,10 +187,9 @@ export default function SnakePlayComponent({
         col += 1;
         break;
     }
-    if (row < 0 || row >= gridLength || col < 0 || col >= gridLength) {
+    if (row < 0 || row >= GRID_SIZE || col < 0 || col >= GRID_SIZE) {
       // out of bounds
-      handleGameState(GAME_STATES.GAMEOVER);
-      clearInterval(frameInterval.current);
+      resetGame('GAME OVER');
       return;
     }
 
@@ -199,14 +197,12 @@ export default function SnakePlayComponent({
     curHead.setNext(newHead);
     if (newHead.state === NODE_STATES.SNAKE) {
       // collide into body
-      handleGameState(GAME_STATES.GAMEOVER);
-      clearInterval(frameInterval.current);
+      resetGame('GAME OVER');
       return;
     } else if (newHead.state === NODE_STATES.FOOD) {
       score += 1;
       if (score === maxScore) {
-        handleGameState(GAME_STATES.WIN);
-        clearInterval(frameInterval.current);
+        resetGame('YOU WON! :)');
         return;
       }
       updateFoodInGrid();
@@ -228,8 +224,8 @@ export default function SnakePlayComponent({
     // food can only be assigned to a square that is not occupied by snake
     const allowed = [];
     const curGrid = grid.current;
-    for (let i = 0; i < gridLength; i++) {
-      for (let j = 0; j < gridLength; j++) {
+    for (let i = 0; i < GRID_SIZE; i++) {
+      for (let j = 0; j < GRID_SIZE; j++) {
         const node = curGrid[i][j];
         if (node.state === NODE_STATES.EMPTY) allowed.push(`${i},${j}`);
       }
@@ -239,5 +235,20 @@ export default function SnakePlayComponent({
     food.state = NODE_STATES.FOOD;
   };
 
-  return <>{gridNodes}</>;
-}
+  const resetGame = (message) => {
+    setMessage(message);
+    setTimeout(() => {
+      handleGameState(GAME_STATES.MENU);
+    }, 3000);
+    clearInterval(frameInterval.current);
+  };
+
+  return (
+    <GridWrapper ref={ref}>
+      {gridNodes}
+      {message && <GameOver>{message}</GameOver>}
+    </GridWrapper>
+  );
+});
+
+export default SnakePlayComponent;

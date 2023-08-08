@@ -1,5 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
 
 import { GAME_STATES, Menu, Header, Button } from './models';
 import { DoublyLinkedListNode } from './node';
@@ -10,21 +15,28 @@ const CONTROLS = {
   SPACE: ' ',
 };
 
-export default function SnakeMenuComponent({ keyDown, handleGameState }) {
+const SnakeMenuComponent = forwardRef(function renderSnakeMenu(
+  { handleGameState },
+  ref
+) {
   const [activeId, setActiveId] = useState('start-game');
   const activeNode = useRef(null);
-  const navigate = useNavigate();
-  const testing = useCallback(() => {
-    console.log('hello');
-  }, [keyDown]);
 
   useEffect(() => {
     initNodes();
   }, []);
 
-  useEffect(() => {
+  useImperativeHandle(
+    ref,
+    () => {
+      return { handleKeyDown };
+    },
+    []
+  );
+
+  const handleKeyDown = (key) => {
     let node = activeNode.current;
-    switch (keyDown) {
+    switch (key) {
       case CONTROLS.UP:
         node = node.prev;
         setActiveId(node.id);
@@ -38,10 +50,10 @@ export default function SnakeMenuComponent({ keyDown, handleGameState }) {
       case CONTROLS.SPACE:
         if (activeNode.current.id === 'start-game')
           handleGameState(GAME_STATES.DIFFICULTY);
-        else navigate('/');
+        else handleGameState(GAME_STATES.EXIT);
         break;
     }
-  }, [keyDown]);
+  };
 
   const initNodes = () => {
     const start = new DoublyLinkedListNode('start-game');
@@ -54,7 +66,7 @@ export default function SnakeMenuComponent({ keyDown, handleGameState }) {
   };
 
   return (
-    <Menu>
+    <Menu ref={ref}>
       <Header>SNAKE</Header>
       <Button id="start-game" activeId={activeId}>
         START GAME
@@ -64,4 +76,6 @@ export default function SnakeMenuComponent({ keyDown, handleGameState }) {
       </Button>
     </Menu>
   );
-}
+});
+
+export default SnakeMenuComponent;

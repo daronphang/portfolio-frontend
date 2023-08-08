@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { mediaQuery, standardStyles } from '../../utils/styles';
 
+export const GRID_SIZE = 30;
+
 export const NODE_SIZES = {
   EXTRA_SMALL: 0.7,
   SMALL: 1,
@@ -15,6 +17,7 @@ export const GAME_STATES = {
   START: 'START',
   WIN: 'WIN',
   GAMEOVER: 'GAMEOVER',
+  EXIT: 'EXIT',
 };
 
 export const DIFFICULTY = {

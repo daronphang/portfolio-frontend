@@ -155,6 +155,10 @@ export default function Projects() {
     'Services are deployed with Docker and monitored with ELK stack',
     'Achieved productivity gain of ~3 manhour savings per day',
   ];
+
+  const adhoc = [
+    'Built classic snake game with gameboy interface in Javascript',
+  ];
   return (
     <Wrap id="projects">
       <ProjectsWrap>
@@ -168,6 +172,12 @@ export default function Projects() {
           heading="DYNAMO"
           date="JAN 2023-PRESENT"
           content={dynamoContent}
+        />
+        <Project
+          heading="MINI"
+          date="AUG 2023-PRESENT"
+          content={adhoc}
+          link="/snake-game"
         />
       </ProjectsWrap>
 

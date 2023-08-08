@@ -1,25 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useRef, useState } from 'react';
 import styled from 'styled-components';
 
-import { NODE_SIZES, GAME_STATES, DIFFICULTY } from './models';
+import { GAME_STATES } from './models';
 import SnakeMenuComponent from './menu';
 import SnakeDifficultyComponent from './difficulty';
 import SnakePlayComponent from './play';
-import SnakeGameOverComponent from './game-over';
-import { standardStyles, mediaQuery } from '../../utils/styles';
 
-const GRID_LENGTH = 30;
-
-const GridWrapper = styled.div`
+const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(30, 1fr);
-  grid-template-rows: repeat(30, 1fr);
 `;
 
-export default function SnakeGameComponent({ keyDown }) {
+const SnakeGameComponent = forwardRef(function renderSnakeGame(props, ref) {
   const [gameState, setGameState] = useState(GAME_STATES.MENU);
   const difficulty = useRef(null);
 
@@ -32,42 +25,27 @@ export default function SnakeGameComponent({ keyDown }) {
   };
 
   return (
-    <GridWrapper>
+    <Wrapper>
       {gameState === GAME_STATES.MENU && (
-        <SnakeMenuComponent
-          keyDown={keyDown}
-          handleGameState={handleGameState}
-        />
+        <SnakeMenuComponent ref={ref} handleGameState={handleGameState} />
       )}
       {gameState === GAME_STATES.DIFFICULTY && (
         <SnakeDifficultyComponent
-          keyDown={keyDown}
+          ref={ref}
           handleDifficulty={handleDifficulty}
           handleGameState={handleGameState}
         />
       )}
 
-      {(gameState === GAME_STATES.START ||
-        gameState === GAME_STATES.GAMEOVER ||
-        gameState === GAME_STATES.WIN) && (
+      {gameState === GAME_STATES.START && (
         <SnakePlayComponent
-          gridLength={GRID_LENGTH}
+          ref={ref}
           difficulty={difficulty}
           handleGameState={handleGameState}
         />
       )}
-      {gameState === GAME_STATES.GAMEOVER && (
-        <SnakeGameOverComponent
-          content="GAME OVER"
-          handleGameState={handleGameState}
-        />
-      )}
-      {gameState === GAME_STATES.WIN && (
-        <SnakeGameOverComponent
-          content="YOU WON!"
-          handleGameState={handleGameState}
-        />
-      )}
-    </GridWrapper>
+    </Wrapper>
   );
-}
+});
+
+export default SnakeGameComponent;
