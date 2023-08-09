@@ -24,7 +24,7 @@ const BgdImg = styled.img.attrs((props) => ({
   style: {
     position:
       props.content === 100 ? 'fixed' : props.show ? 'absolute' : 'fixed',
-    top: props.content === 100 ? '-20vh' : 0,
+    top: props.content === 100 ? `${-0.2 * window.innerHeight}px` : 0,
     opacity: Math.max(
       0,
       !props.ratio ? 1 : props.ratio >= 0.5 ? 1 : props.ratio * 2 - 0.2

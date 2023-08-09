@@ -33,8 +33,8 @@ const GameBoy = styled.div`
   ${mediaQuery(
     'ios',
     `
-    height: 70rem;
-    width: 36rem;
+    height: 65rem;
+    width: 35rem;
     padding: 1.5rem;
   `
   )}
@@ -84,7 +84,7 @@ const ScreenWrapper = styled.div`
   ${mediaQuery(
     'ios',
     `
-    height: 39rem;
+    height: 37rem;
     padding: 2rem;
 `
   )}
@@ -161,8 +161,8 @@ const MovementWrapper = styled.div`
   ${mediaQuery(
     'ios',
     `
-    left: -9rem;
-    top: 8rem;
+    left: -7rem;
+    top: 5rem;
     `
   )}
   ${mediaQuery(
@@ -270,8 +270,8 @@ const MovementButton = styled.button`
       ${mediaQuery(
     'tablet',
     `
-    height: 4rem;
-    width: 4rem;
+    height: 5rem;
+    width: 5rem;
 `
   )}
       ${mediaQuery(
@@ -346,7 +346,8 @@ const ControlButtonA = styled(ControlButton)`
   ${mediaQuery(
     'ios',
     `
-    left: 28rem;
+    left: 27rem;
+    top: -8rem;
     `
   )}
   ${mediaQuery(
@@ -379,7 +380,8 @@ const ControlButtonB = styled(ControlButton)`
   ${mediaQuery(
     'ios',
     `
-    left: 22rem;
+    left: 21rem;
+    top: -8rem;
     `
   )}
   ${mediaQuery(
