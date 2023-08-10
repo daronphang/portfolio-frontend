@@ -7,16 +7,19 @@ const LinkedListNode = class LinkedListNode {
     this.score = 0;
     this.state = null;
     this.next = null;
+    this.direction = null;
   }
 
   setNext(next) {
     this.next = next;
     this.score = 0;
+    this.direction = null;
   }
 
-  setAsHead(state, score) {
+  setAsHead(state, score, direction) {
     this.state = state;
     this.score = score;
+    this.direction = direction;
   }
 
   reset() {

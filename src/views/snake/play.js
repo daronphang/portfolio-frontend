@@ -103,16 +103,16 @@ const SnakePlayComponent = forwardRef(function renderSnakeGame(
     let prev = direction.current;
     switch (key) {
       case DIRECTIONS.UP:
-        if (prev !== DIRECTIONS.DOWN) direction.current = DIRECTIONS.UP;
+        direction.current = DIRECTIONS.UP;
         break;
       case DIRECTIONS.DOWN:
-        if (prev !== DIRECTIONS.UP) direction.current = DIRECTIONS.DOWN;
+        direction.current = DIRECTIONS.DOWN;
         break;
       case DIRECTIONS.LEFT:
-        if (prev !== DIRECTIONS.RIGHT) direction.current = DIRECTIONS.LEFT;
+        direction.current = DIRECTIONS.LEFT;
         break;
       case DIRECTIONS.RIGHT:
-        if (prev !== DIRECTIONS.LEFT) direction.current = DIRECTIONS.RIGHT;
+        direction.current = DIRECTIONS.RIGHT;
         break;
     }
   };
@@ -166,6 +166,17 @@ const SnakePlayComponent = forwardRef(function renderSnakeGame(
     setGridNodes(newGridSquares);
   };
 
+  const getNewDirection = (prev, cur) => {
+    if (
+      (prev === DIRECTIONS.LEFT && cur === DIRECTIONS.RIGHT) ||
+      (prev === DIRECTIONS.RIGHT && cur === DIRECTIONS.LEFT) ||
+      (prev === DIRECTIONS.UP && cur === DIRECTIONS.DOWN) ||
+      (prev === DIRECTIONS.DOWN && cur === DIRECTIONS.UP)
+    )
+      return prev;
+    return cur;
+  };
+
   const updateHeadinGrid = () => {
     const curHead = head.current;
     const curGrid = grid.current;
@@ -173,7 +184,8 @@ const SnakePlayComponent = forwardRef(function renderSnakeGame(
     let col = curHead.col;
     let score = curHead.score;
 
-    switch (direction.current) {
+    let newDirection = getNewDirection(curHead.direction, direction.current);
+    switch (newDirection) {
       case DIRECTIONS.UP:
         row -= 1;
         break;
@@ -209,7 +221,7 @@ const SnakePlayComponent = forwardRef(function renderSnakeGame(
     } else {
       updateTailInGrid();
     }
-    newHead.setAsHead(NODE_STATES.SNAKE, score);
+    newHead.setAsHead(NODE_STATES.SNAKE, score, newDirection);
     head.current = newHead;
   };
 
