@@ -93,13 +93,13 @@ const Placeholder = styled.div`
 const Content = styled.div`
   position: absolute;
   font-weight: 500;
+  top: 60%;
+  right: 0%;
   color: ${standardStyles.fontColorPrimary};
 
   ${mediaQuery(
     'ios',
     `
-    top: 60%;
-    right: 0%;
     width: 25rem;
     font-size: ${standardStyles.fontSizeSmall};
   `
@@ -107,17 +107,13 @@ const Content = styled.div`
   ${mediaQuery(
     'android',
     `
-    top: 60%;
-    right: 0%;
     width: 25rem;
-    font-size: ${standardStyles.fontSizeMedium};
+    font-size: ${standardStyles.fontSizeSmall};
   `
   )};
   ${mediaQuery(
     'tablet',
     `
-    top: 60%;
-    right: 0%;
     width: 25rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
@@ -125,18 +121,14 @@ const Content = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    top: 60%;
-    right: 3%;
     width: 48rem;
-    font-size: ${standardStyles.fontSizeLarge};
+    font-size: ${standardStyles.fontSizeMedium};
   `
   )};
 
   ${mediaQuery(
     'desktop',
     `
-    top: 60%;
-    right: 0%;
     width: 50rem;
     font-size: ${standardStyles.fontSizeLarge};
   `
