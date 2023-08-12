@@ -24,7 +24,7 @@ const Wrap = styled.div.attrs((props) => ({
   ${mediaQuery(
     'android',
     `
-  font-size: ${standardStyles.fontSizeSmall};
+  font-size: ${standardStyles.fontSizeVerySmall};
   `
   )};
   ${mediaQuery(
@@ -36,7 +36,7 @@ const Wrap = styled.div.attrs((props) => ({
   ${mediaQuery(
     'laptop',
     `
-  font-size: ${standardStyles.fontSizeNormal};
+  font-size: ${standardStyles.fontSizeSmall};
   `
   )};
 

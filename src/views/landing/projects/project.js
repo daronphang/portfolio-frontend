@@ -75,7 +75,7 @@ const Heading = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    font-size: 7rem;
+    font-size: 6rem;
   `
   )};
 
@@ -115,8 +115,8 @@ const Date = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    font-size: 4rem;
-    margin-left: 2rem;
+    font-size: 3.5rem;
+    margin-left: 1.8rem;
   `
   )};
 

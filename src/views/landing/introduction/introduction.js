@@ -37,37 +37,37 @@ const BgdImg = styled.img.attrs((props) => ({
   ${mediaQuery(
     'ios',
     `
-    width: 100%;
-    height: ${window.innerHeight}px;
+    max-width: 100%;
+    min-height: ${window.innerHeight}px;
   `
   )};
   ${mediaQuery(
     'android',
     `
-    width: 100%;
-    height: ${window.innerHeight}px;
+    max-width: 100%;
+    min-height: ${window.innerHeight}px;
   `
   )};
   ${mediaQuery(
     'tablet',
     `
-    width: 100%;
-    height: ${window.innerHeight}px;
+    max-width: 100%;
+    min-height: ${window.innerHeight}px;
   `
   )};
   ${mediaQuery(
     'laptop',
     `
-    width: 100vw;
-    height: auto;
+    max-width: 100%;
+    min-height: 100vh;
   `
   )};
 
   ${mediaQuery(
     'desktop',
     `
-    width: 100vw;
-    height: auto;
+    max-width: 100%;
+    min-height: 100vh;
   `
   )};
 `;
@@ -92,14 +92,14 @@ const Placeholder = styled.div`
 
 const Content = styled.div`
   position: absolute;
-  top: 60%;
-  right: 0%;
   font-weight: 500;
   color: ${standardStyles.fontColorPrimary};
 
   ${mediaQuery(
     'ios',
     `
+    top: 60%;
+    right: 0%;
     width: 25rem;
     font-size: ${standardStyles.fontSizeSmall};
   `
@@ -107,6 +107,8 @@ const Content = styled.div`
   ${mediaQuery(
     'android',
     `
+    top: 60%;
+    right: 0%;
     width: 25rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
@@ -114,6 +116,8 @@ const Content = styled.div`
   ${mediaQuery(
     'tablet',
     `
+    top: 60%;
+    right: 0%;
     width: 25rem;
     font-size: ${standardStyles.fontSizeMedium};
   `
@@ -121,16 +125,20 @@ const Content = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    width: 50rem;
-    font-size: ${standardStyles.fontSizeVeryLarge};
+    top: 60%;
+    right: 3%;
+    width: 48rem;
+    font-size: ${standardStyles.fontSizeLarge};
   `
   )};
 
   ${mediaQuery(
     'desktop',
     `
+    top: 60%;
+    right: 0%;
     width: 50rem;
-    font-size: ${standardStyles.fontSizeVeryLarge};
+    font-size: ${standardStyles.fontSizeLarge};
   `
   )};
 `;

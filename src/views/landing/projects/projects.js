@@ -70,8 +70,8 @@ const ProjectsWrap = styled.div`
   ${mediaQuery(
     'laptop',
     `
-  width: 55rem;
-  margin-left: calc(50% - 27.5rem);
+  width: 70rem;
+  margin-left: calc(50% - 35rem);
 `
   )};
 
@@ -111,7 +111,7 @@ const Heading = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    font-size: 12rem;
+    font-size: 10rem;
   `
   )};
 

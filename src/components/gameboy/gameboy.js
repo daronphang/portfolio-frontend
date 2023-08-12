@@ -57,8 +57,8 @@ const GameBoy = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    height: 90rem;
-    width: 50rem;
+    height: 80rem;
+    width: 48rem;
     padding: 2rem;
   `
   )}
