@@ -33,11 +33,31 @@ div {
 }
 ```
 
+### Disabling Scroll
+
+To disable scroll, can set position as fixed or overflow hidden. However, this will not work on iOS. Instead, can add an event handler that prevents default.
+
+https://medium.com/jsdownunder/locking-body-scroll-for-all-devices-22def9615177
+
+```css
+html, body {
+  overflow: hidden;
+}
+
+body {
+ position: fixed; 
+}
+
+targetElement.ontouchend = (e) => {
+    e.preventDefault();
+};
+```
+
 ## Deployment
 
 Build is done on local computer, not remote server instance. Folder needs write access for SSH user.
 
-```console
+```bash
 $ npm run build
 $ rsync -avP build/ exampleuser@mydomain.com:/var/www/mydomain.com/
 ```
@@ -48,7 +68,7 @@ Modal, navigation, redux.
 
 ### React Hooks
 
-```console
+```bash
 $ npm test
 ```
 

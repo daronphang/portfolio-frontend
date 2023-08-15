@@ -43,8 +43,8 @@ const Grid = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    grid-template-columns: 7rem 37rem;
-  font-size: ${standardStyles.fontSizeLarge};
+    grid-template-columns: 4.8rem 35rem;
+  font-size: ${standardStyles.fontSizeMedium};
   `
   )};
 

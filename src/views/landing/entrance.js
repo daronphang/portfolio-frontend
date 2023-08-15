@@ -62,6 +62,12 @@ export default function Entrance() {
   };
 
   useEffect(() => {
+    // for ios
+    const el = document.getElementById('entrance');
+    el.ontouchmove = (e) => {
+      e.preventDefault();
+    };
+
     for (let i = 0; i < 4; i++) {
       changeText(Texts[i], i);
     }
@@ -77,8 +83,9 @@ export default function Entrance() {
   useEffect(() => {
     if (size === 100) setHideSquare(true);
   }, [size]);
+
   return (
-    <Wrap>
+    <Wrap id="entrance">
       {!hideText && <Text>{text}</Text>}
       {!hideSquare && <Square size={size} />}
     </Wrap>

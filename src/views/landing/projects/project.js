@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { mediaQuery, standardStyles } from '../../../utils/styles';
@@ -74,7 +75,7 @@ const Heading = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    font-size: 7rem;
+    font-size: 6rem;
   `
   )};
 
@@ -114,8 +115,8 @@ const Date = styled.div`
   ${mediaQuery(
     'laptop',
     `
-    font-size: 4rem;
-    margin-left: 2rem;
+    font-size: 3.5rem;
+    margin-left: 1.8rem;
   `
   )};
 
@@ -164,7 +165,43 @@ const Content = styled.div`
   )};
 `;
 
-export default function Project({ heading, content, date, left }) {
+const ProjectLink = styled(Link)`
+  color: ${standardStyles.fontColorPrimary};
+
+  ${mediaQuery(
+    'ios',
+    `
+  font-size: ${standardStyles.fontSizeVerySmall};
+`
+  )};
+  ${mediaQuery(
+    'android',
+    `
+  font-size: ${standardStyles.fontSizeSmall};
+`
+  )};
+  ${mediaQuery(
+    'tablet',
+    `
+  font-size: ${standardStyles.fontSizeSmall};
+`
+  )};
+  ${mediaQuery(
+    'laptop',
+    `
+  font-size: ${standardStyles.fontSizeMedium};
+`
+  )};
+
+  ${mediaQuery(
+    'desktop',
+    `
+  font-size: ${standardStyles.fontSizeMedium};
+`
+  )};
+`;
+
+export default function Project({ heading, content, date, left, link }) {
   const [points, setPoints] = useState(null);
 
   useEffect(() => {
@@ -181,6 +218,11 @@ export default function Project({ heading, content, date, left }) {
       <Content>
         <ul>{points}</ul>
       </Content>
+      {link && (
+        <ProjectLink to={link} target="_blank">
+          View Project
+        </ProjectLink>
+      )}
     </Wrap>
   );
 }
