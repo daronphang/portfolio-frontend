@@ -133,8 +133,8 @@ export default function Projects() {
   load balancing, availability, data sanitzation, multithreading, design patterns
   */
   const myAssistantContent = [
-    'Developed a dynamic web application that serves as a consolidated platform (metrics integration, automated workflows) ' +
-      'to improve the productivity of Engineers (Process, Equipment) and Technicians',
+    'Spearheaded a dynamic web application from design to distribution that serves as a consolidated platform (metrics integration, automated workflows) ' +
+      'to improve the productivity of engineers (Process, Equipment) and technicians after identifying repetitive and potential streamlining opportunities',
     'Architecture and technologies used: ' +
       'SPA (Angular), ' +
       'microservices (Python, Golang) with choreography (RabbitMQ, Redis), orchestration (saga with finite automata), ' +
@@ -147,15 +147,15 @@ export default function Projects() {
       'CRON jobs scheduling, ' +
       'CI/CD automation (Jenkins), ' +
       'centralized logging and monitoring (ELK), ' +
-      'and team collaboration (Git, Bitbucket, Confluence, Jira)',
-    'Awarded as the Culture Champion (Micron Technology) for Q4 2022 with significant productivity gain of ' +
-      '~800 manhour savings per week and averaging over 1,218 requests daily in Singapore',
+      'and team collaboration using a monorepo approach (Git, Bitbucket, Confluence, Jira)',
+    'Awarded as the Culture Champion (Micron Technology) in Q4 2022 with significant productivity gain of ' +
+      '~800 manhour savings per week and averaging ~1,218 requests daily in Singapore',
     'Approved as a global BKM (Best Known Method) and extended to other Micron sites ' +
       '(Taiwan, China, Japan, USA)',
   ];
 
   const orionContent = [
-    'Developed a static web application that processes various adhoc requests for labor productivity improvement',
+    'Developed a static web application that processes various adhoc requests across module stakeholders for labor productivity improvement and optimization',
     'Architecture and technologies used: ' +
       'Microservices (Python) with SSR deployed in Docker, ' +
       'API gateway (FastAPI), ' +
@@ -163,6 +163,7 @@ export default function Projects() {
       'reverse proxy (Nginx), ' +
       'charts visualization (Matplotlib, Pandas), ' +
       'web scraping (Selenium), ' +
+      'SQL Server, ' +
       'multiprocessing and multithreading for long-running tasks (Celery), ' +
       'and centralized logging and monitoring (ELK) ',
     'Achieved productivity gain of ~3 manhour savings per day (Micron Technology)',
