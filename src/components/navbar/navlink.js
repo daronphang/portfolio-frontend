@@ -6,9 +6,10 @@ import { standardStyles } from '../../utils/styles';
 
 const NavLink = styled(HashLink).attrs((props) => ({
   style: {
-    backgroundColor: props.isActive
-      ? standardStyles.colorSecondary
-      : standardStyles.colorQuinary,
+    backgroundColor:
+      props.isactive === 'active'
+        ? standardStyles.colorSecondary
+        : standardStyles.colorQuinary,
   },
 }))`
   position: relative;
@@ -41,7 +42,7 @@ const Span = styled.span`
 `;
 
 export default function CustomNavLink({ id, to, children }) {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(null);
   const handleActive = () => {
     const element = document.getElementById(id);
     if (!element) return;
@@ -51,9 +52,9 @@ export default function CustomNavLink({ id, to, children }) {
       element.getBoundingClientRect().bottom > 0
     ) {
       // element is in view
-      setActive(true);
+      setActive('active');
     } else {
-      setActive(false);
+      setActive('inactive');
     }
   };
 
@@ -66,7 +67,7 @@ export default function CustomNavLink({ id, to, children }) {
   }, []);
 
   return (
-    <NavLink isActive={active} smooth to={to}>
+    <NavLink isactive={active} smooth to={to}>
       <Span>{children}</Span>
     </NavLink>
   );

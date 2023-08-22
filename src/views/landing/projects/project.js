@@ -202,12 +202,14 @@ const ProjectLink = styled(Link)`
 `;
 
 export default function Project({ heading, content, date, left, link }) {
-  const [points, setPoints] = useState(null);
+  const [bulletPoints, setBulletPoints] = useState(null);
 
   useEffect(() => {
-    const temp = [];
-    content.forEach((row) => temp.push(<li>{row}</li>));
-    setPoints(temp);
+    setBulletPoints(() =>
+      content.map((row, idx) => (
+        <li key={`${heading}-metadata-row-${idx}`}>{row}</li>
+      ))
+    );
   }, []);
   return (
     <Wrap left={left}>
@@ -216,7 +218,7 @@ export default function Project({ heading, content, date, left, link }) {
         <Date>{date}</Date>
       </HeadingWrap>
       <Content>
-        <ul>{points}</ul>
+        <ul>{bulletPoints}</ul>
       </Content>
       {link && (
         <ProjectLink to={link} target="_blank">

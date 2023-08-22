@@ -129,34 +129,46 @@ const Spacing = styled.div`
 `;
 
 export default function Projects() {
+  /*
+  load balancing, availability, data sanitzation, multithreading, design patterns
+  */
   const myAssistantContent = [
-    'Developed a scalable full-stack microservice web application at Micron Technology ' +
-      'that serves as a consolidated platform to improve productivity for Process Engineers ' +
-      'through workflow automation and metrices integration',
-    'Deployed frontend as an SPA instance (Angular) that is extended from an in-house framework (Omelek)',
-    'Built backend microservices (Python, Golang) that implements an API gateway using REST (Flask, FastAPI, Gin), ' +
-      'choreographs async requests (Redis, RabbitMQ), ' +
-      'retrieves data through dynamic CRUD from SQL (Snowflake, SQL Server), ' +
-      'visualizes cleaned and transformed data (Matplotlib, Pandas, Highcharts), ' +
-      'executes async tasks using saga orchestration pattern as state machine with multi-threading (Celery), ' +
-      'and schedules CRON jobs on a daily basis',
-    'Services are deployed with Docker, automated with CI/CD (Jenkins) and monitored with ELK stack',
-    'Awarded as the Culture Champion for Q4 2022 with significant productivity gain of ' +
-      '~800 manhour savings per week',
+    'Developed a dynamic web application that serves as a consolidated platform (metrics integration, automated workflows) ' +
+      'to improve the productivity of Engineers (Process, Equipment) and Technicians',
+    'Architecture and technologies used: ' +
+      'SPA (Angular), ' +
+      'microservices (Python, Golang) with choreography (RabbitMQ, Redis), orchestration (saga with finite automata), ' +
+      'dependency injection and Factory/Singleton/Composite patterns, ' +
+      'RESTful APIs (Flask, FastAPI, Gin) with client/server-side caching (LRU), ' +
+      'fault tolerant and high availability with redundancy through the deployment of ephemeral containers (Docker), ' +
+      'reverse proxy (API gateway) and load balancing (Nginx), ' +
+      'dynamic and transactional CRUD operations with data sanitization (SQL Server, Postgres, Snowflake), ' +
+      'multiprocessing and multithreading for long-running tasks (Celery), ' +
+      'CRON jobs scheduling, ' +
+      'CI/CD automation (Jenkins), ' +
+      'centralized logging and monitoring (ELK), ' +
+      'and team collaboration (Git, Bitbucket, Confluence, Jira)',
+    'Awarded as the Culture Champion (Micron Technology) for Q4 2022 with significant productivity gain of ' +
+      '~800 manhour savings per week and averaging over 1,218 requests daily in Singapore',
     'Approved as a global BKM (Best Known Method) and extended to other Micron sites ' +
-      '(Taiwan, China, Japan and USA)',
+      '(Taiwan, China, Japan, USA)',
   ];
 
-  const dynamoContent = [
-    'Developed a robust backend microservice platform (Python) that serves static HTML with Nginx, ' +
-      'implements an API gateway (FastAPI) using REST (external) and gRPC (internal), ' +
-      'utilizes a caching mechanism for large SQL queries, ' +
-      'and executes async tasks with multi-threading (Celery)',
-    'Services are deployed with Docker and monitored with ELK stack',
-    'Achieved productivity gain of ~3 manhour savings per day',
+  const orionContent = [
+    'Developed a static web application that processes various adhoc requests for labor productivity improvement',
+    'Architecture and technologies used: ' +
+      'Microservices (Python) with SSR deployed in Docker, ' +
+      'API gateway (FastAPI), ' +
+      'RESTful APIs (external) and gRPC (internal), ' +
+      'reverse proxy (Nginx), ' +
+      'charts visualization (Matplotlib, Pandas), ' +
+      'web scraping (Selenium), ' +
+      'multiprocessing and multithreading for long-running tasks (Celery), ' +
+      'and centralized logging and monitoring (ELK) ',
+    'Achieved productivity gain of ~3 manhour savings per day (Micron Technology)',
   ];
 
-  const adhoc = [
+  const personal = [
     'Built classic snake game with gameboy interface in Javascript',
   ];
   return (
@@ -169,14 +181,14 @@ export default function Projects() {
           content={myAssistantContent}
         />
         <Project
-          heading="DYNAMO"
+          heading="ORION"
           date="JAN 2023-PRESENT"
-          content={dynamoContent}
+          content={orionContent}
         />
         <Project
-          heading="MINI"
+          heading="PERSONAL"
           date="AUG 2023-PRESENT"
-          content={adhoc}
+          content={personal}
           link="/snake-game"
         />
       </ProjectsWrap>
