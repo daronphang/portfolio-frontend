@@ -133,40 +133,49 @@ export default function Projects() {
   load balancing, availability, data sanitzation, multithreading, design patterns
   */
   const myAssistantContent = [
-    'Spearheaded a dynamic web application from design to distribution that serves as a consolidated platform (metrics integration, automated workflows) ' +
-      'to improve the productivity of engineers (Process, Equipment) and technicians after identifying repetitive and potential streamlining opportunities',
+    'Spearheaded a dynamic web application from design to distribution ' +
+      'that integrates metrics, automates workflows, and enhances the efficiency ' +
+      'of engineers and technicians by identifying and streamlining repetitive tasks, ' +
+      'as well as recognizing potential optimization opportunities in their daily responsibilities ',
+    'Proficiently assessed and pinpointed gaps within the codebase to enhance overall ' +
+      'software quality and maintainability by applying SOLID design principles',
     'Architecture and technologies used: ' +
       'SPA (Angular), ' +
-      'microservices (Python, Golang) with choreography (RabbitMQ, Redis), orchestration (saga with finite automata), ' +
+      'Microservices (Python, Golang) with caching and choreography (RabbitMQ, Redis), ' +
+      'orchestration (saga pattern with finite automata), ' +
       'dependency injection and Factory/Singleton/Composite patterns, ' +
       'RESTful APIs (Flask, FastAPI, Gin) with client/server-side caching (LRU), ' +
       'fault tolerant and high availability with redundancy through the deployment of ephemeral containers (Docker), ' +
       'reverse proxy (API gateway) and load balancing (Nginx), ' +
-      'dynamic and transactional CRUD operations with data sanitization (SQL Server, Postgres, Snowflake), ' +
+      'dynamic and transactional CRUD operations with data validation and sanitization (SQL Server, Postgres, Snowflake), ' +
       'multiprocessing and multithreading for long-running tasks (Celery), ' +
       'CRON jobs scheduling, ' +
       'CI/CD automation (Jenkins), ' +
       'centralized logging and monitoring (ELK), ' +
       'and team collaboration using a monorepo approach (Git, Bitbucket, Confluence, Jira)',
-    'Awarded as the Culture Champion (Micron Technology) in Q4 2022 with significant productivity gain of ' +
+    'Awarded with the Best Idea of the Quarter for Productivity Improvement and as the Culture Champion (Innovation) in 2022 with significant productivity gain of ' +
       '~800 manhour savings per week and averaging ~1,218 requests daily in Singapore',
     'Approved as a global BKM (Best Known Method) and extended to other Micron sites ' +
       '(Taiwan, China, Japan, USA)',
   ];
 
   const orionContent = [
-    'Developed a static web application that processes various adhoc requests across module stakeholders for labor productivity improvement and optimization',
+    'Developed a static web application focused on visualizing charts ' +
+      'to facilitate data mining and analysis, metrics reporting, and highlight ' +
+      'deviations in Key Performance Indicators (KPIs), aiding in the prompt ' +
+      'identification of trends and anomalies',
     'Architecture and technologies used: ' +
-      'Microservices (Python) with SSR deployed in Docker, ' +
+      'Microservices (Python) with caching and choreography (Redis, RabbitMQ), ' +
       'API gateway (FastAPI), ' +
       'RESTful APIs (external) and gRPC (internal), ' +
       'reverse proxy (Nginx), ' +
-      'charts visualization (Matplotlib, Pandas), ' +
+      'visualization libraries (Matplotlib, Pandas), ' +
       'web scraping (Selenium), ' +
-      'SQL Server, ' +
+      'persistent storage (SQL Server), ' +
       'multiprocessing and multithreading for long-running tasks (Celery), ' +
       'and centralized logging and monitoring (ELK) ',
-    'Achieved productivity gain of ~3 manhour savings per day (Micron Technology)',
+    'Eliminated manual interventions through tasks automation and ' +
+      'achieved a productivity gain of ~3 manhour savings per day',
   ];
 
   const personal = [
